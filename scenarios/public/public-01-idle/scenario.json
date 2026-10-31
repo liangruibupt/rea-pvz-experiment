@@ -1,0 +1,16 @@
+{
+  "actions": [],
+  "collect_sun": {
+    "every_frames": 0,
+    "mode": "first_enabled"
+  },
+  "device_seed": 101,
+  "end_frame": 3000,
+  "frame_ms": 16,
+  "id": "public-01-idle",
+  "level": 4,
+  "purpose": "No plants; observes card readiness, first wave, movement and mower state.",
+  "schema": 1,
+  "split": "public",
+  "time_seed": 1700000101
+}

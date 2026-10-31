@@ -1,0 +1,10 @@
+{
+  "frames": 8201,
+  "id": "cal-03-economy-grid",
+  "raw_input_events": 117,
+  "replay_sha256": "f7f9d2121e2c49e559bbde2c85f18ceae2d270eefea7e05a72ee111ba7da7d71",
+  "scenario_sha256": "ea0a965b16a0f60c1106e6b1c757a0d949550fb53325ca628d93af050623b0de",
+  "split": "calibration",
+  "trace_sha256": "6ad0f49ed680aa7a62b3747e39146429d224e1002392b37d3d12daec97d8c4a1",
+  "verified_replay": true
+}

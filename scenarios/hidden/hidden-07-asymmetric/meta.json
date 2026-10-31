@@ -1,0 +1,10 @@
+{
+  "frames": 11642,
+  "id": "hidden-07-asymmetric",
+  "raw_input_events": 84,
+  "replay_sha256": "27337795c93ec40f5a4db083aad4ca512de40b889bb52cb058e5abbdfa98a421",
+  "scenario_sha256": "1057add111f4e666c203eac375982653ffddb0a6011433fd30ce77279024fed8",
+  "split": "hidden",
+  "trace_sha256": "6ba23f7615aad447cda9325a2554388229867101045f8ad724c6dd7a99ee74db",
+  "verified_replay": true
+}

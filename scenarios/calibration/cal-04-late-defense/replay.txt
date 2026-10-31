@@ -1,0 +1,68 @@
+time_seed 1700000204
+device_seed 204
+boot_max 3000
+end_frame 10000
+post_result_frames 60
+boot MainMenu 240 c 980 158
+boot ModernWorld 120 d 1100 450
+boot ModernWorld 2 m 1000 450
+boot ModernWorld 2 m 900 450
+boot ModernWorld 2 m 800 450
+boot ModernWorld 2 m 700 450
+boot ModernWorld 2 u 700 450
+boot ModernWorld 90 c 883 403
+boot SelectPlantsScene 420 c 187 393
+boot SelectPlantsScene 40 c 311 393
+boot SelectPlantsScene 40 c 434 393
+boot SelectPlantsScene 60 c 398 671
+input 360 m 929 48
+input 362 d 929 48
+input 363 u 929 48
+input 1920 m 793 15
+input 1922 d 793 15
+input 1923 u 793 15
+input 2300 m 70 117
+input 2302 d 70 117
+input 2303 u 70 117
+input 2304 m 583 600
+input 2314 d 583 600
+input 2315 u 583 600
+input 2820 m 70 117
+input 2822 d 70 117
+input 2823 u 70 117
+input 2824 m 583 227
+input 2834 d 583 227
+input 2835 u 583 227
+input 3340 m 70 117
+input 3342 d 70 117
+input 3343 u 70 117
+input 3344 m 583 413
+input 3354 d 583 413
+input 3355 u 583 413
+input 3480 m 457 26
+input 3482 d 457 26
+input 3483 u 457 26
+input 3900 m 70 185
+input 3902 d 70 185
+input 3903 u 70 185
+input 3904 m 827 413
+input 3914 d 827 413
+input 3915 u 827 413
+input 4450 m 70 48
+input 4452 d 70 48
+input 4453 u 70 48
+input 4454 m 502 507
+input 4464 d 502 507
+input 4465 u 502 507
+input 4800 m 485 454
+input 4802 d 485 454
+input 4803 u 485 454
+input 5040 m 624 35
+input 5042 d 624 35
+input 5043 u 624 35
+input 6640 m 559 72
+input 6642 d 559 72
+input 6643 u 559 72
+input 8200 m 488 81
+input 8202 d 488 81
+input 8203 u 488 81

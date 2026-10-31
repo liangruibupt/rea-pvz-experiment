@@ -1,0 +1,56 @@
+# Reconstructed Level 4 rules
+
+This document distinguishes directly measured rules from assumptions used where the three public traces do not identify a unique rule.
+
+## Clock and board
+
+- One update is 0.016 seconds and one output row is written after every update, beginning at frame 0. Evidence: `docs/SCENARIO_FORMAT.md`; a speed-30 zombie moves 0.480 design pixels each frame (for example public-01 frames 1139-1140).
+- The lawn has five rows and nine columns. Zombie row centres are `y = 130 + 138*row`. Plant trace coordinates intentionally follow the program's reversed names: `r=column`, `c=row`. Evidence: schema and every public placement.
+- The trace starts with 10,000 sun. Evidence: frame 0 of all public traces.
+
+## Cards and plants
+
+| card | cost | recharge | health |
+|---|---:|---:|---:|
+| sunflower | 50 | 7.5 s | 300 |
+| peashooter | 100 | 7.5 s | 300 |
+| wallnut | 50 | 30 s | 3000 |
+
+Evidence: public-03 sun changes at frames 64, 524, 1044, and 1944; placements at 75, 535, 1055, and 1955; cooldown percentages and completion frames 544/1004/1524/3830; plant records at those placement frames.
+
+- Selection is reflected four frames after an action's nominal frame and immediately deducts the cost and sets `hold`. Successful placement is reflected at `F+15`, clears `hold`, creates the plant, and starts recharge. Evidence: all public actions.
+- A card is enabled only if recharged and affordable. Sunflower is initially ready at frame 1; its button and the mower objects finish level-start setup at frames 8 and 33 respectively. Peashooter and wallnut begin with full recharge. Evidence: public-01 frames 0-8, 33, 470, and 1876.
+- Assumption: an occupied/out-of-grid placement is rejected, clears the cursor, and refunds the cost. Public examples prove occupied cells are relevant but provide no trace for that case.
+- A dead plant remains in the trace with zero health for 251 frames. Evidence: public-02 frames 3212-3463 and public-03 frames 5987-6238.
+
+## Sun
+
+- Each collected sun is worth 50. Collection disables it on mouse release and credits it 44 frames later. Evidence: public-02 releases at 363/483/963 and counter changes at 407/527/1007.
+- Falling sun first appears at frame 314 and then about every 25 seconds (1562-1563 frames), beginning above the viewport, arcing briefly, and falling to a seed-dependent lawn height. Evidence: all public traces at frames 314, 1876, 3439, and 5001.
+- A sunflower first produces after roughly 5-6 seconds. Its later interval is stable for that plant and was observed between 23.5 and 25.5 seconds. Produced sun starts at `x=630+122*column`, `y=123+138*row`. Evidence: public-02 births 451/948/1571/1982/2542/3513/4135 and public-03 births 451/1919/3388/4857.
+- Sun motion to the counter is an exponential approach to `(290,1010)` and snaps after about 32 frames. Collected objects are retained for about 430 frames from birth; uncollected falling objects for about 1312 frames. Evidence: public-01 sun 1 and public-02 suns 1-3.
+- Falling/producer sun randomness is modeled with a splitmix64-seeded `mt19937`; its exact original mapping remains underdetermined by the three public traces.
+- Zombie horizontal positions use a separate C++ `minstd_rand0` (`default_random_engine`) seeded by the first documented random-device draw and `uniform_int_distribution(1780,2280)`. This exactly predicts every public spawn X: seed 103 yields 1911 for wave 1, then 2071/1902/2024/1907/1854 and 1848/1999/1873/2067/2041 for waves 2 and 3.
+
+## Waves and zombies
+
+- Initial wave timing begins at frame 64. The first wave is released at frame 1139 after an 18-second display timer and contains one common zombie in the top row. Evidence: every public trace.
+- Later releases are about 31.5-32.1 seconds apart, with a six-frame release transition and a short post-release delay before the timer resumes. Evidence: public-02 frames 3189/3195 and public-03 frames 3195/3201, 5220/5226.
+- Common, cone, and bucket body health is assumed to begin at 200. Cone head shield is 600; bucket head shield is assumed to be 1300. Evidence: public-03 wave 2 cone at frame 3201; bucket does not occur publicly.
+- Walking speed is 30 design pixels/s. Zombies become displayed at about `x=1710`. Evidence: public-01 frames 1139-2176 and analogous transitions in public-03.
+- A zombie stops at approximately 78.7 pixels to the right of the occupied plant centre and enters eating state. Common bites remove 100 health, first after about 50 frames and then about every 99 frames. Cone timing is observed as roughly 41 then 82 frames. Evidence: public-02 frames 2964, 3014, 3113, 3212 and public-03 frames 5782, 5823, 5905, 5987.
+- Wave lane patterns and growth after wave 3 are assumptions extrapolated from the public wave records. The public observations are wave 2 lanes `{0,1,2}` for seed 102 and `{0,1,2,3,3}` for seed 103; wave 3 lanes are `{0,1,2,2,4}` for seed 103.
+
+## Peas and combat
+
+- A pea begins at `x=700+122*column`, `y=208+138*row`, travels right at about 666.667 pixels/s (10.667/frame), and deals 20 to body shield, then head shield, then body health. Evidence: public-03 bullet births and each 20-point health step from frames 3741 onward.
+- A used pea keeps moving; a pea is retained for 189 frames from birth. Evidence: public-03 bullet 1, frames 3688-3876.
+- Shooter cadence is stable per plant; observed periods span 69-90 frames. Assumption: cadence is selected from that interval by the seeded engine. Evidence: the two shooters' birth sequences in public-03.
+- A normal projectile death remains for about 470 frames. A mower death remains for about 315 frames. Evidence: public-03 zombie 3 (4084-4553) and zombie 1 (4005-4319).
+
+## Mowers and result
+
+- Five mowers appear at frame 33 at `x=455`, state 1, not live. A zombie reaching about `x=535` starts that row's mower, sets it to state 2, and dies immediately. Evidence: public-02 frame 4085 and public-03 frames 4005, 5949, 6303.
+- A running mower advances 12.16 pixels/frame after its trigger frame, kills zombies in its row, and is removed just beyond `x=2100`. Evidence: public-03 mower positions at frames 4005-4140.
+- Assumption: a later zombie reaching `x=350` in a row whose mower is gone causes zombie victory. Ten released waves are treated as Level 4's final wave; clearing the final wave causes plant victory. The public traces do not reach either level result.
+- The output stops 60 frames after a result, as required by `docs/SCENARIO_FORMAT.md`.

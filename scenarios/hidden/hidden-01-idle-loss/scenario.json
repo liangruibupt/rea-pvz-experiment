@@ -1,0 +1,16 @@
+{
+  "actions": [],
+  "collect_sun": {
+    "every_frames": 0,
+    "mode": "first_enabled"
+  },
+  "device_seed": 301,
+  "end_frame": 11000,
+  "frame_ms": 16,
+  "id": "hidden-01-idle-loss",
+  "level": 4,
+  "purpose": "Unopposed progression and loss/mower lifecycle.",
+  "schema": 1,
+  "split": "hidden",
+  "time_seed": 1700000301
+}

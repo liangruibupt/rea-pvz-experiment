@@ -1,0 +1,10 @@
+{
+  "frames": 6501,
+  "id": "public-03-single-lane",
+  "raw_input_events": 48,
+  "replay_sha256": "6f44ead342bb4de775af80c28fbbe450f1841237fb7f080a4a4d41c80897648d",
+  "scenario_sha256": "171a10ce541064b19f202847f2e6a65de0c042f2f4b5012eb26ae60681f94bce",
+  "split": "public",
+  "trace_sha256": "478153fe9305e35cde64e4da6e5d2de883b7b90f0abeae2518b325f165f34a33",
+  "verified_replay": true
+}

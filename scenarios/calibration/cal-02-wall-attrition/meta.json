@@ -1,0 +1,10 @@
+{
+  "frames": 9001,
+  "id": "cal-02-wall-attrition",
+  "raw_input_events": 24,
+  "replay_sha256": "37e731d275fd616a9542de1e31654f5aa76c38396a396f08497ae2914c277757",
+  "scenario_sha256": "7a9b1580d4500e80d925c550a3c93176bcf8458fe64dba7245b52d2ef2d71d03",
+  "split": "calibration",
+  "trace_sha256": "549fa904bba9345a52e62abbd2b0bedf7fbc9228251d49ee3121064429bbcb2b",
+  "verified_replay": true
+}

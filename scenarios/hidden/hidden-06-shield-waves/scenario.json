@@ -1,0 +1,81 @@
+{
+  "actions": [
+    {
+      "card": "sunflower",
+      "card_index": 0,
+      "col": 0,
+      "frame": 60,
+      "kind": "plant",
+      "row": 2
+    },
+    {
+      "card": "peashooter",
+      "card_index": 1,
+      "col": 2,
+      "frame": 520,
+      "kind": "plant",
+      "row": 0
+    },
+    {
+      "card": "peashooter",
+      "card_index": 1,
+      "col": 2,
+      "frame": 1040,
+      "kind": "plant",
+      "row": 1
+    },
+    {
+      "card": "peashooter",
+      "card_index": 1,
+      "col": 2,
+      "frame": 1560,
+      "kind": "plant",
+      "row": 2
+    },
+    {
+      "card": "peashooter",
+      "card_index": 1,
+      "col": 2,
+      "frame": 2080,
+      "kind": "plant",
+      "row": 3
+    },
+    {
+      "card": "peashooter",
+      "card_index": 1,
+      "col": 2,
+      "frame": 2600,
+      "kind": "plant",
+      "row": 4
+    },
+    {
+      "card": "wallnut",
+      "card_index": 2,
+      "col": 6,
+      "frame": 3900,
+      "kind": "plant",
+      "row": 1
+    },
+    {
+      "card": "wallnut",
+      "card_index": 2,
+      "col": 6,
+      "frame": 5800,
+      "kind": "plant",
+      "row": 3
+    }
+  ],
+  "collect_sun": {
+    "every_frames": 32,
+    "mode": "first_enabled"
+  },
+  "device_seed": 306,
+  "end_frame": 13000,
+  "frame_ms": 16,
+  "id": "hidden-06-shield-waves",
+  "level": 4,
+  "purpose": "Longer wave sample emphasizing cone/bucket shield depletion.",
+  "schema": 1,
+  "split": "hidden",
+  "time_seed": 1700000306
+}

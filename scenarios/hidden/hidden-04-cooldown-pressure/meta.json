@@ -1,0 +1,10 @@
+{
+  "frames": 8501,
+  "id": "hidden-04-cooldown-pressure",
+  "raw_input_events": 48,
+  "replay_sha256": "6656d79ed6b04dee1558318d46106d04992893cf39913829158cb89bddc3803b",
+  "scenario_sha256": "67f269a6528c995c466a1d0012bdd3e5f19dc865b20f57f9c463330067b6cf42",
+  "split": "hidden",
+  "trace_sha256": "2c2d31bd95c9577b4745d4d9e374803a22f2312121ad0e45771ccb08ce36d26d",
+  "verified_replay": true
+}

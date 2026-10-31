@@ -1,0 +1,52 @@
+{
+  "D01": {
+    "blind_label": "rep2-W",
+    "source_sha256": "3fe841292931dcd9d4598edc8c595a2c7aa0486043b74ff2ba3c76131df1e3b9",
+    "redacted_sha256": "3a6a6d29642c80293baa8a3d74654848d82dea6753956e6c3851e7740b195fc7"
+  },
+  "D02": {
+    "blind_label": "rep2-X",
+    "source_sha256": "e7f82d796a74f12c5c02aea54bf39ad4438fdd3bf6c5dc2d49fa42e5dfad846a",
+    "redacted_sha256": "a1924208548e327bd2619f54bb2277ff2d0dd6e21de977c4f77d734f1b2db10c"
+  },
+  "D03": {
+    "blind_label": "rep3-W",
+    "source_sha256": "f71651ee7ec40e7bc0e93923dc9ff66ead79c0020668a76080c3fb95498a8f1b",
+    "redacted_sha256": "1295fffc1b63ac860b3a671622bae923cffbec9d23f7c3f516b0715840640fa2"
+  },
+  "D04": {
+    "blind_label": "rep3-X",
+    "source_sha256": "b5a07e5ca3f59354336116df0ac5a6478fd05891cf2ed4f40b8fbc65448f2fdc",
+    "redacted_sha256": "3283bd071569104d79e2a3737c28489a842e0662237d1b0ea51c717c4664dac3"
+  },
+  "D05": {
+    "blind_label": "rep1-Z",
+    "source_sha256": "8b54eeaa6e85b1ad4f9ef22ed11a8b59121258178643619651658ab9aa0f1524",
+    "redacted_sha256": "1432e3a23de972104c6a657f3b84647f240c58cd6ad2487ccd00d68f0e42340f"
+  },
+  "D06": {
+    "blind_label": "rep2-Z",
+    "source_sha256": "d441e484b2c079a334b51fd72c8a41849f58c634bf849da51c9025572b85f136",
+    "redacted_sha256": "7566fc0ea412fbe080f6514f7e374e0d90db5ad9651f16095523a9e6e87c6893"
+  },
+  "D07": {
+    "blind_label": "rep2-Y",
+    "source_sha256": "39dc61ce8e3fb372704af10c8997dc3f6ab679c8dcc2ad9beae3833e21f3ce32",
+    "redacted_sha256": "835d3d7fbfc1322a53b65e28a8c70697a92e4b42fecd449e597f2c78f8e9ee05"
+  },
+  "D08": {
+    "blind_label": "rep1-X",
+    "source_sha256": "d89ceb7ad073df8e790136dc0bb1524ef53188e6692862a45c0ac009a846505f",
+    "redacted_sha256": "4076fdb2e609683de09c3475d094b88515a7d789c3f9d27ce12cfc03d3047fb7"
+  },
+  "D09": {
+    "blind_label": "rep3-Y",
+    "source_sha256": "96634afc3875933326ffdf8f0235891c0653c09935b11a8bcb3639da3d1e0ea5",
+    "redacted_sha256": "a5dac84df1ad937bcd9149b3ce3fded935d23c981bb35e4d82257dfad3927256"
+  },
+  "D10": {
+    "blind_label": "rep3-Z",
+    "source_sha256": "ef839167318bf04c66811af58fc7b1491273e047e72f80ef3e116dfb50f64a0e",
+    "redacted_sha256": "00e842ba23771db2fa56b298f42ab5d9ce35f69fb86070845980f50882227aab"
+  }
+}

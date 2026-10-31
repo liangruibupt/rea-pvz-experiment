@@ -1,0 +1,89 @@
+{
+  "actions": [
+    {
+      "card": "sunflower",
+      "card_index": 0,
+      "col": 0,
+      "frame": 60,
+      "kind": "plant",
+      "row": 2
+    },
+    {
+      "card": "peashooter",
+      "card_index": 1,
+      "col": 2,
+      "frame": 520,
+      "kind": "plant",
+      "row": 0
+    },
+    {
+      "card": "peashooter",
+      "card_index": 1,
+      "col": 2,
+      "frame": 1040,
+      "kind": "plant",
+      "row": 4
+    },
+    {
+      "card": "peashooter",
+      "card_index": 1,
+      "col": 2,
+      "frame": 1560,
+      "kind": "plant",
+      "row": 2
+    },
+    {
+      "card": "peashooter",
+      "card_index": 1,
+      "col": 3,
+      "frame": 2080,
+      "kind": "plant",
+      "row": 1
+    },
+    {
+      "card": "peashooter",
+      "card_index": 1,
+      "col": 3,
+      "frame": 2600,
+      "kind": "plant",
+      "row": 3
+    },
+    {
+      "card": "wallnut",
+      "card_index": 2,
+      "col": 6,
+      "frame": 3900,
+      "kind": "plant",
+      "row": 2
+    },
+    {
+      "card": "wallnut",
+      "card_index": 2,
+      "col": 6,
+      "frame": 5800,
+      "kind": "plant",
+      "row": 0
+    },
+    {
+      "card": "wallnut",
+      "card_index": 2,
+      "col": 6,
+      "frame": 7700,
+      "kind": "plant",
+      "row": 4
+    }
+  ],
+  "collect_sun": {
+    "every_frames": 30,
+    "mode": "first_enabled"
+  },
+  "device_seed": 205,
+  "end_frame": 12500,
+  "frame_ms": 16,
+  "id": "cal-05-mixed",
+  "level": 4,
+  "purpose": "Long mixed defense exercising waves, shields, bullets, suns and walls.",
+  "schema": 1,
+  "split": "calibration",
+  "time_seed": 1700000205
+}

@@ -1,0 +1,73 @@
+{
+  "actions": [
+    {
+      "card": "sunflower",
+      "card_index": 0,
+      "col": 0,
+      "frame": 60,
+      "kind": "plant",
+      "row": 0
+    },
+    {
+      "card": "sunflower",
+      "card_index": 0,
+      "col": 0,
+      "frame": 570,
+      "kind": "plant",
+      "row": 1
+    },
+    {
+      "card": "sunflower",
+      "card_index": 0,
+      "col": 0,
+      "frame": 1080,
+      "kind": "plant",
+      "row": 2
+    },
+    {
+      "card": "sunflower",
+      "card_index": 0,
+      "col": 0,
+      "frame": 1590,
+      "kind": "plant",
+      "row": 3
+    },
+    {
+      "card": "sunflower",
+      "card_index": 0,
+      "col": 0,
+      "frame": 2100,
+      "kind": "plant",
+      "row": 4
+    },
+    {
+      "card": "peashooter",
+      "card_index": 1,
+      "col": 2,
+      "frame": 2700,
+      "kind": "plant",
+      "row": 0
+    },
+    {
+      "card": "peashooter",
+      "card_index": 1,
+      "col": 2,
+      "frame": 3220,
+      "kind": "plant",
+      "row": 4
+    }
+  ],
+  "collect_sun": {
+    "every_frames": 20,
+    "mode": "first_enabled"
+  },
+  "device_seed": 305,
+  "end_frame": 10000,
+  "frame_ms": 16,
+  "id": "hidden-05-sun-saturation",
+  "level": 4,
+  "purpose": "Dense dynamic sun collection and economy state.",
+  "schema": 1,
+  "split": "hidden",
+  "time_seed": 1700000305
+}

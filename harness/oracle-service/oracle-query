@@ -1,0 +1,60 @@
+#!/usr/bin/env python3
+"""Ask the trace oracle to run one scenario on the original program.
+
+usage: bin/oracle-query <scenario.json> [out_dir]
+
+Blocks until the oracle finishes (a run takes roughly 1-6 minutes, plus queueing behind
+other requests). Writes trace.jsonl, inputs.txt, rc and status.json into out_dir
+(default: oracle-results/<scenario-file-stem>-<n>/). Rejected requests do not use budget.
+"""
+import json
+import shutil
+import sys
+import time
+import uuid
+from pathlib import Path
+
+WS = Path(__file__).resolve().parents[1]
+SVC = WS / "oracle-svc"
+
+
+def main() -> int:
+    if len(sys.argv) not in (2, 3):
+        print(__doc__, file=sys.stderr)
+        return 2
+    src = Path(sys.argv[1])
+    data = src.read_bytes()
+    json.loads(data)  # fail fast on invalid JSON
+    name = f"{time.strftime('%Y%m%dT%H%M%S', time.gmtime())}-{uuid.uuid4().hex[:8]}"
+    req = SVC / "requests" / f"{name}.json"
+    tmp = req.with_suffix(".part")
+    tmp.write_bytes(data)
+    tmp.rename(req)
+    resp = SVC / "responses" / name
+    status = resp / "status.json"
+    t0 = time.time()
+    while not status.exists():
+        if time.time() - t0 > 3600:
+            print("oracle-query: no answer within 60 minutes", file=sys.stderr)
+            return 3
+        time.sleep(3)
+    st = json.loads(status.read_text())
+    if len(sys.argv) == 3:
+        out = Path(sys.argv[2])
+    else:
+        n = 1
+        while (WS / "oracle-results" / f"{src.stem}-{n}").exists():
+            n += 1
+        out = WS / "oracle-results" / f"{src.stem}-{n}"
+    out.mkdir(parents=True, exist_ok=True)
+    for f in ("trace.jsonl", "inputs.txt", "rc", "status.json"):
+        if (resp / f).exists():
+            shutil.copy2(resp / f, out / f)
+    st["out_dir"] = str(out)
+    st["waited_s"] = round(time.time() - t0, 1)
+    print(json.dumps(st))
+    return 0 if st.get("status") == "done" else 1
+
+
+if __name__ == "__main__":
+    raise SystemExit(main())

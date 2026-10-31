@@ -1,0 +1,436 @@
+{
+  "align_frames": 2,
+  "category_weights": {
+    "bullets": 0.1,
+    "cards": 0.1,
+    "cars": 0.1,
+    "global": 0.2,
+    "plants": 0.15,
+    "suns": 0.1,
+    "zombies": 0.25
+  },
+  "sample_every": 10,
+  "scenarios": [
+    {
+      "alignment_counts": {
+        "0": 301
+      },
+      "candidate_frames": 3001,
+      "candidate_sha256": "7e7b50734ce73d62920e7de71f7fc4503b3d364af4ee310423d149463d0ca70a",
+      "categories": {
+        "bullets": 1.0,
+        "cards": 0.999985049833887,
+        "cars": 1.0,
+        "global": 1.0,
+        "plants": 1.0,
+        "suns": 0.46012912513842746,
+        "zombies": 0.9294942783314876
+      },
+      "deterministic": true,
+      "id": "public-01-idle",
+      "missing_frames": 0,
+      "oracle_frames": 3001,
+      "oracle_sha256": "7addcf86c630c4754ce6b7d29e05ab7de781b3dcc1f7eb6004361aba396dfb87",
+      "sampled_frames": 301,
+      "score": 0.9283849870801033,
+      "split": "public",
+      "status": "scored"
+    },
+    {
+      "alignment_counts": {
+        "0": 451
+      },
+      "candidate_frames": 4501,
+      "candidate_sha256": "04d2d8f006f2eb891bc60b182e54b2e0e90f134a492306391c9dcefd1946ccc3",
+      "categories": {
+        "bullets": 1.0,
+        "cards": 0.9995273466371027,
+        "cars": 0.9961566888396157,
+        "global": 0.9323725055432373,
+        "plants": 0.9940872135994088,
+        "suns": 0.7122379896526237,
+        "zombies": 0.8995223346267553
+      },
+      "deterministic": true,
+      "id": "public-02-sun-economy",
+      "missing_frames": 0,
+      "oracle_frames": 4501,
+      "oracle_sha256": "b7b4d1a5e701bb76cb032e3c01f001b69988b6ab1afac68a09ab3bb908f3ba88",
+      "sampled_frames": 451,
+      "score": 0.9312603693181818,
+      "split": "public",
+      "status": "scored"
+    },
+    {
+      "alignment_counts": {
+        "0": 651
+      },
+      "candidate_frames": 6501,
+      "candidate_sha256": "fee1716972b2a582fc1f0de12007932eb8a1fa90741fb7692362339a27d8d3a9",
+      "categories": {
+        "bullets": 0.765531660692951,
+        "cards": 0.9994953917050691,
+        "cars": 0.9852633299197815,
+        "global": 0.9969278033794163,
+        "plants": 0.9838709677419355,
+        "suns": 0.926686917562724,
+        "zombies": 0.8407423225901273
+      },
+      "deterministic": true,
+      "id": "public-03-single-lane",
+      "missing_frames": 0,
+      "oracle_frames": 6501,
+      "oracle_sha256": "478153fe9305e35cde64e4da6e5d2de883b7b90f0abeae2518b325f165f34a33",
+      "sampled_frames": 651,
+      "score": 0.924849516472758,
+      "split": "public",
+      "status": "scored"
+    },
+    {
+      "alignment_counts": {
+        "0": 761
+      },
+      "candidate_frames": 7601,
+      "candidate_sha256": "bbdc832a2a2903d6bad2c0a211feb724874268cd784b4377ebef0d2c9c70124c",
+      "categories": {
+        "bullets": 0.5072886070959264,
+        "cards": 0.9992941305300044,
+        "cars": 1.0,
+        "global": 0.9722733245729304,
+        "plants": 0.9431199549464989,
+        "suns": 0.9146600963644328,
+        "zombies": 0.675373463245513
+      },
+      "deterministic": true,
+      "id": "cal-01-five-lane-peas",
+      "missing_frames": 0,
+      "oracle_frames": 7601,
+      "oracle_sha256": "540b26998ea0cce7d76365603af38f126bf578dc44953d20fd4f2a6354f18937",
+      "sampled_frames": 761,
+      "score": 0.8468903073669756,
+      "split": "calibration",
+      "status": "scored"
+    },
+    {
+      "alignment_counts": {
+        "0": 901
+      },
+      "candidate_frames": 9001,
+      "candidate_sha256": "a9e840bfb0fea6616568f5014e412a2c8a3d6ccc7dc8b7d4a7accea757632011",
+      "categories": {
+        "bullets": 1.0,
+        "cards": 0.9996109877913429,
+        "cars": 0.9075348193365397,
+        "global": 0.9863485016648169,
+        "plants": 0.5136884942656308,
+        "suns": 0.4494057713651498,
+        "zombies": 0.6757108108311459
+      },
+      "deterministic": true,
+      "id": "cal-02-wall-attrition",
+      "missing_frames": 0,
+      "oracle_frames": 9001,
+      "oracle_sha256": "549fa904bba9345a52e62abbd2b0bedf7fbc9228251d49ee3121064429bbcb2b",
+      "sampled_frames": 901,
+      "score": 0.7789058350298977,
+      "split": "calibration",
+      "status": "scored"
+    },
+    {
+      "alignment_counts": {
+        "0": 821
+      },
+      "candidate_frames": 8201,
+      "candidate_sha256": "b2dc04112b5f1999e67bc64777f0cbd1449c1d89db6512f9d05bfd4d779885cf",
+      "categories": {
+        "bullets": 0.6883881445391798,
+        "cards": 0.9994861956963054,
+        "cars": 0.9605278522127487,
+        "global": 0.9392204628501827,
+        "plants": 0.9565773447015834,
+        "suns": 0.8498303965353905,
+        "zombies": 0.6968141300976677
+      },
+      "deterministic": true,
+      "id": "cal-03-economy-grid",
+      "missing_frames": 0,
+      "oracle_frames": 8201,
+      "oracle_sha256": "6ad0f49ed680aa7a62b3747e39146429d224e1002392b37d3d12daec97d8c4a1",
+      "sampled_frames": 821,
+      "score": 0.8553574856980534,
+      "split": "calibration",
+      "status": "scored"
+    },
+    {
+      "alignment_counts": {
+        "0": 911
+      },
+      "candidate_frames": 9898,
+      "candidate_sha256": "aedd664795a31cd675a2c0bbc61196bfbf14d2b4b619d7e301eb4a36a4cd643f",
+      "categories": {
+        "bullets": 0.5062194444444444,
+        "cards": 0.9995630564703013,
+        "cars": 0.9657519209659715,
+        "global": 0.9973655323819978,
+        "plants": 0.964873765093304,
+        "suns": 0.9374154957921698,
+        "zombies": 0.7012465642521076
+      },
+      "deterministic": true,
+      "id": "cal-04-late-defense",
+      "missing_frames": 0,
+      "oracle_frames": 9094,
+      "oracle_sha256": "7038018a5452d670ee99c55e9d657deac845e650d38018036cdc7866495afd46",
+      "sampled_frames": 911,
+      "score": 0.8604108040707108,
+      "split": "calibration",
+      "status": "scored"
+    },
+    {
+      "alignment_counts": {
+        "0": 1251
+      },
+      "candidate_frames": 12501,
+      "candidate_sha256": "0f689134f40623128f98c65b7e49f3b6f07b61096df64eaa2542f3d572ff33c8",
+      "categories": {
+        "bullets": 0.22570615211534475,
+        "cards": 0.9993862243538503,
+        "cars": 0.9559419131361577,
+        "global": 0.8661870503597122,
+        "plants": 0.7205124789057643,
+        "suns": 0.7944851052491341,
+        "zombies": 0.3614808478842124
+      },
+      "deterministic": true,
+      "id": "cal-05-mixed",
+      "missing_frames": 0,
+      "oracle_frames": 12501,
+      "oracle_sha256": "c62d50b4b6e9d08d1df66b9c87ce5b7bdc9ece5343505e957e2c45a1c82cff33",
+      "sampled_frames": 1251,
+      "score": 0.6692364333643089,
+      "split": "calibration",
+      "status": "scored"
+    },
+    {
+      "alignment_counts": {
+        "0": 902
+      },
+      "candidate_frames": 10594,
+      "candidate_sha256": "5834604bea8fae6dd758d5c372642019828f7203fb3a486cd4d63e9dad75b4d3",
+      "categories": {
+        "bullets": 1.0,
+        "cards": 0.9999950110864745,
+        "cars": 0.9138950480413895,
+        "global": 0.9280487804878049,
+        "plants": 1.0,
+        "suns": 0.4478873983739837,
+        "zombies": 0.6212690335409847
+      },
+      "deterministic": true,
+      "id": "hidden-01-idle-loss",
+      "missing_frames": 0,
+      "oracle_frames": 9007,
+      "oracle_sha256": "a7c762cc0277b5c162d5790a4a65eddce12d116f939c3e0499cad2ee2fc9401d",
+      "sampled_frames": 902,
+      "score": 0.827104760232992,
+      "split": "hidden",
+      "status": "scored"
+    },
+    {
+      "alignment_counts": {
+        "0": 901
+      },
+      "candidate_frames": 9001,
+      "candidate_sha256": "e55c9c04ac7db36eff17c85ed4233bfe3a406ffe81f398b956cf13416d625bea",
+      "categories": {
+        "bullets": 0.5672027007029227,
+        "cards": 0.999558206930571,
+        "cars": 0.9494080651128376,
+        "global": 0.9074361820199778,
+        "plants": 0.8890122086570478,
+        "suns": 0.7157914724380318,
+        "zombies": 0.5337653432791705
+      },
+      "deterministic": true,
+      "id": "hidden-02-center-fort",
+      "missing_frames": 0,
+      "oracle_frames": 9001,
+      "oracle_sha256": "a515d1d13a9275c525269c1df5150a7cab676f7e865603865fc069f91376af62",
+      "sampled_frames": 901,
+      "score": 0.7714764480407816,
+      "split": "hidden",
+      "status": "scored"
+    },
+    {
+      "alignment_counts": {
+        "0": 951
+      },
+      "candidate_frames": 9501,
+      "candidate_sha256": "8e45aa7e90c6dd5504a3336eba3d1433b16a14091e1ca257c4e59b420030acbb",
+      "categories": {
+        "bullets": 0.3651980410484091,
+        "cards": 0.9993870195116252,
+        "cars": 0.9618296529968454,
+        "global": 0.8269190325972661,
+        "plants": 0.870136698212408,
+        "suns": 0.6310091657903961,
+        "zombies": 0.4282631400887453
+      },
+      "deterministic": true,
+      "id": "hidden-03-edge-fort",
+      "missing_frames": 0,
+      "oracle_frames": 9501,
+      "oracle_sha256": "8fe4ca06054101db1003862696016c7384c18b745d5aeafccd4a96aec00d5970",
+      "sampled_frames": 951,
+      "score": 0.6987124842082283,
+      "split": "hidden",
+      "status": "scored"
+    },
+    {
+      "alignment_counts": {
+        "0": 851
+      },
+      "candidate_frames": 8501,
+      "candidate_sha256": "8dafe7d2af72063916dda0439babc95838c33c11cbaaf779ae6b23220104bd9e",
+      "categories": {
+        "bullets": 0.5462788843191017,
+        "cards": 0.999560190625408,
+        "cars": 0.9405731400966184,
+        "global": 0.8473560517038778,
+        "plants": 0.8411672542107325,
+        "suns": 0.4132860556208382,
+        "zombies": 0.46715393524994975
+      },
+      "deterministic": true,
+      "id": "hidden-04-cooldown-pressure",
+      "missing_frames": 0,
+      "oracle_frames": 8501,
+      "oracle_sha256": "2c2d31bd95c9577b4745d4d9e374803a22f2312121ad0e45771ccb08ce36d26d",
+      "sampled_frames": 851,
+      "score": 0.7024046093510695,
+      "split": "hidden",
+      "status": "scored"
+    },
+    {
+      "alignment_counts": {
+        "0": 898
+      },
+      "candidate_frames": 8973,
+      "candidate_sha256": "44444429e73c20c95eec79aadbc34edb48dc5da49799a723bff120374efe2e69",
+      "categories": {
+        "bullets": 0.448995448995449,
+        "cards": 0.8966119991119991,
+        "cars": 0.7219114219114219,
+        "global": 0.7694305694305694,
+        "plants": 0.6668426811283954,
+        "suns": 0.4431494616494617,
+        "zombies": 0.44439506445134147
+      },
+      "deterministic": true,
+      "id": "hidden-05-sun-saturation",
+      "missing_frames": 103,
+      "oracle_frames": 10001,
+      "oracle_sha256": "b70c06847160e23007bc2fa1848c28765cfc8597296b054bca17674a15b27ab2",
+      "sampled_frames": 1001,
+      "score": 0.6160781153350418,
+      "split": "hidden",
+      "status": "scored"
+    },
+    {
+      "alignment_counts": {
+        "0": 1301
+      },
+      "candidate_frames": 13001,
+      "candidate_sha256": "f65f5545e07f559d46ccae81146251fd4256537bd5aa8674dea987f676e9d7d0",
+      "categories": {
+        "bullets": 0.3415401552936488,
+        "cards": 0.9994984627209839,
+        "cars": 0.8997309761721752,
+        "global": 0.9010760953112991,
+        "plants": 0.7120749606529776,
+        "suns": 0.8239222777350755,
+        "zombies": 0.3842680795765376
+      },
+      "deterministic": true,
+      "id": "hidden-06-shield-waves",
+      "missing_frames": 0,
+      "oracle_frames": 13001,
+      "oracle_sha256": "9bfafc60cea260da36c784e4fbae422a85f620f34cf9ac6faa72ca3ebbeff6cc",
+      "sampled_frames": 1301,
+      "score": 0.6895626702465292,
+      "split": "hidden",
+      "status": "scored"
+    },
+    {
+      "alignment_counts": {
+        "0": 1037
+      },
+      "candidate_frames": 10365,
+      "candidate_sha256": "5aa33a5278bed11d6e108b628d4634d72fa31430c33099975b927c0d41970d32",
+      "categories": {
+        "bullets": 0.3314396575821104,
+        "cards": 0.8889643129407281,
+        "cars": 0.7748713550600344,
+        "global": 0.7987993138936536,
+        "plants": 0.6825328759291024,
+        "suns": 0.7661037735849057,
+        "zombies": 0.35561047150399877
+      },
+      "deterministic": true,
+      "id": "hidden-07-asymmetric",
+      "missing_frames": 129,
+      "oracle_frames": 11642,
+      "oracle_sha256": "6ba23f7615aad447cda9325a2554388229867101045f8ad724c6dd7a99ee74db",
+      "sampled_frames": 1166,
+      "score": 0.6271803219608737,
+      "split": "hidden",
+      "status": "scored"
+    },
+    {
+      "alignment_counts": {
+        "0": 1243
+      },
+      "candidate_frames": 18001,
+      "candidate_sha256": "1024c23a9b080c72a6582cedc1cbf2c224958acf65394b26b10bc84b7779414d",
+      "categories": {
+        "bullets": 0.2167940466613033,
+        "cards": 0.9991770358451775,
+        "cars": 0.8770716009654063,
+        "global": 0.80603378921963,
+        "plants": 0.7472247181619668,
+        "suns": 0.49021255028157684,
+        "zombies": 0.29910621949111377
+      },
+      "deterministic": true,
+      "id": "hidden-08-long-mixed",
+      "missing_frames": 0,
+      "oracle_frames": 12416,
+      "oracle_sha256": "a11f19c0cede9c0837f03115019ff56d6461ac543752ec404c3018aec08c12be",
+      "sampled_frames": 1243,
+      "score": 0.6063925438163459,
+      "split": "hidden",
+      "status": "scored"
+    }
+  ],
+  "schema": 1,
+  "score": 0.7708879807245532,
+  "scored": 16,
+  "splits": {
+    "calibration": {
+      "score": 0.8021601731059893,
+      "scored": 5,
+      "total": 5
+    },
+    "hidden": {
+      "score": 0.6923639941489828,
+      "scored": 8,
+      "total": 8
+    },
+    "public": {
+      "score": 0.928164957623681,
+      "scored": 3,
+      "total": 3
+    }
+  },
+  "total": 16
+}

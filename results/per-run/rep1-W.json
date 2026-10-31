@@ -1,0 +1,148 @@
+{
+  "align_frames": 2,
+  "category_weights": {
+    "bullets": 0.1,
+    "cards": 0.1,
+    "cars": 0.1,
+    "global": 0.2,
+    "plants": 0.15,
+    "suns": 0.1,
+    "zombies": 0.25
+  },
+  "sample_every": 10,
+  "scenarios": [
+    {
+      "error": "[Errno 2] No such file or directory: '/home/ubuntu/workspace/rea-pvz-experiment/evaluation-20261028/blind/rep1-W/submission/bin/run-scenario'",
+      "id": "public-01-idle",
+      "score": 0.0,
+      "split": "public",
+      "status": "disqualified"
+    },
+    {
+      "error": "[Errno 2] No such file or directory: '/home/ubuntu/workspace/rea-pvz-experiment/evaluation-20261028/blind/rep1-W/submission/bin/run-scenario'",
+      "id": "public-02-sun-economy",
+      "score": 0.0,
+      "split": "public",
+      "status": "disqualified"
+    },
+    {
+      "error": "[Errno 2] No such file or directory: '/home/ubuntu/workspace/rea-pvz-experiment/evaluation-20261028/blind/rep1-W/submission/bin/run-scenario'",
+      "id": "public-03-single-lane",
+      "score": 0.0,
+      "split": "public",
+      "status": "disqualified"
+    },
+    {
+      "error": "[Errno 2] No such file or directory: '/home/ubuntu/workspace/rea-pvz-experiment/evaluation-20261028/blind/rep1-W/submission/bin/run-scenario'",
+      "id": "cal-01-five-lane-peas",
+      "score": 0.0,
+      "split": "calibration",
+      "status": "disqualified"
+    },
+    {
+      "error": "[Errno 2] No such file or directory: '/home/ubuntu/workspace/rea-pvz-experiment/evaluation-20261028/blind/rep1-W/submission/bin/run-scenario'",
+      "id": "cal-02-wall-attrition",
+      "score": 0.0,
+      "split": "calibration",
+      "status": "disqualified"
+    },
+    {
+      "error": "[Errno 2] No such file or directory: '/home/ubuntu/workspace/rea-pvz-experiment/evaluation-20261028/blind/rep1-W/submission/bin/run-scenario'",
+      "id": "cal-03-economy-grid",
+      "score": 0.0,
+      "split": "calibration",
+      "status": "disqualified"
+    },
+    {
+      "error": "[Errno 2] No such file or directory: '/home/ubuntu/workspace/rea-pvz-experiment/evaluation-20261028/blind/rep1-W/submission/bin/run-scenario'",
+      "id": "cal-04-late-defense",
+      "score": 0.0,
+      "split": "calibration",
+      "status": "disqualified"
+    },
+    {
+      "error": "[Errno 2] No such file or directory: '/home/ubuntu/workspace/rea-pvz-experiment/evaluation-20261028/blind/rep1-W/submission/bin/run-scenario'",
+      "id": "cal-05-mixed",
+      "score": 0.0,
+      "split": "calibration",
+      "status": "disqualified"
+    },
+    {
+      "error": "[Errno 2] No such file or directory: '/home/ubuntu/workspace/rea-pvz-experiment/evaluation-20261028/blind/rep1-W/submission/bin/run-scenario'",
+      "id": "hidden-01-idle-loss",
+      "score": 0.0,
+      "split": "hidden",
+      "status": "disqualified"
+    },
+    {
+      "error": "[Errno 2] No such file or directory: '/home/ubuntu/workspace/rea-pvz-experiment/evaluation-20261028/blind/rep1-W/submission/bin/run-scenario'",
+      "id": "hidden-02-center-fort",
+      "score": 0.0,
+      "split": "hidden",
+      "status": "disqualified"
+    },
+    {
+      "error": "[Errno 2] No such file or directory: '/home/ubuntu/workspace/rea-pvz-experiment/evaluation-20261028/blind/rep1-W/submission/bin/run-scenario'",
+      "id": "hidden-03-edge-fort",
+      "score": 0.0,
+      "split": "hidden",
+      "status": "disqualified"
+    },
+    {
+      "error": "[Errno 2] No such file or directory: '/home/ubuntu/workspace/rea-pvz-experiment/evaluation-20261028/blind/rep1-W/submission/bin/run-scenario'",
+      "id": "hidden-04-cooldown-pressure",
+      "score": 0.0,
+      "split": "hidden",
+      "status": "disqualified"
+    },
+    {
+      "error": "[Errno 2] No such file or directory: '/home/ubuntu/workspace/rea-pvz-experiment/evaluation-20261028/blind/rep1-W/submission/bin/run-scenario'",
+      "id": "hidden-05-sun-saturation",
+      "score": 0.0,
+      "split": "hidden",
+      "status": "disqualified"
+    },
+    {
+      "error": "[Errno 2] No such file or directory: '/home/ubuntu/workspace/rea-pvz-experiment/evaluation-20261028/blind/rep1-W/submission/bin/run-scenario'",
+      "id": "hidden-06-shield-waves",
+      "score": 0.0,
+      "split": "hidden",
+      "status": "disqualified"
+    },
+    {
+      "error": "[Errno 2] No such file or directory: '/home/ubuntu/workspace/rea-pvz-experiment/evaluation-20261028/blind/rep1-W/submission/bin/run-scenario'",
+      "id": "hidden-07-asymmetric",
+      "score": 0.0,
+      "split": "hidden",
+      "status": "disqualified"
+    },
+    {
+      "error": "[Errno 2] No such file or directory: '/home/ubuntu/workspace/rea-pvz-experiment/evaluation-20261028/blind/rep1-W/submission/bin/run-scenario'",
+      "id": "hidden-08-long-mixed",
+      "score": 0.0,
+      "split": "hidden",
+      "status": "disqualified"
+    }
+  ],
+  "schema": 1,
+  "score": 0.0,
+  "scored": 0,
+  "splits": {
+    "calibration": {
+      "score": 0.0,
+      "scored": 0,
+      "total": 5
+    },
+    "hidden": {
+      "score": 0.0,
+      "scored": 0,
+      "total": 8
+    },
+    "public": {
+      "score": 0.0,
+      "scored": 0,
+      "total": 3
+    }
+  },
+  "total": 16
+}

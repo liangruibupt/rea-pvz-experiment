@@ -1,0 +1,10 @@
+{
+  "frames": 12416,
+  "id": "hidden-08-long-mixed",
+  "raw_input_events": 180,
+  "replay_sha256": "515958e7e15b9d9acd06533c3367f41ebee043472cdd9f71ca67bd1f3d1c948e",
+  "scenario_sha256": "f734db61ab9eafdb7939ef3c8630f9d7066119f4068c428000f5b9c292764e8b",
+  "split": "hidden",
+  "trace_sha256": "a11f19c0cede9c0837f03115019ff56d6461ac543752ec404c3018aec08c12be",
+  "verified_replay": true
+}

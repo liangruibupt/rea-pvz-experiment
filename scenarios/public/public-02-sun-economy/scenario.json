@@ -1,0 +1,41 @@
+{
+  "actions": [
+    {
+      "card": "sunflower",
+      "card_index": 0,
+      "col": 1,
+      "frame": 60,
+      "kind": "plant",
+      "row": 2
+    },
+    {
+      "card": "sunflower",
+      "card_index": 0,
+      "col": 2,
+      "frame": 620,
+      "kind": "plant",
+      "row": 0
+    },
+    {
+      "card": "sunflower",
+      "card_index": 0,
+      "col": 2,
+      "frame": 1180,
+      "kind": "plant",
+      "row": 4
+    }
+  ],
+  "collect_sun": {
+    "every_frames": 40,
+    "mode": "first_enabled"
+  },
+  "device_seed": 102,
+  "end_frame": 4500,
+  "frame_ms": 16,
+  "id": "public-02-sun-economy",
+  "level": 4,
+  "purpose": "Sunflower production and dynamic sun collection across rows.",
+  "schema": 1,
+  "split": "public",
+  "time_seed": 1700000102
+}

@@ -1,0 +1,57 @@
+{
+  "actions": [
+    {
+      "card": "sunflower",
+      "card_index": 0,
+      "col": 0,
+      "frame": 60,
+      "kind": "plant",
+      "row": 2
+    },
+    {
+      "card": "peashooter",
+      "card_index": 1,
+      "col": 2,
+      "frame": 520,
+      "kind": "plant",
+      "row": 2
+    },
+    {
+      "card": "peashooter",
+      "card_index": 1,
+      "col": 2,
+      "frame": 1040,
+      "kind": "plant",
+      "row": 1
+    },
+    {
+      "card": "peashooter",
+      "card_index": 1,
+      "col": 2,
+      "frame": 1560,
+      "kind": "plant",
+      "row": 3
+    },
+    {
+      "card": "wallnut",
+      "card_index": 2,
+      "col": 6,
+      "frame": 1950,
+      "kind": "plant",
+      "row": 2
+    }
+  ],
+  "collect_sun": {
+    "every_frames": 28,
+    "mode": "first_enabled"
+  },
+  "device_seed": 302,
+  "end_frame": 9000,
+  "frame_ms": 16,
+  "id": "hidden-02-center-fort",
+  "level": 4,
+  "purpose": "Center-heavy mixed defense under a held-out entropy stream.",
+  "schema": 1,
+  "split": "hidden",
+  "time_seed": 1700000302
+}

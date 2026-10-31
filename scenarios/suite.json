@@ -1,0 +1,176 @@
+{
+  "frame_ms": 16,
+  "materialized": true,
+  "reference_commit": "cbc4c83dee9407dc3d82ca869ebf13b450bab382",
+  "schema": 1,
+  "splits": {
+    "calibration": [
+      {
+        "frames": 7601,
+        "id": "cal-01-five-lane-peas",
+        "raw_input_events": 72,
+        "replay_sha256": "964ed757aa8c29f56468e09eb70bc8cb280ca3933227a6805cf5c704b43cd408",
+        "scenario_sha256": "b5bef66c714940d17a9000f6dbf1b75c62efe00774f96333ddc37db15d3307d9",
+        "split": "calibration",
+        "trace_sha256": "540b26998ea0cce7d76365603af38f126bf578dc44953d20fd4f2a6354f18937",
+        "verified_replay": true
+      },
+      {
+        "frames": 9001,
+        "id": "cal-02-wall-attrition",
+        "raw_input_events": 24,
+        "replay_sha256": "37e731d275fd616a9542de1e31654f5aa76c38396a396f08497ae2914c277757",
+        "scenario_sha256": "7a9b1580d4500e80d925c550a3c93176bcf8458fe64dba7245b52d2ef2d71d03",
+        "split": "calibration",
+        "trace_sha256": "549fa904bba9345a52e62abbd2b0bedf7fbc9228251d49ee3121064429bbcb2b",
+        "verified_replay": true
+      },
+      {
+        "frames": 8201,
+        "id": "cal-03-economy-grid",
+        "raw_input_events": 117,
+        "replay_sha256": "f7f9d2121e2c49e559bbde2c85f18ceae2d270eefea7e05a72ee111ba7da7d71",
+        "scenario_sha256": "ea0a965b16a0f60c1106e6b1c757a0d949550fb53325ca628d93af050623b0de",
+        "split": "calibration",
+        "trace_sha256": "6ad0f49ed680aa7a62b3747e39146429d224e1002392b37d3d12daec97d8c4a1",
+        "verified_replay": true
+      },
+      {
+        "frames": 9094,
+        "id": "cal-04-late-defense",
+        "raw_input_events": 51,
+        "replay_sha256": "39f8125bbd847cf9346e323834ba3700f21471c8c8e6a14efbd24a88d9502f83",
+        "scenario_sha256": "113a0438bfbbfcd7808f06fde7488eb6aacf579fbd970fe61249298b49fc9f85",
+        "split": "calibration",
+        "trace_sha256": "7038018a5452d670ee99c55e9d657deac845e650d38018036cdc7866495afd46",
+        "verified_replay": true
+      },
+      {
+        "frames": 12501,
+        "id": "cal-05-mixed",
+        "raw_input_events": 105,
+        "replay_sha256": "853270982dc354f93472e77c5703d48188393eec7cfb9726c24f1df036a87d33",
+        "scenario_sha256": "ece579efd500af74519b9cbb77941e85fb9aa8149b1e2a871b45923574cb23a6",
+        "split": "calibration",
+        "trace_sha256": "c62d50b4b6e9d08d1df66b9c87ce5b7bdc9ece5343505e957e2c45a1c82cff33",
+        "verified_replay": true
+      }
+    ],
+    "hidden": [
+      {
+        "frames": 9007,
+        "id": "hidden-01-idle-loss",
+        "raw_input_events": 0,
+        "replay_sha256": "c417f71b9af8caee57d9824b810c47bd0418b842c4def67d19988a582ea3e634",
+        "scenario_sha256": "f828e5e48dd4edb340ab11c738095ebcfa67479a1c4495469e99973245acc0a8",
+        "split": "hidden",
+        "trace_sha256": "a7c762cc0277b5c162d5790a4a65eddce12d116f939c3e0499cad2ee2fc9401d",
+        "verified_replay": true
+      },
+      {
+        "frames": 9001,
+        "id": "hidden-02-center-fort",
+        "raw_input_events": 66,
+        "replay_sha256": "9afd73f7aa85d476b19d0ea85175afd06ef22d9af55f50d21a737c460f0465f7",
+        "scenario_sha256": "9f00da428448d90a635a62b89d14325027477e6c1926e817fd17206c0766253d",
+        "split": "hidden",
+        "trace_sha256": "a515d1d13a9275c525269c1df5150a7cab676f7e865603865fc069f91376af62",
+        "verified_replay": true
+      },
+      {
+        "frames": 9501,
+        "id": "hidden-03-edge-fort",
+        "raw_input_events": 102,
+        "replay_sha256": "4923961197a5742e4e46bc868d687c6b7e5f97e57978a76e4973fff659758e8e",
+        "scenario_sha256": "324fd50b8981a5b013d68c4504899503d85278215abd8fbf9cd9c863ba8fb713",
+        "split": "hidden",
+        "trace_sha256": "8fe4ca06054101db1003862696016c7384c18b745d5aeafccd4a96aec00d5970",
+        "verified_replay": true
+      },
+      {
+        "frames": 8501,
+        "id": "hidden-04-cooldown-pressure",
+        "raw_input_events": 48,
+        "replay_sha256": "6656d79ed6b04dee1558318d46106d04992893cf39913829158cb89bddc3803b",
+        "scenario_sha256": "67f269a6528c995c466a1d0012bdd3e5f19dc865b20f57f9c463330067b6cf42",
+        "split": "hidden",
+        "trace_sha256": "2c2d31bd95c9577b4745d4d9e374803a22f2312121ad0e45771ccb08ce36d26d",
+        "verified_replay": true
+      },
+      {
+        "frames": 10001,
+        "id": "hidden-05-sun-saturation",
+        "raw_input_events": 135,
+        "replay_sha256": "51fcb0983d2604d096aea2a097ca5c764dce9eaa7cdddbf0b8306c09e606e362",
+        "scenario_sha256": "993db9b0cfddb25e37204036ba87792c544dd867d6eb7ef843c3887de4a81a51",
+        "split": "hidden",
+        "trace_sha256": "b70c06847160e23007bc2fa1848c28765cfc8597296b054bca17674a15b27ab2",
+        "verified_replay": true
+      },
+      {
+        "frames": 13001,
+        "id": "hidden-06-shield-waves",
+        "raw_input_events": 93,
+        "replay_sha256": "cba589351fda2aacbcf37903275121339f29508f9d5b7262df694db8118483de",
+        "scenario_sha256": "258163998c2c81e46df20e1cd65553c39015b3f3c55bef1e3a1732d75d7305d6",
+        "split": "hidden",
+        "trace_sha256": "9bfafc60cea260da36c784e4fbae422a85f620f34cf9ac6faa72ca3ebbeff6cc",
+        "verified_replay": true
+      },
+      {
+        "frames": 11642,
+        "id": "hidden-07-asymmetric",
+        "raw_input_events": 84,
+        "replay_sha256": "27337795c93ec40f5a4db083aad4ca512de40b889bb52cb058e5abbdfa98a421",
+        "scenario_sha256": "1057add111f4e666c203eac375982653ffddb0a6011433fd30ce77279024fed8",
+        "split": "hidden",
+        "trace_sha256": "6ba23f7615aad447cda9325a2554388229867101045f8ad724c6dd7a99ee74db",
+        "verified_replay": true
+      },
+      {
+        "frames": 12416,
+        "id": "hidden-08-long-mixed",
+        "raw_input_events": 180,
+        "replay_sha256": "515958e7e15b9d9acd06533c3367f41ebee043472cdd9f71ca67bd1f3d1c948e",
+        "scenario_sha256": "f734db61ab9eafdb7939ef3c8630f9d7066119f4068c428000f5b9c292764e8b",
+        "split": "hidden",
+        "trace_sha256": "a11f19c0cede9c0837f03115019ff56d6461ac543752ec404c3018aec08c12be",
+        "verified_replay": true
+      }
+    ],
+    "public": [
+      {
+        "frames": 3001,
+        "id": "public-01-idle",
+        "raw_input_events": 0,
+        "replay_sha256": "3312cbe3e2b14ccc1d7af81fb2841fe4c833154b39456134a062f1cc5957e776",
+        "scenario_sha256": "cdffb8ddf5dac349b7c100f4d42c1ea2d285c9565656c57706a2f95c677efbeb",
+        "split": "public",
+        "trace_sha256": "7addcf86c630c4754ce6b7d29e05ab7de781b3dcc1f7eb6004361aba396dfb87",
+        "verified_replay": true
+      },
+      {
+        "frames": 4501,
+        "id": "public-02-sun-economy",
+        "raw_input_events": 48,
+        "replay_sha256": "9d53f3ccddac321e559ea47d1fbb65d853438189d16210c14a21594111e0dd7d",
+        "scenario_sha256": "fc4047b9ef90f1fccfcbdbdc5ef5b3d82b8a3b27832d139f941dc6356d2bd73d",
+        "split": "public",
+        "trace_sha256": "b7b4d1a5e701bb76cb032e3c01f001b69988b6ab1afac68a09ab3bb908f3ba88",
+        "verified_replay": true
+      },
+      {
+        "frames": 6501,
+        "id": "public-03-single-lane",
+        "raw_input_events": 48,
+        "replay_sha256": "6f44ead342bb4de775af80c28fbbe450f1841237fb7f080a4a4d41c80897648d",
+        "scenario_sha256": "171a10ce541064b19f202847f2e6a65de0c042f2f4b5012eb26ae60681f94bce",
+        "split": "public",
+        "trace_sha256": "478153fe9305e35cde64e4da6e5d2de883b7b90f0abeae2518b325f165f34a33",
+        "verified_replay": true
+      }
+    ]
+  },
+  "stripped_elf_sha256": "04c83db7035365985e2d9f5c00adfb401cc97ede12e3c2172532345d415cc424",
+  "verified_replay": true
+}

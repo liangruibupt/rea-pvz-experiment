@@ -1,0 +1,173 @@
+{
+  "rep1-W": {
+    "audit": {
+      "entry": false,
+      "largest_file_bytes": 0,
+      "non_stdlib_imports": [],
+      "py_lines": 0,
+      "rules": false,
+      "suspect_strings": []
+    },
+    "files": 0,
+    "tree_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  "rep1-X": {
+    "audit": {
+      "entry": true,
+      "largest_file_bytes": 20623,
+      "non_stdlib_imports": [],
+      "py_lines": 533,
+      "rules": true,
+      "suspect_strings": [
+        "src/simulator.py: trace.jsonl",
+        "tests/test_smoke.py: subprocess"
+      ]
+    },
+    "files": 4,
+    "tree_sha256": "28b4a304d8a2c4e2713b1ba670c6cc499e3a459a6c5454dc55ebbbbf0f42c7a9"
+  },
+  "rep1-Y": {
+    "audit": {
+      "entry": false,
+      "largest_file_bytes": 0,
+      "non_stdlib_imports": [],
+      "py_lines": 0,
+      "rules": false,
+      "suspect_strings": []
+    },
+    "files": 0,
+    "tree_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  "rep1-Z": {
+    "audit": {
+      "entry": true,
+      "largest_file_bytes": 22405,
+      "non_stdlib_imports": [],
+      "py_lines": 638,
+      "rules": true,
+      "suspect_strings": [
+        "src/simulator.py: trace.jsonl"
+      ]
+    },
+    "files": 4,
+    "tree_sha256": "9f48a609551e492c7c7005aeb74b538e6b5d0962c34bbe58a788e636eea08232"
+  },
+  "rep2-W": {
+    "audit": {
+      "entry": true,
+      "largest_file_bytes": 37686,
+      "non_stdlib_imports": [],
+      "py_lines": 659,
+      "rules": true,
+      "suspect_strings": [
+        "src/simulator.py: trace.jsonl",
+        "src/__pycache__/simulator.cpython-312.pyc: runs-20261028",
+        "src/__pycache__/simulator.cpython-312.pyc: trace.jsonl",
+        "tests/__pycache__/test_simulator.cpython-312.pyc: runs-20261028"
+      ]
+    },
+    "files": 6,
+    "tree_sha256": "3734427f1ae6a8c466b81a66d4ee50eaebe23631054fffa22da20ab54b7e9e94"
+  },
+  "rep2-X": {
+    "audit": {
+      "entry": true,
+      "largest_file_bytes": 22445,
+      "non_stdlib_imports": [],
+      "py_lines": 672,
+      "rules": true,
+      "suspect_strings": [
+        "src/simulator.py: trace.jsonl",
+        "tests/test_smoke.py: subprocess"
+      ]
+    },
+    "files": 4,
+    "tree_sha256": "85b27783f608d855f17c70a033f6937f4646779eb05d80c5498b727a47ac6685"
+  },
+  "rep2-Y": {
+    "audit": {
+      "entry": true,
+      "largest_file_bytes": 20090,
+      "non_stdlib_imports": [],
+      "py_lines": 687,
+      "rules": true,
+      "suspect_strings": [
+        "src/run_scenario.py: trace.jsonl"
+      ]
+    },
+    "files": 13,
+    "tree_sha256": "8c4a68e41b903af643eef3c23cae15a40180670cd980580107dde827d9c291ad"
+  },
+  "rep2-Z": {
+    "audit": {
+      "entry": true,
+      "largest_file_bytes": 18851,
+      "non_stdlib_imports": [],
+      "py_lines": 540,
+      "rules": true,
+      "suspect_strings": [
+        "src/simulator.py: trace.jsonl"
+      ]
+    },
+    "files": 4,
+    "tree_sha256": "f6092b18485a203d232be13ed358c57234b2f6048fa356b3f07bae51017ce58a"
+  },
+  "rep3-W": {
+    "audit": {
+      "entry": true,
+      "largest_file_bytes": 21517,
+      "non_stdlib_imports": [],
+      "py_lines": 560,
+      "rules": true,
+      "suspect_strings": [
+        "src/simulator.py: trace.jsonl"
+      ]
+    },
+    "files": 3,
+    "tree_sha256": "29cd920b98cba3b4c9f7a6d473d9d3860a1facdfaec9fb527e8aa68759e88930"
+  },
+  "rep3-X": {
+    "audit": {
+      "entry": true,
+      "largest_file_bytes": 16878,
+      "non_stdlib_imports": [],
+      "py_lines": 455,
+      "rules": true,
+      "suspect_strings": [
+        "src/simulator.py: trace.jsonl"
+      ]
+    },
+    "files": 3,
+    "tree_sha256": "790631a42418a978d506d6fc5f31a05f1bb616e6b6ac4151444c7ad3f796322f"
+  },
+  "rep3-Y": {
+    "audit": {
+      "entry": true,
+      "largest_file_bytes": 21356,
+      "non_stdlib_imports": [],
+      "py_lines": 600,
+      "rules": true,
+      "suspect_strings": [
+        "src/cli.py: trace.jsonl"
+      ]
+    },
+    "files": 14,
+    "tree_sha256": "3952e37c9ea9d66c1d30993549933152c07837c7f2441c9539d9142dd59f30a5"
+  },
+  "rep3-Z": {
+    "audit": {
+      "entry": true,
+      "largest_file_bytes": 22446,
+      "non_stdlib_imports": [],
+      "py_lines": 611,
+      "rules": true,
+      "suspect_strings": [
+        "src/pvzsim.py: trace.jsonl",
+        "bin/run-scenario: /pvz",
+        "tests/test_sim.py: subprocess"
+      ]
+    },
+    "files": 4,
+    "tree_sha256": "e27bc4601aba95e072b62a2b0b6e652f077892576cd19bbe76d769a7b4e50574"
+  }
+}

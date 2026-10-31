@@ -1,0 +1,22 @@
+time_seed 1700000102
+device_seed 102
+bot_seed 2
+boot_max 3000
+end_frame 4500
+post_result_frames 60
+boot MainMenu 240 c 980 158
+boot ModernWorld 120 d 1100 450
+boot ModernWorld 2 m 1000 450
+boot ModernWorld 2 m 900 450
+boot ModernWorld 2 m 800 450
+boot ModernWorld 2 m 700 450
+boot ModernWorld 2 u 700 450
+boot ModernWorld 90 c 883 403
+boot SelectPlantsScene 420 c 187 393
+boot SelectPlantsScene 40 c 311 393
+boot SelectPlantsScene 40 c 434 393
+boot SelectPlantsScene 60 c 398 671
+bot_plant 60 0 2 1
+bot_plant 620 0 0 2
+bot_plant 1180 0 4 2
+bot_collect_sun 40

@@ -1,0 +1,73 @@
+{
+  "actions": [
+    {
+      "card": "sunflower",
+      "card_index": 0,
+      "col": 1,
+      "frame": 60,
+      "kind": "plant",
+      "row": 2
+    },
+    {
+      "card": "peashooter",
+      "card_index": 1,
+      "col": 2,
+      "frame": 500,
+      "kind": "plant",
+      "row": 0
+    },
+    {
+      "card": "peashooter",
+      "card_index": 1,
+      "col": 2,
+      "frame": 1020,
+      "kind": "plant",
+      "row": 1
+    },
+    {
+      "card": "peashooter",
+      "card_index": 1,
+      "col": 2,
+      "frame": 1540,
+      "kind": "plant",
+      "row": 2
+    },
+    {
+      "card": "peashooter",
+      "card_index": 1,
+      "col": 2,
+      "frame": 2060,
+      "kind": "plant",
+      "row": 3
+    },
+    {
+      "card": "peashooter",
+      "card_index": 1,
+      "col": 2,
+      "frame": 2580,
+      "kind": "plant",
+      "row": 4
+    },
+    {
+      "card": "wallnut",
+      "card_index": 2,
+      "col": 6,
+      "frame": 3900,
+      "kind": "plant",
+      "row": 2
+    }
+  ],
+  "collect_sun": {
+    "every_frames": 35,
+    "mode": "first_enabled"
+  },
+  "device_seed": 201,
+  "end_frame": 7600,
+  "frame_ms": 16,
+  "id": "cal-01-five-lane-peas",
+  "level": 4,
+  "purpose": "Projectile and zombie behavior in all five rows.",
+  "schema": 1,
+  "split": "calibration",
+  "time_seed": 1700000201
+}

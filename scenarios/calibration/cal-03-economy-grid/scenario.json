@@ -1,0 +1,73 @@
+{
+  "actions": [
+    {
+      "card": "sunflower",
+      "card_index": 0,
+      "col": 0,
+      "frame": 60,
+      "kind": "plant",
+      "row": 0
+    },
+    {
+      "card": "sunflower",
+      "card_index": 0,
+      "col": 0,
+      "frame": 570,
+      "kind": "plant",
+      "row": 1
+    },
+    {
+      "card": "sunflower",
+      "card_index": 0,
+      "col": 0,
+      "frame": 1080,
+      "kind": "plant",
+      "row": 2
+    },
+    {
+      "card": "sunflower",
+      "card_index": 0,
+      "col": 0,
+      "frame": 1590,
+      "kind": "plant",
+      "row": 3
+    },
+    {
+      "card": "sunflower",
+      "card_index": 0,
+      "col": 0,
+      "frame": 2100,
+      "kind": "plant",
+      "row": 4
+    },
+    {
+      "card": "sunflower",
+      "card_index": 0,
+      "col": 0,
+      "frame": 2610,
+      "kind": "plant",
+      "row": 4
+    },
+    {
+      "card": "peashooter",
+      "card_index": 1,
+      "col": 2,
+      "frame": 2800,
+      "kind": "plant",
+      "row": 2
+    }
+  ],
+  "collect_sun": {
+    "every_frames": 30,
+    "mode": "first_enabled"
+  },
+  "device_seed": 203,
+  "end_frame": 8200,
+  "frame_ms": 16,
+  "id": "cal-03-economy-grid",
+  "level": 4,
+  "purpose": "Five-producer economy plus occupied-cell rejection.",
+  "schema": 1,
+  "split": "calibration",
+  "time_seed": 1700000203
+}

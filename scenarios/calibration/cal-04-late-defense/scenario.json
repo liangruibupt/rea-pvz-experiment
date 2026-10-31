@@ -1,0 +1,57 @@
+{
+  "actions": [
+    {
+      "card": "peashooter",
+      "card_index": 1,
+      "col": 2,
+      "frame": 2300,
+      "kind": "plant",
+      "row": 0
+    },
+    {
+      "card": "peashooter",
+      "card_index": 1,
+      "col": 2,
+      "frame": 2820,
+      "kind": "plant",
+      "row": 4
+    },
+    {
+      "card": "peashooter",
+      "card_index": 1,
+      "col": 2,
+      "frame": 3340,
+      "kind": "plant",
+      "row": 2
+    },
+    {
+      "card": "wallnut",
+      "card_index": 2,
+      "col": 5,
+      "frame": 3900,
+      "kind": "plant",
+      "row": 2
+    },
+    {
+      "card": "sunflower",
+      "card_index": 0,
+      "col": 1,
+      "frame": 4450,
+      "kind": "plant",
+      "row": 1
+    }
+  ],
+  "collect_sun": {
+    "every_frames": 40,
+    "mode": "first_enabled"
+  },
+  "device_seed": 204,
+  "end_frame": 10000,
+  "frame_ms": 16,
+  "id": "cal-04-late-defense",
+  "level": 4,
+  "purpose": "Delayed response after zombies have advanced; mower pressure.",
+  "schema": 1,
+  "split": "calibration",
+  "time_seed": 1700000204
+}

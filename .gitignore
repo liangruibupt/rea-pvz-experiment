@@ -1,0 +1,9 @@
+__pycache__/
+*.pyc
+*.so
+*.o
+*.syms
+# Oracle traces and game binaries/assets are never committed.
+trace.jsonl
+/scenarios/**/oracle/
+Resources/

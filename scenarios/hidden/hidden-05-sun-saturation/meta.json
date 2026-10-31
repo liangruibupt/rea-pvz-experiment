@@ -1,0 +1,10 @@
+{
+  "frames": 10001,
+  "id": "hidden-05-sun-saturation",
+  "raw_input_events": 135,
+  "replay_sha256": "51fcb0983d2604d096aea2a097ca5c764dce9eaa7cdddbf0b8306c09e606e362",
+  "scenario_sha256": "993db9b0cfddb25e37204036ba87792c544dd867d6eb7ef843c3887de4a81a51",
+  "split": "hidden",
+  "trace_sha256": "b70c06847160e23007bc2fa1848c28765cfc8597296b054bca17674a15b27ab2",
+  "verified_replay": true
+}

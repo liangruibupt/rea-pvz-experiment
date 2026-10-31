@@ -1,0 +1,110 @@
+time_seed 1700000306
+device_seed 306
+boot_max 3000
+end_frame 13000
+post_result_frames 60
+boot MainMenu 240 c 980 158
+boot ModernWorld 120 d 1100 450
+boot ModernWorld 2 m 1000 450
+boot ModernWorld 2 m 900 450
+boot ModernWorld 2 m 800 450
+boot ModernWorld 2 m 700 450
+boot ModernWorld 2 u 700 450
+boot ModernWorld 90 c 883 403
+boot SelectPlantsScene 420 c 187 393
+boot SelectPlantsScene 40 c 311 393
+boot SelectPlantsScene 40 c 434 393
+boot SelectPlantsScene 60 c 398 671
+input 60 m 70 48
+input 62 d 70 48
+input 63 u 70 48
+input 64 m 421 413
+input 74 d 421 413
+input 75 u 421 413
+input 352 m 456 30
+input 354 d 456 30
+input 355 u 456 30
+input 416 m 415 363
+input 418 d 415 363
+input 419 u 415 363
+input 520 m 70 117
+input 522 d 70 117
+input 523 u 70 117
+input 524 m 583 600
+input 534 d 583 600
+input 535 u 583 600
+input 1040 m 70 117
+input 1042 d 70 117
+input 1043 u 70 117
+input 1044 m 583 507
+input 1054 d 583 507
+input 1055 u 583 507
+input 1560 m 70 117
+input 1562 d 70 117
+input 1563 u 70 117
+input 1564 m 583 413
+input 1574 d 583 413
+input 1575 u 583 413
+input 1920 m 532 29
+input 1922 d 532 29
+input 1923 u 532 29
+input 1984 m 422 432
+input 1986 d 422 432
+input 1987 u 422 432
+input 2080 m 70 117
+input 2082 d 70 117
+input 2083 u 70 117
+input 2084 m 583 320
+input 2094 d 583 320
+input 2095 u 583 320
+input 2600 m 70 117
+input 2602 d 70 117
+input 2603 u 70 117
+input 2604 m 583 227
+input 2614 d 583 227
+input 2615 u 583 227
+input 3488 m 801 8
+input 3490 d 801 8
+input 3491 u 801 8
+input 3584 m 411 392
+input 3586 d 411 392
+input 3587 u 411 392
+input 3900 m 70 185
+input 3902 d 70 185
+input 3903 u 70 185
+input 3904 m 909 507
+input 3914 d 909 507
+input 3915 u 909 507
+input 5056 m 886 33
+input 5058 d 886 33
+input 5059 u 886 33
+input 5184 m 409 365
+input 5186 d 409 365
+input 5187 u 409 365
+input 5800 m 70 185
+input 5802 d 70 185
+input 5803 u 70 185
+input 5804 m 909 320
+input 5814 d 909 320
+input 5815 u 909 320
+input 6624 m 453 33
+input 6626 d 453 33
+input 6627 u 453 33
+input 6784 m 420 335
+input 6786 d 420 335
+input 6787 u 420 335
+input 8192 m 816 86
+input 8194 d 816 86
+input 8195 u 816 86
+input 8384 m 444 379
+input 8386 d 444 379
+input 8387 u 444 379
+input 9728 m 922 9
+input 9730 d 922 9
+input 9731 u 922 9
+input 11296 m 597 19
+input 11298 d 597 19
+input 11299 u 597 19
+input 12864 m 981 14
+input 12866 d 981 14
+input 12867 u 981 14

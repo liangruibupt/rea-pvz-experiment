@@ -1,0 +1,10 @@
+{
+  "frames": 12501,
+  "id": "cal-05-mixed",
+  "raw_input_events": 105,
+  "replay_sha256": "853270982dc354f93472e77c5703d48188393eec7cfb9726c24f1df036a87d33",
+  "scenario_sha256": "ece579efd500af74519b9cbb77941e85fb9aa8149b1e2a871b45923574cb23a6",
+  "split": "calibration",
+  "trace_sha256": "c62d50b4b6e9d08d1df66b9c87ce5b7bdc9ece5343505e957e2c45a1c82cff33",
+  "verified_replay": true
+}

@@ -1,0 +1,476 @@
+{
+  "meta": {
+    "title": "Truth rubric: Xi-Gong/Plants-Vs-Zombies @cbc4c83, Level 4 gameplay rules",
+    "reference_commit": "cbc4c83dee9407dc3d82ca869ebf13b450bab382",
+    "source_root": "sealed/src (Classes/, Resources/resources/, cocos2d/ 3.17.2)",
+    "frame": "1 frame = 16 ms; 1 s = 62.5 frames. Frame numbers quoted are trace line numbers (f) from the frozen oracle traces.",
+    "tier_definition": "1 = readable from the three public traces (public-01/02/03); 2 = needs more traces/oracle experiments or the shipped resource/config data (GAMEWORLD_1DATAS.json, spine .compiled JSON, plists); 3 = only reliably known from program logic (RNG engines and draw order, formulas, loss threshold, crash).",
+    "weight_definition": "3 = drives many scored fields or the whole run (waves, RNG, combat, loss); 2 = important subsystem behaviour; 1 = minor/edge behaviour.",
+    "scoring_hint": "CORRECT = full weight, PARTIAL = half weight, otherwise 0. A rule a RULES.md does not mention scores 0. Ignore anything listed under harness_given."
+  },
+  "rules": [
+    {
+      "id": "R01",
+      "subsystem": "clock_board",
+      "statement": "Lawn geometry: 9 columns x 5 rows of cells 122 px wide and 138 px tall starting at x=570, y=110 (row 0 = bottom). Plant anchor = (630 + 122*col, 123 + 138*row). Zombie lane y = {130, 268, 406, 544, 682}; pea y = plant y + 85 = {208, 346, 484, 622, 760}; mower y = {180, 318, 456, 594, 732}. Lane tests: zombie vs plant |zy - 10 - py| <= 10, pea vs zombie |by - 83 - zy| <= 10, zombie vs mower |zy + 50 - my| <= 10 (so each zombie lane maps to exactly one plant row / mower).",
+      "accept": "CORRECT: anchor formula (or the table of anchor positions) plus the lane y values for zombies, peas and mowers. PARTIAL: lane y values / pea offset right but plant anchor or row pitch wrong (e.g. 140 px pitch taken from the harness click coordinates).",
+      "source": ["Classes/Scenes/GameScene/GSMacro.h:28-48", "Classes/Scenes/GameScene/ZombiesAppearControl.h:81-82", "Classes/Scenes/GameScene/GSAnimationLayer.cpp:69,161-168", "Classes/Plants/Plants.cpp:135-138", "Classes/Plants/EmissonPlants/Bullet/Bullet.cpp:112-115", "Classes/Based/Car.cpp:115-120", "trace public-02 sun spawns at (752,399.001),(874,123.001); public-03 pea spawn (944,484)/(1066,484)"],
+      "tier": 1,
+      "weight": 2
+    },
+    {
+      "id": "R02",
+      "subsystem": "clock_board",
+      "statement": "Periodic game timers: a 0.1 s 'mainUpdate' tick (card enabling, hovered-cell resolution, wave spawning/trigger, win check), a 1.0 s wave-timer tick, a 2.0 s sun/coin deletion tick, plus an every-frame main loop. Each cocos Timer ignores its first update and then accumulates float32 dt = 0.016 and fires when elapsed >= interval, subtracting the interval (carry kept). Resulting tick frames: 0.1 s at 8, 14, 20, 26, 33, 39, 45, 51, 58, 64, 70, ... (6/7-frame gaps, mean 6.25); 1 s at 64, 127, 189, 252, 314, ... (mean 62.5); 2 s at 126, 251, 376, 501, ... (every 125).",
+      "accept": "CORRECT: all three periods with the frame phase (first 0.1 s tick f8, first 1 s tick f64, first 2 s tick f126) and fractional-carry cadence. PARTIAL: periods right but phase off by >1 frame or cadence rounded to integer frames (e.g. 6 or 63).",
+      "source": ["Classes/Scenes/GameScene/GSControlLayer.cpp:55-67", "Classes/Scenes/GameScene/GSAnimationLayer.cpp:54-60", "cocos2d/cocos/base/CCScheduler.cpp:97-147", "trace public-01: card0 en f8, wt changes f64/127/189, sun removal f751/876"],
+      "tier": 1,
+      "weight": 3
+    },
+    {
+      "id": "R03",
+      "subsystem": "clock_board",
+      "statement": "Order inside one frame: (1) ActionManager actions (Delay/Move/Jump/Fade sequences and their callbacks: sky-sun spawn, sun credit, cooldown end, sunflower production), (2) spine skeleton updates and their events (pea 'shoot', zombie 'eat' bite, 'filldown', 'die'), (3) 0.1 s mainUpdate, (4) 1 s wave timer (so when both fire in one frame the wave trigger is evaluated before the timer increments), (5) main loop: all zombies (move, injury/death, groan sound, loss check, deletion) -> all plants (eat, recover, shoot decision, deletion) -> all peas (collision, deletion) -> all mowers (trigger, deletion), (6) 2 s deletion tick, then render, then the window's mouse events are polled at the END of the frame (after all of that frame's logic).",
+      "accept": "CORRECT: actions/spine before timers, mainUpdate before the 1 s timer, the zombie->plant->bullet->mower order, and input handled after the frame's game logic. PARTIAL: the main-loop order right but timer/input placement missing or wrong.",
+      "source": ["Classes/Scenes/GameScene/GSAnimationLayer.cpp:178-183", "Classes/Scenes/GameScene/GSAnimationLayer.cpp:185-256", "Classes/Scenes/GameScene/GSControlLayer.cpp:55-67", "cocos2d/cocos/base/CCScheduler.cpp (update: priority-negative list incl. ActionManager, then priority-0 nodes, then custom timers)", "trace public-02 f3189 wt=1 with wdead=1; spawn x always n - 0.48 (moved in spawn frame)"],
+      "tier": 3,
+      "weight": 2
+    },
+    {
+      "id": "R04",
+      "subsystem": "clock_board",
+      "statement": "Interval actions consume no time on their first step (elapsed set to epsilon), so a moving object shows a +0.001 displacement on its second frame and every Delay/Move/Fade effectively ends one frame later than duration/0.016 (pea 1066.000 -> 1066.001 -> 1076.667; mower 455.000 -> 455.001 -> 467.161; spawned suns appear at y + 0.001).",
+      "accept": "CORRECT: states the one-frame lag / epsilon first step. PARTIAL: notes the +0.001 artefact without explaining it as a one-frame delay of all actions.",
+      "source": ["cocos2d/cocos/2d/CCActionInterval.cpp:119-141", "trace public-03 bullet id1 f3688-3691, mower f4005-4008"],
+      "tier": 1,
+      "weight": 1
+    },
+    {
+      "id": "R05",
+      "subsystem": "cards_economy",
+      "statement": "Sun starts at 10000 (UserWorldData default, never reset for the level). Costs: sunflower 50, peashooter 100, wallnut 50. The cost is deducted when the card is picked up (hold = card index, that card's pct set to 100), not at planting; each collected sun gives +50.",
+      "accept": "CORRECT: 10000 start, the three costs, deduction at pick-up. PARTIAL: costs right but deduction placed at planting, or wrong start value.",
+      "source": ["Classes/Based/UserData/UserWorldData.h:20", "Classes/Plants/PlantsInformation.h:33-34", "Classes/Scenes/GameScene/GSControlLayer.cpp:149-200", "Classes/Plants/DefensePlants/SunFlower.cpp:149", "trace public-03 f64 (9950), f524 (-100), f1944 (-50)"],
+      "tier": 1,
+      "weight": 3
+    },
+    {
+      "id": "R06",
+      "subsystem": "cards_economy",
+      "statement": "Cooldowns: after a successful planting the card goes ready=0 and en=0 at once and pct falls linearly 100 -> 0 over 7.5 s (sunflower, peashooter; -0.2133 per frame, ~469 frames) or 30 s (wallnut; -0.0533 per frame, 1875 frames); ready=1 when the progress action finishes, en=1 only at the next 0.1 s tick. At level start sunflower has a 0 s cooldown (ready f1, en f8), peashooter 7.5 s (ready f470), wallnut 30 s (ready f1876). Picking a card does not disable it.",
+      "accept": "CORRECT: 7.5/7.5/30 s, initial 0/7.5/30 s, en lags ready until a 0.1 s tick. PARTIAL: cooldown values right but initial cooldowns or en/ready distinction wrong.",
+      "source": ["Classes/Plants/PlantsInformation.h:30-31", "Classes/Scenes/GameScene/GSButtonLayer.cpp:176-233", "Classes/Scenes/GameScene/GSControlLayer.cpp:69-95,506-533", "trace public-01 f1/f8/f470/f1876; public-02 f75->f544/545"],
+      "tier": 1,
+      "weight": 3
+    },
+    {
+      "id": "R07",
+      "subsystem": "cards_economy",
+      "statement": "Invalid clicks: while holding a plant, a left mouse-down that cannot plant (hovered cell outside the lawn or occupied) cancels the hold only if mouse x > 220 (card-bar right edge): hold -1, cost refunded, that card's pct = 0; with x <= 220 the plant stays held. Right-click cancels with refund. Clicking an enabled card while holding cancels the HELD card (refund, pct 0) and does not pick up the clicked one. Picking an unaffordable card only plays a buzzer (no state change). A cooling-down card is a disabled button and ignores clicks.",
+      "accept": "CORRECT: occupied/outside click cancels with refund (x>220 condition), card click while holding cancels rather than switches, cooling card ignores clicks. PARTIAL: refund-on-cancel stated but one of the three cases wrong or missing.",
+      "source": ["Classes/Scenes/GameScene/GSControlLayer.cpp:131-200", "Classes/Scenes/GameScene/GSControlLayer.cpp:457-563", "Classes/Scenes/GameScene/GSMacro.h:32", "trace cal-03-economy-grid f2614-2625 (occupied cell: +50 refund, hold -1)"],
+      "tier": 2,
+      "weight": 2
+    },
+    {
+      "id": "R08",
+      "subsystem": "cards_economy",
+      "statement": "Planting cell resolution: the hovered cell is recomputed only on 0.1 s ticks from the last mouse-move position (cell j,i if 570+122j < x < 570+122(j+1) and 110+138i < y < 110+138(i+1); outside the lawn box -> invalid). Any left mouse-down while holding plants at the last resolved cell if it is free, including clicks the sun-collect bot makes during a plant action; the plant is entered with p.r = column, p.c = row and the cell is marked occupied.",
+      "accept": "CORRECT: 0.1 s resolution latency plus 138 px rows / strict bounds, and that any left click while holding plants. PARTIAL: only the latency or only the cell bounds.",
+      "source": ["Classes/Scenes/GameScene/GSControlLayer.cpp:97-112", "Classes/Scenes/GameScene/GSControlLayer.cpp:491-535", "Classes/Scenes/GameScene/GSMacro.h:45-51", "Classes/Scenes/GameScene/GSAnimationLayer.cpp:65-77"],
+      "tier": 3,
+      "weight": 2
+    },
+    {
+      "id": "R09",
+      "subsystem": "cards_economy",
+      "statement": "Shovel: the shovel-bank button sits at (1520,1080), anchor top-left, scale 0.6 of a 158x164 frame (x 1520-1614.8, y 981.6-1080). A click there toggles shovel=1; the sun bot can hit it when collecting a sky sun inside that rectangle (the sun is collected too). The next left click drops the shovel and, if the resolved cell holds a plant, removes it (hp 0, invisible, cell freed, entry deleted 4 s later).",
+      "accept": "CORRECT: shovel toggled by clicks on the bank rectangle (incl. via sun clicks) and the shovel's next-click effect. PARTIAL: shovel mechanism described without the sun-click interaction or bank rectangle.",
+      "source": ["Classes/Scenes/GameScene/GSButtonLayer.cpp:137-174", "Classes/Scenes/GameScene/GSControlLayer.cpp:564-574", "Classes/Scenes/GameScene/GSAnimationLayer.cpp:90-101", "Resources/resources/images/Dialog/Dialog.plist:579-591", "trace hidden-05 f6624 (shovel 0->1 on sky sun at 1555,1044), f7043 (dropped)"],
+      "tier": 3,
+      "weight": 1
+    },
+    {
+      "id": "R10",
+      "subsystem": "plants",
+      "statement": "Plant HP: sunflower 300, peashooter 300, wallnut 3000. Zombie bites are the only damage source; wallnut has no other behaviour (cracked skins at 2/3 and 1/3 are cosmetic).",
+      "accept": "CORRECT: all three HP values. PARTIAL: two of three.",
+      "source": ["Classes/Plants/DefensePlants/SunFlower.cpp:24", "Classes/Plants/EmissonPlants/PeaShooter.cpp:18", "Classes/Plants/DefensePlants/WallNut.cpp:13-14,47-56", "trace public-03 p hp 300/300/3000"],
+      "tier": 1,
+      "weight": 2
+    },
+    {
+      "id": "R11",
+      "subsystem": "plants",
+      "statement": "Plant death: when hp reaches <= 0 the eating zombie's recovery step (same frame) hides the plant; the next plant update frees the cell (it can be replanted at once), and the entry stays in the plant list with hp 0 for 4 s (~250 frames) before it is deleted.",
+      "accept": "CORRECT: immediate cell release plus 4 s lingering hp-0 entry. PARTIAL: one of the two.",
+      "source": ["Classes/Plants/Plants.cpp:170-189", "Classes/Scenes/GameScene/GSAnimationLayer.cpp:204-229", "trace public-02 p3 hp 0 at f3212, removed f3463; public-03 p1 f5987 -> f6238"],
+      "tier": 1,
+      "weight": 2
+    },
+    {
+      "id": "R12",
+      "subsystem": "plants",
+      "statement": "Sunflower production: each SunFlower object draws x = 4 + rand()%3 s and y = 16 + rand()%5 s in its constructor (x drawn first). A planted sunflower produces its first sun x s after planting, then one every x + 0.5 + y s (20.5-26.5 s, i.e. 1281-1656 frames), fixed per flower (public: first 6 s / 5 s, periods 23.5, 24.5, 25.5 s). The sun spawns at the plant anchor.",
+      "accept": "CORRECT: per-flower x in {4,5,6} first delay and period x+0.5+y with y in {16..20}, drawn by rand(). PARTIAL: per-flower constant first delay and period with observed values but no ranges/RNG mapping.",
+      "source": ["Classes/Plants/DefensePlants/SunFlower.cpp:17-25", "Classes/Plants/DefensePlants/SunFlower.cpp:103-121", "Classes/Plants/DefensePlants/SunFlower.cpp:179-189", "trace public-02 f75 -> sun f451, f1982; public-03 f451, f1919, f3388, f4857"],
+      "tier": 3,
+      "weight": 3
+    },
+    {
+      "id": "R13",
+      "subsystem": "plants",
+      "statement": "Peashooter rate: at planting its animation timescale ts = 0.7 + 0.1*(rand()%4). The Shoot loop lasts 1 s of animation time with the 'shoot' event at 0.5 s, so a firing peashooter emits one pea every 1/ts s = 1.4286 / 1.25 / 1.1111 / 1.0 s (89.3 / 78.1 / 69.4 / 62.5 frames). Shoot is queued after the current 1 s Normal loop when a target appears (first pea up to 1.5/ts s later) and Normal is queued after the current Shoot loop when the target is gone, so one extra pea can be fired after the target dies.",
+      "accept": "CORRECT: the four-value per-plant interval set from the random timescale plus the queued-loop start/stop behaviour. PARTIAL: interval constant per plant with observed values (~89 / ~69 frames) but no rule for which value or for start/stop phase.",
+      "source": ["Classes/Plants/Plants.cpp:36", "Classes/Plants/EmissonPlants/PeaShooter.cpp:53-110", "Resources/resources/Animations/compiled/PeaShooter.compiled (PeaShooter_Normal 1 s; PeaShooter_Shoot 1 s, event 'shoot' at 0.5)", "trace public-03 bullets from x=1066 every 89/90 frames, from x=944 every 69/70; stray pea f4111 after kill f4084"],
+      "tier": 3,
+      "weight": 3
+    },
+    {
+      "id": "R14",
+      "subsystem": "plants",
+      "statement": "Peashooter targeting: it is in shooting mode on a frame iff it is alive and at least one zombie is alive, entered (x < 1710), in its lane and at x >= the plant's x; zombies behind it or not yet entered are ignored.",
+      "accept": "CORRECT: all four conditions (alive, entered x<1710, same lane, in front). PARTIAL: same lane and in front but missing the x<1710 entry condition.",
+      "source": ["Classes/Plants/EmissonPlants/PeaShooter.cpp:65-73", "Classes/Plants/Plants.cpp:131-138", "Classes/Zombies/Zombies.cpp:256-258", "trace public-03: no peas until z3 shows at f3601; first peas f3688/f3694"],
+      "tier": 1,
+      "weight": 2
+    },
+    {
+      "id": "R15",
+      "subsystem": "zombies_stats",
+      "statement": "Common zombie: hp 200, head shield 0, body shield 0, walking speed 30 px/s. Level 4 uses only types 1 common, 2 cone, 3 bucket (no flag zombie).",
+      "accept": "CORRECT: 200 hp and 30 px/s (or 0.48 px/frame). PARTIAL: one of the two.",
+      "source": ["Classes/Zombies/CommonZombies.cpp:14-21", "Resources/resources/Text/GAMEWORLD_1DATAS.json:85", "trace public-01 z1 hp 200, dx 0.48/frame"],
+      "tier": 1,
+      "weight": 2
+    },
+    {
+      "id": "R16",
+      "subsystem": "zombies_stats",
+      "statement": "Cone zombie: hp 200 plus head shield (hs) 600, body shield 0, speed 30 px/s.",
+      "accept": "CORRECT: hs 600 and hp 200. PARTIAL: hs right, hp wrong (or vice versa).",
+      "source": ["Classes/Zombies/ConeZombies.cpp:14-21", "trace public-03 z2 cone hs 600"],
+      "tier": 1,
+      "weight": 2
+    },
+    {
+      "id": "R17",
+      "subsystem": "zombies_stats",
+      "statement": "Bucket zombie: hp 200 plus head shield (hs) 1200, body shield 0, speed 30 px/s.",
+      "accept": "CORRECT: hs 1200 and hp 200. PARTIAL: hs right, hp wrong (or vice versa).",
+      "source": ["Classes/Zombies/BucketZombies.cpp:14-21", "trace hidden-06 z18 bucket hs 1200"],
+      "tier": 2,
+      "weight": 2
+    },
+    {
+      "id": "R18",
+      "subsystem": "zombies_stats",
+      "statement": "Damage layering: a hit goes to the body shield (always 0 here), then the head shield, overflowing into hp; if body + head + hp <= damage all three become 0. With 20-damage peas there is no overflow: common dies after 10 peas, cone after 30 + 10 = 40, bucket after 60 + 10 = 70. hs reaches 0 before hp starts dropping.",
+      "accept": "CORRECT: shield-first absorption with overflow into hp. PARTIAL: shield-first stated without overflow/all-zero rule, or pea counts only.",
+      "source": ["Classes/Plants/EmissonPlants/Bullet/Bullet.cpp:55-88", "trace hidden-06 z18 bucket hs 1200 -> 1180 -> ..."],
+      "tier": 2,
+      "weight": 2
+    },
+    {
+      "id": "R19",
+      "subsystem": "zombie_movement_eating",
+      "statement": "Movement: every frame from its spawn frame on, x -= speed * 0.016 = 0.48 px (30 px/s) while walking (spd 30) and 0 while eating or after the death fall (spd 0). show becomes 1 the first frame x < 1710; x < 1710 is also the 'entered' condition for being shot, hit by peas and triggering/being killed by mowers.",
+      "accept": "CORRECT: 0.48 px/frame and the 1710 show/entered threshold. PARTIAL: speed right, threshold missing or different.",
+      "source": ["Classes/Zombies/Zombies.cpp:71-78", "Classes/Zombies/Zombies.cpp:256-258", "trace public-01 z1 x 2207.52 -> 2207.04, show at x 1709.78 (f2176)"],
+      "tier": 1,
+      "weight": 3
+    },
+    {
+      "id": "R20",
+      "subsystem": "zombie_movement_eating",
+      "statement": "Eat trigger: when a plant is alive, the zombie is in its lane and |zx - px| <= 80, a zombie that is alive and not already eating stops (spd 0) and starts eating (eat 1), i.e. it stops at about px + 80. Several zombies can eat the same plant.",
+      "accept": "CORRECT: 80 px reach and stop. PARTIAL: stop on contact with a different reach (within 10 px of 80 counts as PARTIAL).",
+      "source": ["Classes/Plants/Plants.cpp:140-168", "trace public-02 z1 eat at x 953.556 vs plant x 874 (f2964)"],
+      "tier": 1,
+      "weight": 2
+    },
+    {
+      "id": "R21",
+      "subsystem": "zombie_movement_eating",
+      "statement": "Bites: each bite removes 100 plant HP (sunflower/peashooter 3 bites, wallnut 30). When the plant dies every zombie eating it resumes walking at 30 px/s with eat 0 in the same frame.",
+      "accept": "CORRECT: 100 per bite and same-frame resume. PARTIAL: one of the two.",
+      "source": ["Classes/Plants/Plants.cpp:156-165", "Classes/Plants/Plants.cpp:170-189", "trace public-02 p3 300->200->100->0, z1 spd 30 at f3212"],
+      "tier": 1,
+      "weight": 3
+    },
+    {
+      "id": "R22",
+      "subsystem": "zombie_movement_eating",
+      "statement": "Bite timing: the eat animation lasts 1 s of animation time with the bite event at 0.5 s, played at the zombie's own timescale ts = 0.6 + U[0,0.45) drawn at spawn; so the first bite comes 0.5/ts s after eating starts and then one bite every 1/ts s (0.952-1.667 s, 59.5-104 frames), fixed per zombie (public: 99 and 82 frames).",
+      "accept": "CORRECT: per-zombie random timescale model with the 0.5 s offset and 1 s period. PARTIAL: per-zombie constant bite interval in the right range without the mechanism, or a single fixed interval close to an observed one.",
+      "source": ["Classes/Zombies/Zombies.cpp:41-53", "Classes/Plants/Plants.cpp:149-165", "Resources/resources/Animations/compiled/Zombies.compiled (Zombies_Eat/Zombies_Eat1: 1 s, event 'eat' int 1 at 0.5)", "trace public-02 f2964/3014/3113/3212; public-03 f5782/5823/5905/5987"],
+      "tier": 3,
+      "weight": 3
+    },
+    {
+      "id": "R23",
+      "subsystem": "zombie_movement_eating",
+      "statement": "Dying zombie: when hp reaches 0 the zombie is not alive (alive 0) but keeps walking at its speed until the die animation's 'filldown' event at 0.4989/tsd s (tsd = a new 0.6 + U[0,0.45) draw), then spd 0; the 'die' event at 1.1333/tsd s starts a 1 s fade, then it turns invisible (only now is the live-zombie count decremented) and it is deleted from the list 5 s later (~7.1-8.0 s after death; public-03 z3 470 frames).",
+      "accept": "CORRECT: keeps moving until a randomized fall, count decrement at invisibility, 5 s deletion delay. PARTIAL: corpse movement and late deletion described with fixed observed delays.",
+      "source": ["Classes/Zombies/CommonZombies.cpp:65-74", "Classes/Zombies/Zombies.cpp:380-391", "Classes/Zombies/Zombies.cpp:495-510", "Classes/Zombies/Zombies.cpp:125-164", "Resources/resources/Animations/compiled/Zombies.compiled (Zombies_Die: filldown 0.4989, die 1.1333)", "trace public-03 z3 hp0 f4084, spd0 f4125, removed f4554"],
+      "tier": 3,
+      "weight": 2
+    },
+    {
+      "id": "R24",
+      "subsystem": "combat_bullets",
+      "statement": "Pea flight: created on the 'shoot' event at (plant x + 70, plant y + 85); moves +2000 px over 3 s (666.67 px/s = 10.667 px/frame after the epsilon frame) and is deleted when that move ends (last trace x about start + 1994.7, e.g. 3060.669 from 1066), hit or not.",
+      "accept": "CORRECT: spawn offset, 10.667 px/frame and fixed 3 s lifetime. PARTIAL: speed right but spawn offset or lifetime wrong.",
+      "source": ["Classes/Plants/EmissonPlants/Bullet/Pea.cpp:26-38", "Classes/Plants/EmissonPlants/Bullet/Bullet.cpp:20-29", "trace public-03 b1 1066 -> 1076.667, removed after 3060.669"],
+      "tier": 1,
+      "weight": 2
+    },
+    {
+      "id": "R25",
+      "subsystem": "combat_bullets",
+      "statement": "Pea hit: a pea that is not used hits a zombie that is alive, entered (x < 1710), same lane (|by - 83 - zy| <= 10) and within |bx - zx| <= 25; it deals 20 damage, sets used = 1, becomes transparent and keeps flying (still listed with used 1) until its 3 s deletion. One pea damages at most one zombie.",
+      "accept": "CORRECT: 20 damage, 25 px hit window, used peas persist to the 3 s mark. PARTIAL: 20 damage right but peas assumed to vanish on hit, or hit window missing.",
+      "source": ["Classes/Plants/EmissonPlants/Bullet/Pea.cpp:17,55-78", "Classes/Plants/EmissonPlants/Bullet/Bullet.cpp:112-120", "trace public-03 z3 200->180 at f3741 with b1 x 1620.667 vs z 1642.331; used peas removed later"],
+      "tier": 1,
+      "weight": 3
+    },
+    {
+      "id": "R26",
+      "subsystem": "combat_bullets",
+      "statement": "Pea target choice: collision is tested against zombies in spawn (list) order and the first qualifying zombie takes the hit, not the nearest/leftmost one; peas pass through dead (hp 0) or not-yet-entered zombies. Peas are tested in creation order, after all zombies and plants have updated that frame.",
+      "accept": "CORRECT: list-order first match. PARTIAL: says 'first zombie hit' without the ordering rule.",
+      "source": ["Classes/Plants/EmissonPlants/Bullet/Pea.cpp:55-78", "Classes/Scenes/GameScene/GSAnimationLayer.cpp:124,231-237"],
+      "tier": 3,
+      "weight": 1
+    },
+    {
+      "id": "R27",
+      "subsystem": "suns",
+      "statement": "Sky suns: the first at 5 s (f314), then every 25 s (f1876, 3439, 5001, 6564, ...), for the whole level; each spawns at x = 500 + rand()%1100, y = 1150.",
+      "accept": "CORRECT: 5 s + 25 s schedule and x range 500-1599. PARTIAL: schedule right, x rule missing or wrong.",
+      "source": ["Classes/Plants/DefensePlants/SunFlower.cpp:43-65", "Classes/Scenes/GameScene/GSAnimationLayer.cpp:149-157", "trace public-01 s1 f314, s2 f1876"],
+      "tier": 1,
+      "weight": 3
+    },
+    {
+      "id": "R28",
+      "subsystem": "suns",
+      "statement": "Sky sun motion and lifetime: it falls by 500 + rand()%500 px over 5 s (ends at y 151-650) while a parallel 0.6 s jump shifts x by rand()%120 - 60 (jump height rand()%100 + 100); it stays enabled, becomes invisible 19.5 s after spawning and is deleted at the next 2 s tick (public-01: spawned f314, deleted f1626).",
+      "accept": "CORRECT: 5 s fall, x shift from the jump, 19.5 s life + 2 s-tick deletion, and the fall/shift ranges. PARTIAL: timings right without ranges, or ranges right with wrong lifetime.",
+      "source": ["Classes/Plants/DefensePlants/SunFlower.cpp:47-58", "Classes/Plants/DefensePlants/Sun.cpp:16-28", "trace public-01 s1 (1510,1150) -> (1493,349) at f627, removed f1626"],
+      "tier": 1,
+      "weight": 2
+    },
+    {
+      "id": "R29",
+      "subsystem": "suns",
+      "statement": "Produced suns: spawned at the sunflower anchor, 0.6 s jump with x shift rand()%120 - 60 (-60..59) and height rand()%100 + 100, then rest; they stay enabled, fade out from 14.6 to 15.1 s (still clickable while transparent), turn invisible 20.1 s after spawning if not collected and are deleted at the next 2 s tick.",
+      "accept": "CORRECT: jump ranges and 20.1 s lifetime (with clickable-while-faded). PARTIAL: lifetime right or jump ranges right, not both.",
+      "source": ["Classes/Plants/DefensePlants/Sun.cpp:16-28", "Classes/Plants/DefensePlants/SunFlower.cpp:179-189"],
+      "tier": 2,
+      "weight": 2
+    },
+    {
+      "id": "R30",
+      "subsystem": "suns",
+      "statement": "Collecting: a click inside an enabled sun's bounding box sets en 0 immediately, stops its motion, eases it to (290,1010) in 0.5 s, shrinks/fades it 0.2 s, then adds +50 sun (about 44 frames after the click is processed), hides it 5 s later and deletes it at the next 2 s tick. One click collects every enabled sun under the pointer.",
+      "accept": "CORRECT: +50 credited ~0.7 s after the click, en 0 at once, flight to (290,1010), deletion ~5.7 s + 2 s tick. PARTIAL: +50 with immediate credit or without the delayed deletion.",
+      "source": ["Classes/Plants/DefensePlants/SunFlower.cpp:140-177", "trace public-03 click f353 -> +50 f397; collected s1 removed f751"],
+      "tier": 1,
+      "weight": 3
+    },
+    {
+      "id": "R31",
+      "subsystem": "mowers",
+      "statement": "Mower setup: five mowers are added at 0.5 + 0.1*i s (frames 33, 39, 45, 51, 58) at x = 455, y = 180 + 138*i, listed bottom row first; tag -1, st 1, live 0. The list holds fewer than five in the first second.",
+      "accept": "CORRECT: x=455, appearance times, initial state. PARTIAL: x and state right, appearance times missing.",
+      "source": ["Classes/Scenes/GameScene/GSAnimationLayer.cpp:159-176", "Classes/Based/Car.cpp:14-16", "trace public-01 cars f33-f58"],
+      "tier": 1,
+      "weight": 1
+    },
+    {
+      "id": "R32",
+      "subsystem": "mowers",
+      "statement": "Mower trigger: a mower starts (live 1, st 2) when any zombie that is alive and entered is in its lane (|zy + 50 - my| <= 10) with zx - 80 < mower x, i.e. at zx < 535 for an idle mower.",
+      "accept": "CORRECT: x - 80 < 455 (535) with alive/entered conditions. PARTIAL: threshold within 5 px of 535 or conditions missing.",
+      "source": ["Classes/Based/Car.cpp:58-83", "Classes/Based/Car.cpp:122-125", "trace public-02 z1 x 534.533 at f4085"],
+      "tier": 1,
+      "weight": 3
+    },
+    {
+      "id": "R33",
+      "subsystem": "mowers",
+      "statement": "Mower kill: every frame while the mower exists, each alive entered zombie in its lane with zx - 80 < mower x is killed instantly: hp, hs and bs set to 0 and the zombie made invisible (alive 0, show stays 1). Shields do not protect. The invisible corpse still slides until its filldown event and is deleted 5 s after it became invisible; the live count drops on the next frame.",
+      "accept": "CORRECT: instant kill of all lane zombies ahead of the moving mower including shields. PARTIAL: kill only the triggering zombie, or shields not zeroed.",
+      "source": ["Classes/Based/Car.cpp:58-73", "Classes/Zombies/Zombies.cpp:113-119,125-164", "trace public-03 z5 killed at x 584.654 f5955; hidden-06 bucket hs 740 -> 0 f10107"],
+      "tier": 1,
+      "weight": 2
+    },
+    {
+      "id": "R34",
+      "subsystem": "mowers",
+      "statement": "Mower run: moves +1900 px over 2.5 s (760 px/s, 12.16 px/frame after the epsilon frame) and is deleted from the cars list once x > 2100 (~137 frames after the trigger). It is never replaced: that lane has no protection afterwards and the cars list shrinks below five.",
+      "accept": "CORRECT: speed, removal at x > 2100, one-shot. PARTIAL: one-shot and speed right but kept in the list / removal wrong.",
+      "source": ["Classes/Based/Car.cpp:75-94", "trace public-03 mower 455 -> 2096.602 at f4141, list 4 at f4142"],
+      "tier": 1,
+      "weight": 2
+    },
+    {
+      "id": "R35",
+      "subsystem": "waves_spawning",
+      "statement": "Level 4 data: 10 waves; base sizes [1, 3, 3, 3, 10, 4, 3, 3, 4, 10]; type probabilities in % (common, cone, bucket) per wave: [100,0,0], [95,5,0], [90,10,0], [85,10,5], [80,15,5], [75,15,10], [70,20,10], [60,25,15], [50,30,20], [40,30,30]; first wave at 18 s. The 'huge wave' marker at wave 5 (MunchZombiesFrequency) is only progress-bar decoration.",
+      "accept": "CORRECT: wave count, base sizes and probability table. PARTIAL: wave count and sizes without the table, or the table without sizes.",
+      "source": ["Resources/resources/Text/GAMEWORLD_1DATAS.json:80-102", "Classes/Based/GameData/LevelDataHandler.cpp:73-124"],
+      "tier": 2,
+      "weight": 3
+    },
+    {
+      "id": "R36",
+      "subsystem": "waves_spawning",
+      "statement": "Wave size and types: a wave's size is n + rand()%n for base n (so 1; 3-5; 3-5; 3-5; 10-19; 4-7; 3-5; 3-5; 4-7; 10-19), drawn once per wave (wave 1 still uses a rand()); each zombie's type is rand()%100 compared with the cumulative probabilities (common if < p0, cone if < p0+p1, else bucket).",
+      "accept": "CORRECT: n..2n-1 sizes via rand()%n and the per-zombie cumulative rand()%100 draw. PARTIAL: size ranges right without the draw rule, or the draw rule without the size formula.",
+      "source": ["Classes/Scenes/GameScene/ZombiesAppearControl.cpp:16-46", "Classes/Scenes/GameScene/GSControlLayer.cpp:240-261"],
+      "tier": 3,
+      "weight": 3
+    },
+    {
+      "id": "R37",
+      "subsystem": "waves_spawning",
+      "statement": "Wave timer and flags: wt is a whole number of seconds, +1 on each 1 s tick (if wbegin is 0 the tick first resets wt to 0 and sets wbegin 1). When a trigger condition holds on a 0.1 s tick: wdead 1, wbegin 0. On the next 0.1 s tick the whole wave spawns at once, wave += 1, wdead 0, wt 0; the next 1 s tick sets wbegin 1, wt 1 (public-01: trigger f1133, spawn f1139, wt=1 f1189).",
+      "accept": "CORRECT: integer seconds on 1 s ticks, one-tick trigger -> spawn delay, reset semantics. PARTIAL: timer and reset right, flag/tick sequencing wrong.",
+      "source": ["Classes/Scenes/GameScene/GSControlLayer.cpp:230-269", "Classes/Scenes/GameScene/ZombiesAppearControl.cpp:87-93", "trace public-01 f1127-f1189; public-02 f3189-f3252"],
+      "tier": 1,
+      "weight": 2
+    },
+    {
+      "id": "R38",
+      "subsystem": "waves_spawning",
+      "statement": "First wave: with 0 waves released the trigger is wt >= 18 (FirstFrequencyTime); wt reaches 18 at f1127, the trigger tick is f1133 and the single common zombie spawns at f1139 in every scenario.",
+      "accept": "CORRECT: 18 s, spawn f1139 (+/-2). PARTIAL: ~18 s with the spawn frame off by more than 2.",
+      "source": ["Classes/Scenes/GameScene/GSControlLayer.cpp:280-281", "Resources/resources/Text/GAMEWORLD_1DATAS.json:87", "trace public-01/02/03 wave 0->1 at f1139"],
+      "tier": 1,
+      "weight": 3
+    },
+    {
+      "id": "R39",
+      "subsystem": "waves_spawning",
+      "statement": "Waves 2 and 3: with 1 or 2 waves released the timed trigger is wt >= 32 + rand()%10, with a new rand() on every 0.1 s tick. So the wave comes 32-41 s after the previous one, usually early in that window (public: triggers at wt 32-33, 32.4-33.0 s spawn to spawn).",
+      "accept": "CORRECT: 32 + rand()%10 re-drawn per tick. PARTIAL: a fixed ~32 s delay or a once-drawn random delay.",
+      "source": ["Classes/Scenes/GameScene/GSControlLayer.cpp:283-285", "trace public-02 trigger f3189 (wt 32); public-03 trigger f3195, f5220"],
+      "tier": 3,
+      "weight": 3
+    },
+    {
+      "id": "R40",
+      "subsystem": "waves_spawning",
+      "statement": "Trigger expression on every 0.1 s tick, short-circuit OR in this order: (a) live count <= 4 and waves > 3; (b) live count == 0 and waves > 1; (c) wt >= 18 and waves == 0; (d) wt >= 32 + rand()%10 and waves in {1,2}; (e) wt >= 45 and waves > 2. rand()%10 is consumed on every tick where (a)-(c) are false, at any wave count. The live count goes up at spawn and down only when a zombie becomes invisible (not at hp 0). After wave 4, (a) can fire on the tick right after a spawn, so waves can come 0.1 s apart (hidden-06 f6976 -> f6983). No spawns after 10 waves.",
+      "accept": "CORRECT: all five conditions with the <=4 / ==0 count rules and 45 s fallback. PARTIAL: 45 s fallback plus at least one count rule, without order/short-circuit or the invisibility-based count.",
+      "source": ["Classes/Scenes/GameScene/GSControlLayer.cpp:240-293", "Classes/Zombies/Zombies.cpp:125-137,327-333", "Classes/Scenes/GameScene/GSAnimationLayer.cpp:125", "trace hidden-06 waves 3->4->5 at f6976/f6983"],
+      "tier": 3,
+      "weight": 3
+    },
+    {
+      "id": "R41",
+      "subsystem": "waves_spawning",
+      "statement": "Spawn placement: each zombie starts at x = 1780 + U{0..500} and in the lane picked by the 5-row bag (R46); it moves in its spawn frame (first trace x = integer - 0.48, x range 1779.52-2279.52), starts hidden (show 0) and is appended to the zombie list in creation order. Per-zombie draw order: type rand()%100 -> construction (next random_device draw seeds its engine) -> x (animation-layer engine) and row (wave-control engine) -> walk timescale (own engine) -> rand()%2 walk animation.",
+      "accept": "CORRECT: x range 1780-2280 and same-frame first move, plus the draw order. PARTIAL: x range only.",
+      "source": ["Classes/Scenes/GameScene/GSAnimationLayer.cpp:115-126", "Classes/Zombies/Zombies.cpp:27-53", "Classes/Zombies/CommonZombies.cpp:37-47", "trace public-01 z1 x 2207.52 at f1139"],
+      "tier": 2,
+      "weight": 2
+    },
+    {
+      "id": "R42",
+      "subsystem": "rng",
+      "statement": "C library RNG: glibc rand() (TYPE_3 additive-feedback random_r, r[i] = r[i-3] + r[i-31], output >> 1) seeded by srand(time(nullptr)) = srand(time_seed) in the GSControlLayer constructor at level start. All wave timing, wave sizes, zombie types, sky-sun positions, sunflower timers, peashooter rates and sun jumps come from this one stream (rand() % k mapping).",
+      "accept": "CORRECT: glibc rand seeded by time_seed at level start, and which gameplay draws use it. PARTIAL: srand(time) named but not glibc's algorithm, or the algorithm without the seed point.",
+      "source": ["Classes/Scenes/GameScene/GSControlLayer.cpp:27", "operator/oracle/shim.cpp:510-520 (level start = this srand)", "verified: public-01 rand index 51 % 1100 + 500 = 1510 (sky sun x)"],
+      "tier": 3,
+      "weight": 3
+    },
+    {
+      "id": "R43",
+      "subsystem": "rng",
+      "statement": "Reseeding: every pea construction (Bullet constructor) calls srand(time(nullptr)), reseeding rand() with time_seed + floor(virtual seconds since level start). The shot's sound rand()%2 is drawn just before. So once peashooters fire, later wave timing, sizes and types depend on the second of the last shot. (GSGameEndLayer also reseeds, but only on the abort path.)",
+      "accept": "CORRECT: per-pea srand(time) reseed and its effect. PARTIAL: notes a reseed without tying it to pea creation/time.",
+      "source": ["Classes/Plants/EmissonPlants/Bullet/Bullet.cpp:14-18", "Classes/Plants/EmissonPlants/PeaShooter.cpp:83-89,104-110", "Classes/Scenes/GameScene/GSGameEndLayer.cpp:20-25"],
+      "tier": 3,
+      "weight": 3
+    },
+    {
+      "id": "R44",
+      "subsystem": "rng",
+      "statement": "C++ engines: default_random_engine = libstdc++ minstd_rand0 (x <- 16807 x mod 2^31-1; seed mod m, 0 -> 1). Instances: (1) wave-control engine seeded with time_seed (lane choice); (2) animation-layer engine seeded with random_device draw #1 (spawn x); (3) one engine per zombie seeded with the next random_device draw at its construction (k-th zombie of the level uses draw k+1). Distributions are libstdc++'s: uniform_int_distribution downscales (r = g()-1; reject r >= (span+1)*floor(2147483645/(span+1)); return a + r / scaling); uniform_real_distribution<float> uses one draw, (g()-1)/2147483646 * (b-a) + a.",
+      "accept": "CORRECT: minstd_rand0, the three seedings and the distribution algorithms. PARTIAL: engine type and seeds right without the distribution mapping, or wrong assignment of seeds to uses.",
+      "source": ["Classes/Scenes/GameScene/ZombiesAppearControl.cpp:10-14,60-75", "Classes/Scenes/GameScene/GSAnimationLayer.cpp:21-25,115-122", "Classes/Scenes/GameScene/GSAnimationLayer.h:68-69", "Classes/Zombies/Zombies.cpp:27-39", "verified against public spawns: x 2208; 1830, 2228, 2276, 2136; 1911, 2071, 1902, 2024, 1907, 1854, ..."],
+      "tier": 3,
+      "weight": 3
+    },
+    {
+      "id": "R45",
+      "subsystem": "rng",
+      "statement": "Lane bag: each spawn draws uniform_int{0..4} from the wave-control engine, re-drawing while the row is already in the used set; once all 5 rows are used the set is cleared before the next pick. The set persists across waves. Lane y = {130, 268, 406, 544, 682}[row] (public-03 rows: 4 | 1,2,0,3 | 3 (bag reset),2,4,0,1 | 2).",
+      "accept": "CORRECT: no-repeat bag of 5 persisting across waves, with re-draw. PARTIAL: 'each lane once before repeating' per wave only, or uniform independent lanes with the right engine.",
+      "source": ["Classes/Scenes/GameScene/ZombiesAppearControl.cpp:60-75", "Classes/Scenes/GameScene/ZombiesAppearControl.h:81-82", "trace public-03 wave 2-3 lanes"],
+      "tier": 3,
+      "weight": 2
+    },
+    {
+      "id": "R46",
+      "subsystem": "rng",
+      "statement": "Per-zombie engine schedule: first draw -> walk/eat animation timescale 0.6 + U[0,0.45); then one uniform_int{0..10000} draw every frame the zombie is in the list (groan sound, played if < 5 and fewer than 3 played), dead or alive; at death one more draw -> die-animation timescale. So the die timescale (fall and removal timing) depends on how many frames the zombie existed.",
+      "accept": "CORRECT: the init draw, per-frame draw and death draw. PARTIAL: per-zombie random timescale without the per-frame consumption.",
+      "source": ["Classes/Zombies/Zombies.cpp:41-53", "Classes/Zombies/Zombies.cpp:512-523", "Classes/Zombies/Zombies.cpp:495-497", "Classes/Scenes/GameScene/GSAnimationLayer.cpp:185-193", "verified: public-03 z3 die timescale 0.786 -> filldown ~40 frames (observed 41; without per-frame draws ~30)"],
+      "tier": 3,
+      "weight": 2
+    },
+    {
+      "id": "R47",
+      "subsystem": "rng",
+      "statement": "rand() consumers (in order of occurrence, arguments evaluated left to right): level init 2 (sky-sun SunFlower object: x then y timer); every 0.1 s tick 1 when trigger (d) is evaluated; picking the sunflower card 4 (two preview SunFlower objects), other cards 0; planting 1 (sound) + 2 if sunflower (timers) + 1 (animation timescale); each zombie each frame 1 (groan choice); zombie arm loss (common hp < 100, cone/bucket hp <= 100) 5; head loss at death 5; cone/bucket shield loss (hs <= 0) 5; filldown 1; becoming invisible 1 coin roll (< 5 -> coin, +3 for its jump); eat start 1; each bite 1; each shot 1 (then reseed, R43); each pea hit 1; sky sun 4 (x, jump dx, jump height, fall); produced sun 3 (sound, jump dx, jump height); per wave 1 (size) + per zombie 2 (type, walk animation).",
+      "accept": "CORRECT: an inventory covering the gameplay-relevant consumers including the non-obvious ones (per-frame zombie sound, preview objects, per-tick wave draw). PARTIAL: only gameplay draws (waves, types, suns, timers) listed, without cosmetic/sound consumers.",
+      "source": ["Classes/Scenes/GameScene/GSControlLayer.cpp:202-228,283", "Classes/Scenes/GameScene/GSAnimationLayer.cpp:65-77", "Classes/Plants/Plants.cpp:36,155,161", "Classes/Plants/DefensePlants/SunFlower.cpp:18,50,56,180", "Classes/Plants/DefensePlants/Sun.cpp:23", "Classes/Zombies/Zombies.cpp:166-175,429-493,501", "Classes/Zombies/CommonZombies.cpp:40,61-63", "Classes/Zombies/ConeZombies.cpp:40,62,65-103", "Classes/Plants/EmissonPlants/Bullet/Bullet.cpp:140-156", "Classes/Based/Coin.cpp:77", "verified: public-02/03 sunflower timers at rand index 18"],
+      "tier": 3,
+      "weight": 3
+    },
+    {
+      "id": "R48",
+      "subsystem": "end_conditions",
+      "statement": "Loss threshold: zombies win when a zombie that is alive (hp > 0 and visible) has x < 0. LevelData.userLose defaults to 0 and the loader never reads the JSON 'UserLose': 430. The check runs every frame per zombie right after it moves. Since an idle mower triggers at x < 535, a loss needs a lane whose mower is gone.",
+      "accept": "CORRECT: x < 0 (and noting the JSON 430 is unused). PARTIAL: a threshold within 5 px of 0, or 'reaches the house' with the mower interplay but no number. INCORRECT: 430.",
+      "source": ["Classes/Scenes/GameScene/GSGameResultJudgement.cpp:19-33", "Classes/Based/GameData/LevelData.h:16,27", "Classes/Based/GameData/LevelDataHandler.cpp:73-124", "Resources/resources/Text/GAMEWORLD_1DATAS.json:82", "trace hidden-01 last frame cone x 0.169; hidden-08 0.094"],
+      "tier": 3,
+      "weight": 3
+    },
+    {
+      "id": "R49",
+      "subsystem": "end_conditions",
+      "statement": "Crash on loss: on the loss frame Zombies::judgeZombieWin sets the win flag, builds GSGameEndLayer and calls breakThrough -> UserData::getCurrentCaveFileLevelWorldName, which allocates new char[name.size()] for 'LevelData_ModernWorld_4' and strcpy's 24 bytes into 23. glibc fortify aborts ('*** buffer overflow detected ***: terminated', SIGABRT, exit 134). That frame's trace line is never written: the trace ends at the previous frame with zwin 0 (lead zombie at 0 <= x < 0.48), and there are no 60 post-result frames.",
+      "accept": "CORRECT: abort on the zombie-win frame, so the trace ends one frame before with zwin never 1. PARTIAL: says the run ends at the loss without the off-by-one abort, or names the bug but places the trace end wrongly.",
+      "source": ["Classes/Zombies/Zombies.cpp:335-348", "Classes/Scenes/GameScene/GSGameEndLayer.cpp:65-82", "Classes/Based/UserData/UserData.cpp:18-23", "trace hidden-01/07/08 and cal-04: rc 134, stdout 'Zombies Win' + buffer overflow, last line zwin 0"],
+      "tier": 3,
+      "weight": 3
+    },
+    {
+      "id": "R50",
+      "subsystem": "end_conditions",
+      "statement": "Win: on a 0.1 s tick, if the zombie list is empty (corpses included, so up to ~8 s after the last kill) and all 10 waves have been released, setGameEnd stops the timers and suns and successfullEntry runs; it calls the same getCurrentCaveFileLevelWorldName, so the program is expected to abort the same way (end 1 never written). No trace reaches this.",
+      "accept": "CORRECT: all 10 waves released + empty list (incl. corpses), checked on the 0.1 s tick. PARTIAL: 'all waves killed' without the corpse/list detail. The abort part is not required for CORRECT, and describing a normal 60-frame ending is not penalised, because no trace shows a win.",
+      "source": ["Classes/Scenes/GameScene/GSControlLayer.cpp:386-416", "Classes/Scenes/GameScene/GSGameEndLayer.cpp:50-63", "Classes/Based/UserData/UserData.cpp:18-23"],
+      "tier": 3,
+      "weight": 1
+    }
+  ],
+  "harness_given": [
+    "Fixed virtual clock: every frame advances game time by exactly 16 ms; frame 0 is the first frame after Level 4 starts; trace line f = state at end of frame f (SCENARIO_FORMAT.md).",
+    "time() returns time_seed + floor(virtual seconds since level start); level start = creation of the game layer (SCENARIO_FORMAT.md).",
+    "std::random_device draws = high 32 bits of a splitmix64 stream seeded with device_seed at level start (exact algorithm given) (SCENARIO_FORMAT.md).",
+    "These are the only entropy sources; mapping to srand/rand/C++ engines is left to the agent (SCENARIO_FORMAT.md). The mapping itself is rubric material (R42-R47).",
+    "Bot plant action input timing: move to card (105, 1008 - 103*i) at F, press F+2, release F+3, move to cell centre (570 + 122c + 61, 110 + 140r + 70) at F+4, press F+14, release F+15 (SCENARIO_FORMAT.md).",
+    "Design 1920x1080 bottom-left origin vs window 1280x720 top-left; wx/wy conversion formula (SCENARIO_FORMAT.md).",
+    "Sun-collect bot: on frames G > 0 with G % N == 0, picks the first en=1 sun from the previous trace line that lies strictly inside the window; move at G, press G+2, release G+3 (SCENARIO_FORMAT.md).",
+    "Run stops at end_frame or 60 frames after the game decides the result; the program may stop on its own and the trace then ends at its last written frame (SCENARIO_FORMAT.md). The fact that it does stop on a loss (abort) is rubric material (R49).",
+    "Trace field names and meanings, number formatting, ids not scored, list order not scored, p.r = column and p.c = row as stored (TRACE_SCHEMA.md).",
+    "Card indices 0 sunflower, 1 peashooter, 2 wallnut; zombie type names common/cone/bucket; game speed ts = 1.0 in every scenario (TRACE_SCHEMA.md).",
+    "Level 4 is a 5-row x 9-column lawn with three cards, falling sun, card cooldowns, zombie waves and one mower per row (TASK.md, qualitative only)."
+  ]
+}

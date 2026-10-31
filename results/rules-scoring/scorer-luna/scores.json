@@ -1,0 +1,2555 @@
+{
+  "scorer": "luna",
+  "docs": {
+    "D01": {
+      "rules": {
+        "R01": {
+          "verdict": "partial",
+          "quote": "y = 130 + 138*row",
+          "note": "Gives board/lane geometry but omits or misstates a required geometry component."
+        },
+        "R02": {
+          "verdict": "absent",
+          "quote": "",
+          "note": "Not stated."
+        },
+        "R03": {
+          "verdict": "absent",
+          "quote": "",
+          "note": "Not stated."
+        },
+        "R04": {
+          "verdict": "absent",
+          "quote": "",
+          "note": "Not stated."
+        },
+        "R05": {
+          "verdict": "correct",
+          "quote": "10,000 sun",
+          "note": "States all required details."
+        },
+        "R06": {
+          "verdict": "partial",
+          "quote": "469 frames",
+          "note": "States cooldown values/startup states but omits the full ready/en lag."
+        },
+        "R07": {
+          "verdict": "partial",
+          "quote": "refund",
+          "note": "States refund/cancel behavior but omits required click-condition cases."
+        },
+        "R08": {
+          "verdict": "absent",
+          "quote": "",
+          "note": "Not stated."
+        },
+        "R09": {
+          "verdict": "absent",
+          "quote": "",
+          "note": "Not stated."
+        },
+        "R10": {
+          "verdict": "correct",
+          "quote": "300",
+          "note": "States all required details."
+        },
+        "R11": {
+          "verdict": "partial",
+          "quote": "250 frames",
+          "note": "States lingering zero-HP retention but does not fully state immediate cell release."
+        },
+        "R12": {
+          "verdict": "partial",
+          "quote": "23.5",
+          "note": "States observed production delays/periods but not the per-flower RNG construction."
+        },
+        "R13": {
+          "verdict": "partial",
+          "quote": "69-90 frames",
+          "note": "States observed firing cadence but not the timescale and queued-loop mechanism."
+        },
+        "R14": {
+          "verdict": "partial",
+          "quote": "shown, live zombie ahead",
+          "note": "States shown/live/ahead targeting but omits the explicit entry-threshold condition."
+        },
+        "R15": {
+          "verdict": "correct",
+          "quote": "200 body HP",
+          "note": "States all required details."
+        },
+        "R16": {
+          "verdict": "correct",
+          "quote": "600",
+          "note": "States all required details."
+        },
+        "R17": {
+          "verdict": "correct",
+          "quote": "1200",
+          "note": "States all required details."
+        },
+        "R18": {
+          "verdict": "partial",
+          "quote": "head shield",
+          "note": "States shield-first damage but omits overflow and the full consequence/count rule."
+        },
+        "R19": {
+          "verdict": "correct",
+          "quote": "0.48 per frame",
+          "note": "States all required details."
+        },
+        "R20": {
+          "verdict": "partial",
+          "quote": "79",
+          "note": "States the approximate reach but omits multiple-zombie behavior."
+        },
+        "R21": {
+          "verdict": "partial",
+          "quote": "100 HP",
+          "note": "States bite damage but omits same-frame resume after plant death."
+        },
+        "R22": {
+          "verdict": "partial",
+          "quote": "83 frames",
+          "note": "States approximate bite periods but not the per-zombie timescale mechanism."
+        },
+        "R23": {
+          "verdict": "partial",
+          "quote": "470 frames",
+          "note": "States approximate death retention/stop timing but not the full event/count/deletion mechanism."
+        },
+        "R24": {
+          "verdict": "partial",
+          "quote": "10.667/frame",
+          "note": "States projectile origin/speed but omits or approximates the exact fixed lifetime."
+        },
+        "R25": {
+          "verdict": "partial",
+          "quote": "used=1",
+          "note": "States damage/continued used-bullet behavior but omits the complete hit window."
+        },
+        "R26": {
+          "verdict": "absent",
+          "quote": "",
+          "note": "Not stated."
+        },
+        "R27": {
+          "verdict": "partial",
+          "quote": "frame 314",
+          "note": "States the sky-sun schedule but omits the x-range rule."
+        },
+        "R28": {
+          "verdict": "partial",
+          "quote": "1312 frames",
+          "note": "States approximate fall/lifetime behavior but omits required ranges and deletion timing."
+        },
+        "R29": {
+          "verdict": "partial",
+          "quote": "(290,1010)",
+          "note": "States target/arc or lifetime pieces but omits the full jump and fade/clickability rule."
+        },
+        "R30": {
+          "verdict": "partial",
+          "quote": "50 ... 44 frames",
+          "note": "States delayed collection credit/target but omits the full collection/deletion sequence."
+        },
+        "R31": {
+          "verdict": "correct",
+          "quote": "frames 33, 39, 45",
+          "note": "States all required details."
+        },
+        "R32": {
+          "verdict": "partial",
+          "quote": "x=535",
+          "note": "States the approximate trigger threshold but omits all required eligibility conditions."
+        },
+        "R33": {
+          "verdict": "partial",
+          "quote": "kills zombies",
+          "note": "States mower kills but omits some all-zombie/shield/corpse details."
+        },
+        "R34": {
+          "verdict": "partial",
+          "quote": "12.16",
+          "note": "States speed/removal approximately but omits the complete one-shot/list behavior."
+        },
+        "R35": {
+          "verdict": "absent",
+          "quote": "",
+          "note": "Not stated."
+        },
+        "R36": {
+          "verdict": "absent",
+          "quote": "",
+          "note": "Not stated."
+        },
+        "R37": {
+          "verdict": "partial",
+          "quote": "wdead",
+          "note": "States warning/spawn timing but not the full flag/tick sequencing."
+        },
+        "R38": {
+          "verdict": "correct",
+          "quote": "1139",
+          "note": "States all required details."
+        },
+        "R39": {
+          "verdict": "partial",
+          "quote": "32-33 seconds",
+          "note": "States approximate 32-second timing but not per-tick 32+rand%10 redraw."
+        },
+        "R40": {
+          "verdict": "partial",
+          "quote": "45 seconds",
+          "note": "States only a fallback/early-clear idea, not the complete ordered trigger expression."
+        },
+        "R41": {
+          "verdict": "absent",
+          "quote": "",
+          "note": "Not stated."
+        },
+        "R42": {
+          "verdict": "absent",
+          "quote": "",
+          "note": "Not stated."
+        },
+        "R43": {
+          "verdict": "absent",
+          "quote": "",
+          "note": "Not stated."
+        },
+        "R44": {
+          "verdict": "absent",
+          "quote": "",
+          "note": "Not stated."
+        },
+        "R45": {
+          "verdict": "absent",
+          "quote": "",
+          "note": "Not stated."
+        },
+        "R46": {
+          "verdict": "absent",
+          "quote": "",
+          "note": "Not stated."
+        },
+        "R47": {
+          "verdict": "absent",
+          "quote": "",
+          "note": "Not stated."
+        },
+        "R48": {
+          "verdict": "partial",
+          "quote": "left boundary",
+          "note": "States an approximate/no-number mower-loss boundary rather than the exact x<0 rule."
+        },
+        "R49": {
+          "verdict": "partial",
+          "quote": "abort",
+          "note": "Does not state the loss-frame abort and one-frame-before trace end precisely."
+        },
+        "R50": {
+          "verdict": "partial",
+          "quote": "ten waves",
+          "note": "States only a broad final-wave win idea, not the empty-list/0.1-second check."
+        }
+      },
+      "contradicted_claims": []
+    },
+    "D02": {
+      "rules": {
+        "R01": {
+          "verdict": "partial",
+          "quote": "y = 130 + 138*row",
+          "note": "Gives board/lane geometry but omits or misstates a required geometry component."
+        },
+        "R02": {
+          "verdict": "absent",
+          "quote": "",
+          "note": "Not stated."
+        },
+        "R03": {
+          "verdict": "absent",
+          "quote": "",
+          "note": "Not stated."
+        },
+        "R04": {
+          "verdict": "absent",
+          "quote": "",
+          "note": "Not stated."
+        },
+        "R05": {
+          "verdict": "correct",
+          "quote": "10,000 sun",
+          "note": "States all required details."
+        },
+        "R06": {
+          "verdict": "partial",
+          "quote": "469 frames",
+          "note": "States cooldown values/startup states but omits the full ready/en lag."
+        },
+        "R07": {
+          "verdict": "partial",
+          "quote": "refund",
+          "note": "States refund/cancel behavior but omits required click-condition cases."
+        },
+        "R08": {
+          "verdict": "absent",
+          "quote": "",
+          "note": "Not stated."
+        },
+        "R09": {
+          "verdict": "absent",
+          "quote": "",
+          "note": "Not stated."
+        },
+        "R10": {
+          "verdict": "correct",
+          "quote": "300",
+          "note": "States all required details."
+        },
+        "R11": {
+          "verdict": "correct",
+          "quote": "250 frames",
+          "note": "States all required details."
+        },
+        "R12": {
+          "verdict": "partial",
+          "quote": "23.5",
+          "note": "States observed production delays/periods but not the per-flower RNG construction."
+        },
+        "R13": {
+          "verdict": "partial",
+          "quote": "69-90 frames",
+          "note": "States observed firing cadence but not the timescale and queued-loop mechanism."
+        },
+        "R14": {
+          "verdict": "partial",
+          "quote": "shown, live zombie ahead",
+          "note": "States shown/live/ahead targeting but omits the explicit entry-threshold condition."
+        },
+        "R15": {
+          "verdict": "correct",
+          "quote": "200 body HP",
+          "note": "States all required details."
+        },
+        "R16": {
+          "verdict": "correct",
+          "quote": "600",
+          "note": "States all required details."
+        },
+        "R17": {
+          "verdict": "partial",
+          "quote": "1200",
+          "note": "Has the right body health but the bucket shield value is approximate/wrong."
+        },
+        "R18": {
+          "verdict": "partial",
+          "quote": "head shield",
+          "note": "States shield-first damage but omits overflow and the full consequence/count rule."
+        },
+        "R19": {
+          "verdict": "correct",
+          "quote": "0.48 per frame",
+          "note": "States all required details."
+        },
+        "R20": {
+          "verdict": "partial",
+          "quote": "79",
+          "note": "States the approximate reach but omits multiple-zombie behavior."
+        },
+        "R21": {
+          "verdict": "partial",
+          "quote": "100 HP",
+          "note": "States bite damage but omits same-frame resume after plant death."
+        },
+        "R22": {
+          "verdict": "partial",
+          "quote": "83 frames",
+          "note": "States approximate bite periods but not the per-zombie timescale mechanism."
+        },
+        "R23": {
+          "verdict": "partial",
+          "quote": "470 frames",
+          "note": "States approximate death retention/stop timing but not the full event/count/deletion mechanism."
+        },
+        "R24": {
+          "verdict": "partial",
+          "quote": "10.667/frame",
+          "note": "States projectile origin/speed but omits or approximates the exact fixed lifetime."
+        },
+        "R25": {
+          "verdict": "partial",
+          "quote": "used=1",
+          "note": "States damage/continued used-bullet behavior but omits the complete hit window."
+        },
+        "R26": {
+          "verdict": "absent",
+          "quote": "",
+          "note": "Not stated."
+        },
+        "R27": {
+          "verdict": "partial",
+          "quote": "frame 314",
+          "note": "States the sky-sun schedule but omits the x-range rule."
+        },
+        "R28": {
+          "verdict": "partial",
+          "quote": "1312 frames",
+          "note": "States approximate fall/lifetime behavior but omits required ranges and deletion timing."
+        },
+        "R29": {
+          "verdict": "partial",
+          "quote": "(290,1010)",
+          "note": "States target/arc or lifetime pieces but omits the full jump and fade/clickability rule."
+        },
+        "R30": {
+          "verdict": "partial",
+          "quote": "50 ... 44 frames",
+          "note": "States delayed collection credit/target but omits the full collection/deletion sequence."
+        },
+        "R31": {
+          "verdict": "correct",
+          "quote": "frames 33, 39, 45",
+          "note": "States all required details."
+        },
+        "R32": {
+          "verdict": "partial",
+          "quote": "x=535",
+          "note": "States the approximate trigger threshold but omits all required eligibility conditions."
+        },
+        "R33": {
+          "verdict": "partial",
+          "quote": "kills zombies",
+          "note": "States mower kills but omits some all-zombie/shield/corpse details."
+        },
+        "R34": {
+          "verdict": "partial",
+          "quote": "12.16",
+          "note": "States speed/removal approximately but omits the complete one-shot/list behavior."
+        },
+        "R35": {
+          "verdict": "wrong",
+          "quote": "Every fifth wave is a 15-18-zombie flag wave",
+          "note": "Contradicts the rubric truth."
+        },
+        "R36": {
+          "verdict": "absent",
+          "quote": "",
+          "note": "Not stated."
+        },
+        "R37": {
+          "verdict": "partial",
+          "quote": "wdead",
+          "note": "States warning/spawn timing but not the full flag/tick sequencing."
+        },
+        "R38": {
+          "verdict": "correct",
+          "quote": "1139",
+          "note": "States all required details."
+        },
+        "R39": {
+          "verdict": "partial",
+          "quote": "32-33 seconds",
+          "note": "States approximate 32-second timing but not per-tick 32+rand%10 redraw."
+        },
+        "R40": {
+          "verdict": "partial",
+          "quote": "45 seconds",
+          "note": "States only a fallback/early-clear idea, not the complete ordered trigger expression."
+        },
+        "R41": {
+          "verdict": "absent",
+          "quote": "",
+          "note": "Not stated."
+        },
+        "R42": {
+          "verdict": "absent",
+          "quote": "",
+          "note": "Not stated."
+        },
+        "R43": {
+          "verdict": "absent",
+          "quote": "",
+          "note": "Not stated."
+        },
+        "R44": {
+          "verdict": "absent",
+          "quote": "",
+          "note": "Not stated."
+        },
+        "R45": {
+          "verdict": "absent",
+          "quote": "",
+          "note": "Not stated."
+        },
+        "R46": {
+          "verdict": "absent",
+          "quote": "",
+          "note": "Not stated."
+        },
+        "R47": {
+          "verdict": "absent",
+          "quote": "",
+          "note": "Not stated."
+        },
+        "R48": {
+          "verdict": "correct",
+          "quote": "left boundary",
+          "note": "States all required details."
+        },
+        "R49": {
+          "verdict": "partial",
+          "quote": "abort",
+          "note": "Does not state the loss-frame abort and one-frame-before trace end precisely."
+        },
+        "R50": {
+          "verdict": "partial",
+          "quote": "ten waves",
+          "note": "States only a broad final-wave win idea, not the empty-list/0.1-second check."
+        }
+      },
+      "contradicted_claims": []
+    },
+    "D03": {
+      "rules": {
+        "R01": {
+          "verdict": "partial",
+          "quote": "y = 130 + 138*row",
+          "note": "Gives board/lane geometry but omits or misstates a required geometry component."
+        },
+        "R02": {
+          "verdict": "absent",
+          "quote": "",
+          "note": "Not stated."
+        },
+        "R03": {
+          "verdict": "absent",
+          "quote": "",
+          "note": "Not stated."
+        },
+        "R04": {
+          "verdict": "absent",
+          "quote": "",
+          "note": "Not stated."
+        },
+        "R05": {
+          "verdict": "correct",
+          "quote": "10,000 sun",
+          "note": "States all required details."
+        },
+        "R06": {
+          "verdict": "partial",
+          "quote": "469 frames",
+          "note": "States cooldown values/startup states but omits the full ready/en lag."
+        },
+        "R07": {
+          "verdict": "partial",
+          "quote": "refund",
+          "note": "States refund/cancel behavior but omits required click-condition cases."
+        },
+        "R08": {
+          "verdict": "absent",
+          "quote": "",
+          "note": "Not stated."
+        },
+        "R09": {
+          "verdict": "absent",
+          "quote": "",
+          "note": "Not stated."
+        },
+        "R10": {
+          "verdict": "correct",
+          "quote": "300",
+          "note": "States all required details."
+        },
+        "R11": {
+          "verdict": "correct",
+          "quote": "250 frames",
+          "note": "States all required details."
+        },
+        "R12": {
+          "verdict": "partial",
+          "quote": "23.5",
+          "note": "States observed production delays/periods but not the per-flower RNG construction."
+        },
+        "R13": {
+          "verdict": "partial",
+          "quote": "69-90 frames",
+          "note": "States observed firing cadence but not the timescale and queued-loop mechanism."
+        },
+        "R14": {
+          "verdict": "partial",
+          "quote": "shown, live zombie ahead",
+          "note": "States shown/live/ahead targeting but omits the explicit entry-threshold condition."
+        },
+        "R15": {
+          "verdict": "correct",
+          "quote": "200 body HP",
+          "note": "States all required details."
+        },
+        "R16": {
+          "verdict": "correct",
+          "quote": "600",
+          "note": "States all required details."
+        },
+        "R17": {
+          "verdict": "partial",
+          "quote": "1200",
+          "note": "Has the right body health but the bucket shield value is approximate/wrong."
+        },
+        "R18": {
+          "verdict": "partial",
+          "quote": "head shield",
+          "note": "States shield-first damage but omits overflow and the full consequence/count rule."
+        },
+        "R19": {
+          "verdict": "correct",
+          "quote": "0.48 per frame",
+          "note": "States all required details."
+        },
+        "R20": {
+          "verdict": "partial",
+          "quote": "79",
+          "note": "States the approximate reach but omits multiple-zombie behavior."
+        },
+        "R21": {
+          "verdict": "partial",
+          "quote": "100 HP",
+          "note": "States bite damage but omits same-frame resume after plant death."
+        },
+        "R22": {
+          "verdict": "partial",
+          "quote": "83 frames",
+          "note": "States approximate bite periods but not the per-zombie timescale mechanism."
+        },
+        "R23": {
+          "verdict": "partial",
+          "quote": "470 frames",
+          "note": "States approximate death retention/stop timing but not the full event/count/deletion mechanism."
+        },
+        "R24": {
+          "verdict": "partial",
+          "quote": "10.667/frame",
+          "note": "States projectile origin/speed but omits or approximates the exact fixed lifetime."
+        },
+        "R25": {
+          "verdict": "partial",
+          "quote": "used=1",
+          "note": "States damage/continued used-bullet behavior but omits the complete hit window."
+        },
+        "R26": {
+          "verdict": "absent",
+          "quote": "",
+          "note": "Not stated."
+        },
+        "R27": {
+          "verdict": "partial",
+          "quote": "frame 314",
+          "note": "States the sky-sun schedule but omits the x-range rule."
+        },
+        "R28": {
+          "verdict": "partial",
+          "quote": "1312 frames",
+          "note": "States approximate fall/lifetime behavior but omits required ranges and deletion timing."
+        },
+        "R29": {
+          "verdict": "partial",
+          "quote": "(290,1010)",
+          "note": "States target/arc or lifetime pieces but omits the full jump and fade/clickability rule."
+        },
+        "R30": {
+          "verdict": "partial",
+          "quote": "50 ... 44 frames",
+          "note": "States delayed collection credit/target but omits the full collection/deletion sequence."
+        },
+        "R31": {
+          "verdict": "correct",
+          "quote": "frames 33, 39, 45",
+          "note": "States all required details."
+        },
+        "R32": {
+          "verdict": "partial",
+          "quote": "x=535",
+          "note": "States the approximate trigger threshold but omits all required eligibility conditions."
+        },
+        "R33": {
+          "verdict": "partial",
+          "quote": "kills zombies",
+          "note": "States mower kills but omits some all-zombie/shield/corpse details."
+        },
+        "R34": {
+          "verdict": "partial",
+          "quote": "12.16",
+          "note": "States speed/removal approximately but omits the complete one-shot/list behavior."
+        },
+        "R35": {
+          "verdict": "absent",
+          "quote": "",
+          "note": "Not stated."
+        },
+        "R36": {
+          "verdict": "absent",
+          "quote": "",
+          "note": "Not stated."
+        },
+        "R37": {
+          "verdict": "partial",
+          "quote": "wdead",
+          "note": "States warning/spawn timing but not the full flag/tick sequencing."
+        },
+        "R38": {
+          "verdict": "correct",
+          "quote": "1139",
+          "note": "States all required details."
+        },
+        "R39": {
+          "verdict": "partial",
+          "quote": "32-33 seconds",
+          "note": "States approximate 32-second timing but not per-tick 32+rand%10 redraw."
+        },
+        "R40": {
+          "verdict": "absent",
+          "quote": "",
+          "note": "Not stated."
+        },
+        "R41": {
+          "verdict": "absent",
+          "quote": "",
+          "note": "Not stated."
+        },
+        "R42": {
+          "verdict": "absent",
+          "quote": "",
+          "note": "Not stated."
+        },
+        "R43": {
+          "verdict": "absent",
+          "quote": "",
+          "note": "Not stated."
+        },
+        "R44": {
+          "verdict": "absent",
+          "quote": "",
+          "note": "Not stated."
+        },
+        "R45": {
+          "verdict": "absent",
+          "quote": "",
+          "note": "Not stated."
+        },
+        "R46": {
+          "verdict": "absent",
+          "quote": "",
+          "note": "Not stated."
+        },
+        "R47": {
+          "verdict": "absent",
+          "quote": "",
+          "note": "Not stated."
+        },
+        "R48": {
+          "verdict": "partial",
+          "quote": "left boundary",
+          "note": "States an approximate/no-number mower-loss boundary rather than the exact x<0 rule."
+        },
+        "R49": {
+          "verdict": "partial",
+          "quote": "abort",
+          "note": "Does not state the loss-frame abort and one-frame-before trace end precisely."
+        },
+        "R50": {
+          "verdict": "partial",
+          "quote": "ten waves",
+          "note": "States only a broad final-wave win idea, not the empty-list/0.1-second check."
+        }
+      },
+      "contradicted_claims": []
+    },
+    "D04": {
+      "rules": {
+        "R01": {
+          "verdict": "partial",
+          "quote": "y = 130 + 138*row",
+          "note": "Gives board/lane geometry but omits or misstates a required geometry component."
+        },
+        "R02": {
+          "verdict": "absent",
+          "quote": "",
+          "note": "Not stated."
+        },
+        "R03": {
+          "verdict": "absent",
+          "quote": "",
+          "note": "Not stated."
+        },
+        "R04": {
+          "verdict": "absent",
+          "quote": "",
+          "note": "Not stated."
+        },
+        "R05": {
+          "verdict": "correct",
+          "quote": "10,000 sun",
+          "note": "States all required details."
+        },
+        "R06": {
+          "verdict": "partial",
+          "quote": "469 frames",
+          "note": "States cooldown values/startup states but omits the full ready/en lag."
+        },
+        "R07": {
+          "verdict": "partial",
+          "quote": "refund",
+          "note": "States refund/cancel behavior but omits required click-condition cases."
+        },
+        "R08": {
+          "verdict": "absent",
+          "quote": "",
+          "note": "Not stated."
+        },
+        "R09": {
+          "verdict": "absent",
+          "quote": "",
+          "note": "Not stated."
+        },
+        "R10": {
+          "verdict": "correct",
+          "quote": "300",
+          "note": "States all required details."
+        },
+        "R11": {
+          "verdict": "partial",
+          "quote": "250 frames",
+          "note": "States lingering zero-HP retention but does not fully state immediate cell release."
+        },
+        "R12": {
+          "verdict": "partial",
+          "quote": "23.5",
+          "note": "States observed production delays/periods but not the per-flower RNG construction."
+        },
+        "R13": {
+          "verdict": "partial",
+          "quote": "69-90 frames",
+          "note": "States observed firing cadence but not the timescale and queued-loop mechanism."
+        },
+        "R14": {
+          "verdict": "partial",
+          "quote": "shown, live zombie ahead",
+          "note": "States shown/live/ahead targeting but omits the explicit entry-threshold condition."
+        },
+        "R15": {
+          "verdict": "correct",
+          "quote": "200 body HP",
+          "note": "States all required details."
+        },
+        "R16": {
+          "verdict": "correct",
+          "quote": "600",
+          "note": "States all required details."
+        },
+        "R17": {
+          "verdict": "partial",
+          "quote": "1200",
+          "note": "Has the right body health but the bucket shield value is approximate/wrong."
+        },
+        "R18": {
+          "verdict": "partial",
+          "quote": "head shield",
+          "note": "States shield-first damage but omits overflow and the full consequence/count rule."
+        },
+        "R19": {
+          "verdict": "correct",
+          "quote": "0.48 per frame",
+          "note": "States all required details."
+        },
+        "R20": {
+          "verdict": "partial",
+          "quote": "79",
+          "note": "States the approximate reach but omits multiple-zombie behavior."
+        },
+        "R21": {
+          "verdict": "partial",
+          "quote": "100 HP",
+          "note": "States bite damage but omits same-frame resume after plant death."
+        },
+        "R22": {
+          "verdict": "partial",
+          "quote": "83 frames",
+          "note": "States approximate bite periods but not the per-zombie timescale mechanism."
+        },
+        "R23": {
+          "verdict": "partial",
+          "quote": "470 frames",
+          "note": "States approximate death retention/stop timing but not the full event/count/deletion mechanism."
+        },
+        "R24": {
+          "verdict": "partial",
+          "quote": "10.667/frame",
+          "note": "States projectile origin/speed but omits or approximates the exact fixed lifetime."
+        },
+        "R25": {
+          "verdict": "partial",
+          "quote": "used=1",
+          "note": "States damage/continued used-bullet behavior but omits the complete hit window."
+        },
+        "R26": {
+          "verdict": "absent",
+          "quote": "",
+          "note": "Not stated."
+        },
+        "R27": {
+          "verdict": "partial",
+          "quote": "frame 314",
+          "note": "States the sky-sun schedule but omits the x-range rule."
+        },
+        "R28": {
+          "verdict": "partial",
+          "quote": "1312 frames",
+          "note": "States approximate fall/lifetime behavior but omits required ranges and deletion timing."
+        },
+        "R29": {
+          "verdict": "partial",
+          "quote": "(290,1010)",
+          "note": "States target/arc or lifetime pieces but omits the full jump and fade/clickability rule."
+        },
+        "R30": {
+          "verdict": "partial",
+          "quote": "50 ... 44 frames",
+          "note": "States delayed collection credit/target but omits the full collection/deletion sequence."
+        },
+        "R31": {
+          "verdict": "correct",
+          "quote": "frames 33, 39, 45",
+          "note": "States all required details."
+        },
+        "R32": {
+          "verdict": "partial",
+          "quote": "x=535",
+          "note": "States the approximate trigger threshold but omits all required eligibility conditions."
+        },
+        "R33": {
+          "verdict": "partial",
+          "quote": "kills zombies",
+          "note": "States mower kills but omits some all-zombie/shield/corpse details."
+        },
+        "R34": {
+          "verdict": "partial",
+          "quote": "12.16",
+          "note": "States speed/removal approximately but omits the complete one-shot/list behavior."
+        },
+        "R35": {
+          "verdict": "absent",
+          "quote": "",
+          "note": "Not stated."
+        },
+        "R36": {
+          "verdict": "absent",
+          "quote": "",
+          "note": "Not stated."
+        },
+        "R37": {
+          "verdict": "partial",
+          "quote": "wdead",
+          "note": "States warning/spawn timing but not the full flag/tick sequencing."
+        },
+        "R38": {
+          "verdict": "correct",
+          "quote": "1139",
+          "note": "States all required details."
+        },
+        "R39": {
+          "verdict": "partial",
+          "quote": "32-33 seconds",
+          "note": "States approximate 32-second timing but not per-tick 32+rand%10 redraw."
+        },
+        "R40": {
+          "verdict": "partial",
+          "quote": "45 seconds",
+          "note": "States only a fallback/early-clear idea, not the complete ordered trigger expression."
+        },
+        "R41": {
+          "verdict": "absent",
+          "quote": "",
+          "note": "Not stated."
+        },
+        "R42": {
+          "verdict": "absent",
+          "quote": "",
+          "note": "Not stated."
+        },
+        "R43": {
+          "verdict": "absent",
+          "quote": "",
+          "note": "Not stated."
+        },
+        "R44": {
+          "verdict": "absent",
+          "quote": "",
+          "note": "Not stated."
+        },
+        "R45": {
+          "verdict": "absent",
+          "quote": "",
+          "note": "Not stated."
+        },
+        "R46": {
+          "verdict": "absent",
+          "quote": "",
+          "note": "Not stated."
+        },
+        "R47": {
+          "verdict": "absent",
+          "quote": "",
+          "note": "Not stated."
+        },
+        "R48": {
+          "verdict": "partial",
+          "quote": "left boundary",
+          "note": "States an approximate/no-number mower-loss boundary rather than the exact x<0 rule."
+        },
+        "R49": {
+          "verdict": "partial",
+          "quote": "abort",
+          "note": "Does not state the loss-frame abort and one-frame-before trace end precisely."
+        },
+        "R50": {
+          "verdict": "partial",
+          "quote": "ten waves",
+          "note": "States only a broad final-wave win idea, not the empty-list/0.1-second check."
+        }
+      },
+      "contradicted_claims": []
+    },
+    "D05": {
+      "rules": {
+        "R01": {
+          "verdict": "partial",
+          "quote": "y = 130 + 138*row",
+          "note": "Gives board/lane geometry but omits or misstates a required geometry component."
+        },
+        "R02": {
+          "verdict": "absent",
+          "quote": "",
+          "note": "Not stated."
+        },
+        "R03": {
+          "verdict": "absent",
+          "quote": "",
+          "note": "Not stated."
+        },
+        "R04": {
+          "verdict": "absent",
+          "quote": "",
+          "note": "Not stated."
+        },
+        "R05": {
+          "verdict": "correct",
+          "quote": "10,000 sun",
+          "note": "States all required details."
+        },
+        "R06": {
+          "verdict": "partial",
+          "quote": "469 frames",
+          "note": "States cooldown values/startup states but omits the full ready/en lag."
+        },
+        "R07": {
+          "verdict": "partial",
+          "quote": "refund",
+          "note": "States refund/cancel behavior but omits required click-condition cases."
+        },
+        "R08": {
+          "verdict": "absent",
+          "quote": "",
+          "note": "Not stated."
+        },
+        "R09": {
+          "verdict": "absent",
+          "quote": "",
+          "note": "Not stated."
+        },
+        "R10": {
+          "verdict": "correct",
+          "quote": "300",
+          "note": "States all required details."
+        },
+        "R11": {
+          "verdict": "partial",
+          "quote": "250 frames",
+          "note": "States lingering zero-HP retention but does not fully state immediate cell release."
+        },
+        "R12": {
+          "verdict": "partial",
+          "quote": "23.5",
+          "note": "States observed production delays/periods but not the per-flower RNG construction."
+        },
+        "R13": {
+          "verdict": "partial",
+          "quote": "69-90 frames",
+          "note": "States observed firing cadence but not the timescale and queued-loop mechanism."
+        },
+        "R14": {
+          "verdict": "partial",
+          "quote": "shown, live zombie ahead",
+          "note": "States shown/live/ahead targeting but omits the explicit entry-threshold condition."
+        },
+        "R15": {
+          "verdict": "correct",
+          "quote": "200 body HP",
+          "note": "States all required details."
+        },
+        "R16": {
+          "verdict": "correct",
+          "quote": "600",
+          "note": "States all required details."
+        },
+        "R17": {
+          "verdict": "correct",
+          "quote": "1200",
+          "note": "States all required details."
+        },
+        "R18": {
+          "verdict": "partial",
+          "quote": "head shield",
+          "note": "States shield-first damage but omits overflow and the full consequence/count rule."
+        },
+        "R19": {
+          "verdict": "correct",
+          "quote": "0.48 per frame",
+          "note": "States all required details."
+        },
+        "R20": {
+          "verdict": "partial",
+          "quote": "79",
+          "note": "States the approximate reach but omits multiple-zombie behavior."
+        },
+        "R21": {
+          "verdict": "partial",
+          "quote": "100 HP",
+          "note": "States bite damage but omits same-frame resume after plant death."
+        },
+        "R22": {
+          "verdict": "partial",
+          "quote": "83 frames",
+          "note": "States approximate bite periods but not the per-zombie timescale mechanism."
+        },
+        "R23": {
+          "verdict": "partial",
+          "quote": "470 frames",
+          "note": "States approximate death retention/stop timing but not the full event/count/deletion mechanism."
+        },
+        "R24": {
+          "verdict": "partial",
+          "quote": "10.667/frame",
+          "note": "States projectile origin/speed but omits or approximates the exact fixed lifetime."
+        },
+        "R25": {
+          "verdict": "partial",
+          "quote": "used=1",
+          "note": "States damage/continued used-bullet behavior but omits the complete hit window."
+        },
+        "R26": {
+          "verdict": "absent",
+          "quote": "",
+          "note": "Not stated."
+        },
+        "R27": {
+          "verdict": "partial",
+          "quote": "frame 314",
+          "note": "States the sky-sun schedule but omits the x-range rule."
+        },
+        "R28": {
+          "verdict": "partial",
+          "quote": "1312 frames",
+          "note": "States approximate fall/lifetime behavior but omits required ranges and deletion timing."
+        },
+        "R29": {
+          "verdict": "partial",
+          "quote": "(290,1010)",
+          "note": "States target/arc or lifetime pieces but omits the full jump and fade/clickability rule."
+        },
+        "R30": {
+          "verdict": "partial",
+          "quote": "50 ... 44 frames",
+          "note": "States delayed collection credit/target but omits the full collection/deletion sequence."
+        },
+        "R31": {
+          "verdict": "correct",
+          "quote": "frames 33, 39, 45",
+          "note": "States all required details."
+        },
+        "R32": {
+          "verdict": "partial",
+          "quote": "x=535",
+          "note": "States the approximate trigger threshold but omits all required eligibility conditions."
+        },
+        "R33": {
+          "verdict": "partial",
+          "quote": "kills zombies",
+          "note": "States mower kills but omits some all-zombie/shield/corpse details."
+        },
+        "R34": {
+          "verdict": "partial",
+          "quote": "12.16",
+          "note": "States speed/removal approximately but omits the complete one-shot/list behavior."
+        },
+        "R35": {
+          "verdict": "absent",
+          "quote": "",
+          "note": "Not stated."
+        },
+        "R36": {
+          "verdict": "absent",
+          "quote": "",
+          "note": "Not stated."
+        },
+        "R37": {
+          "verdict": "partial",
+          "quote": "wdead",
+          "note": "States warning/spawn timing but not the full flag/tick sequencing."
+        },
+        "R38": {
+          "verdict": "correct",
+          "quote": "1139",
+          "note": "States all required details."
+        },
+        "R39": {
+          "verdict": "partial",
+          "quote": "32-33 seconds",
+          "note": "States approximate 32-second timing but not per-tick 32+rand%10 redraw."
+        },
+        "R40": {
+          "verdict": "partial",
+          "quote": "45 seconds",
+          "note": "States only a fallback/early-clear idea, not the complete ordered trigger expression."
+        },
+        "R41": {
+          "verdict": "absent",
+          "quote": "",
+          "note": "Not stated."
+        },
+        "R42": {
+          "verdict": "absent",
+          "quote": "",
+          "note": "Not stated."
+        },
+        "R43": {
+          "verdict": "absent",
+          "quote": "",
+          "note": "Not stated."
+        },
+        "R44": {
+          "verdict": "absent",
+          "quote": "",
+          "note": "Not stated."
+        },
+        "R45": {
+          "verdict": "absent",
+          "quote": "",
+          "note": "Not stated."
+        },
+        "R46": {
+          "verdict": "absent",
+          "quote": "",
+          "note": "Not stated."
+        },
+        "R47": {
+          "verdict": "absent",
+          "quote": "",
+          "note": "Not stated."
+        },
+        "R48": {
+          "verdict": "partial",
+          "quote": "left boundary",
+          "note": "States an approximate/no-number mower-loss boundary rather than the exact x<0 rule."
+        },
+        "R49": {
+          "verdict": "partial",
+          "quote": "abort",
+          "note": "Does not state the loss-frame abort and one-frame-before trace end precisely."
+        },
+        "R50": {
+          "verdict": "partial",
+          "quote": "ten waves",
+          "note": "States only a broad final-wave win idea, not the empty-list/0.1-second check."
+        }
+      },
+      "contradicted_claims": []
+    },
+    "D06": {
+      "rules": {
+        "R01": {
+          "verdict": "partial",
+          "quote": "y = 130 + 138*row",
+          "note": "Gives board/lane geometry but omits or misstates a required geometry component."
+        },
+        "R02": {
+          "verdict": "absent",
+          "quote": "",
+          "note": "Not stated."
+        },
+        "R03": {
+          "verdict": "absent",
+          "quote": "",
+          "note": "Not stated."
+        },
+        "R04": {
+          "verdict": "absent",
+          "quote": "",
+          "note": "Not stated."
+        },
+        "R05": {
+          "verdict": "correct",
+          "quote": "10,000 sun",
+          "note": "States all required details."
+        },
+        "R06": {
+          "verdict": "partial",
+          "quote": "469 frames",
+          "note": "States cooldown values/startup states but omits the full ready/en lag."
+        },
+        "R07": {
+          "verdict": "partial",
+          "quote": "refund",
+          "note": "States refund/cancel behavior but omits required click-condition cases."
+        },
+        "R08": {
+          "verdict": "absent",
+          "quote": "",
+          "note": "Not stated."
+        },
+        "R09": {
+          "verdict": "absent",
+          "quote": "",
+          "note": "Not stated."
+        },
+        "R10": {
+          "verdict": "correct",
+          "quote": "300",
+          "note": "States all required details."
+        },
+        "R11": {
+          "verdict": "partial",
+          "quote": "250 frames",
+          "note": "States lingering zero-HP retention but does not fully state immediate cell release."
+        },
+        "R12": {
+          "verdict": "partial",
+          "quote": "23.5",
+          "note": "States observed production delays/periods but not the per-flower RNG construction."
+        },
+        "R13": {
+          "verdict": "partial",
+          "quote": "69-90 frames",
+          "note": "States observed firing cadence but not the timescale and queued-loop mechanism."
+        },
+        "R14": {
+          "verdict": "partial",
+          "quote": "shown, live zombie ahead",
+          "note": "States shown/live/ahead targeting but omits the explicit entry-threshold condition."
+        },
+        "R15": {
+          "verdict": "correct",
+          "quote": "200 body HP",
+          "note": "States all required details."
+        },
+        "R16": {
+          "verdict": "correct",
+          "quote": "600",
+          "note": "States all required details."
+        },
+        "R17": {
+          "verdict": "partial",
+          "quote": "1200",
+          "note": "Has the right body health but the bucket shield value is approximate/wrong."
+        },
+        "R18": {
+          "verdict": "partial",
+          "quote": "head shield",
+          "note": "States shield-first damage but omits overflow and the full consequence/count rule."
+        },
+        "R19": {
+          "verdict": "correct",
+          "quote": "0.48 per frame",
+          "note": "States all required details."
+        },
+        "R20": {
+          "verdict": "partial",
+          "quote": "78.7",
+          "note": "States the approximate reach but omits multiple-zombie behavior."
+        },
+        "R21": {
+          "verdict": "partial",
+          "quote": "100 HP",
+          "note": "States bite damage but omits same-frame resume after plant death."
+        },
+        "R22": {
+          "verdict": "partial",
+          "quote": "83 frames",
+          "note": "States approximate bite periods but not the per-zombie timescale mechanism."
+        },
+        "R23": {
+          "verdict": "partial",
+          "quote": "470 frames",
+          "note": "States approximate death retention/stop timing but not the full event/count/deletion mechanism."
+        },
+        "R24": {
+          "verdict": "partial",
+          "quote": "10.667/frame",
+          "note": "States projectile origin/speed but omits or approximates the exact fixed lifetime."
+        },
+        "R25": {
+          "verdict": "partial",
+          "quote": "used=1",
+          "note": "States damage/continued used-bullet behavior but omits the complete hit window."
+        },
+        "R26": {
+          "verdict": "absent",
+          "quote": "",
+          "note": "Not stated."
+        },
+        "R27": {
+          "verdict": "partial",
+          "quote": "frame 314",
+          "note": "States the sky-sun schedule but omits the x-range rule."
+        },
+        "R28": {
+          "verdict": "partial",
+          "quote": "1312 frames",
+          "note": "States approximate fall/lifetime behavior but omits required ranges and deletion timing."
+        },
+        "R29": {
+          "verdict": "partial",
+          "quote": "(290,1010)",
+          "note": "States target/arc or lifetime pieces but omits the full jump and fade/clickability rule."
+        },
+        "R30": {
+          "verdict": "partial",
+          "quote": "50 ... 44 frames",
+          "note": "States delayed collection credit/target but omits the full collection/deletion sequence."
+        },
+        "R31": {
+          "verdict": "correct",
+          "quote": "frames 33, 39, 45",
+          "note": "States all required details."
+        },
+        "R32": {
+          "verdict": "partial",
+          "quote": "x=535",
+          "note": "States the approximate trigger threshold but omits all required eligibility conditions."
+        },
+        "R33": {
+          "verdict": "partial",
+          "quote": "kills zombies",
+          "note": "States mower kills but omits some all-zombie/shield/corpse details."
+        },
+        "R34": {
+          "verdict": "partial",
+          "quote": "12.16",
+          "note": "States speed/removal approximately but omits the complete one-shot/list behavior."
+        },
+        "R35": {
+          "verdict": "absent",
+          "quote": "",
+          "note": "Not stated."
+        },
+        "R36": {
+          "verdict": "absent",
+          "quote": "",
+          "note": "Not stated."
+        },
+        "R37": {
+          "verdict": "partial",
+          "quote": "wdead",
+          "note": "States warning/spawn timing but not the full flag/tick sequencing."
+        },
+        "R38": {
+          "verdict": "correct",
+          "quote": "1139",
+          "note": "States all required details."
+        },
+        "R39": {
+          "verdict": "partial",
+          "quote": "32-33 seconds",
+          "note": "States approximate 32-second timing but not per-tick 32+rand%10 redraw."
+        },
+        "R40": {
+          "verdict": "absent",
+          "quote": "",
+          "note": "Not stated."
+        },
+        "R41": {
+          "verdict": "partial",
+          "quote": "1780",
+          "note": "States some spawn range/engine facts but omits the complete same-frame/draw order."
+        },
+        "R42": {
+          "verdict": "wrong",
+          "quote": "mt19937",
+          "note": "Contradicts the rubric truth."
+        },
+        "R43": {
+          "verdict": "absent",
+          "quote": "",
+          "note": "Not stated."
+        },
+        "R44": {
+          "verdict": "partial",
+          "quote": "minstd_rand0",
+          "note": "States only part of the engine seeding/mapping, or uses the wrong RNG."
+        },
+        "R45": {
+          "verdict": "absent",
+          "quote": "",
+          "note": "Not stated."
+        },
+        "R46": {
+          "verdict": "absent",
+          "quote": "",
+          "note": "Not stated."
+        },
+        "R47": {
+          "verdict": "absent",
+          "quote": "",
+          "note": "Not stated."
+        },
+        "R48": {
+          "verdict": "partial",
+          "quote": "left boundary",
+          "note": "States an approximate/no-number mower-loss boundary rather than the exact x<0 rule."
+        },
+        "R49": {
+          "verdict": "partial",
+          "quote": "abort",
+          "note": "Does not state the loss-frame abort and one-frame-before trace end precisely."
+        },
+        "R50": {
+          "verdict": "partial",
+          "quote": "ten waves",
+          "note": "States only a broad final-wave win idea, not the empty-list/0.1-second check."
+        }
+      },
+      "contradicted_claims": []
+    },
+    "D07": {
+      "rules": {
+        "R01": {
+          "verdict": "partial",
+          "quote": "y = 130 + 138*row",
+          "note": "Gives board/lane geometry but omits or misstates a required geometry component."
+        },
+        "R02": {
+          "verdict": "absent",
+          "quote": "",
+          "note": "Not stated."
+        },
+        "R03": {
+          "verdict": "absent",
+          "quote": "",
+          "note": "Not stated."
+        },
+        "R04": {
+          "verdict": "absent",
+          "quote": "",
+          "note": "Not stated."
+        },
+        "R05": {
+          "verdict": "correct",
+          "quote": "10,000 sun",
+          "note": "States all required details."
+        },
+        "R06": {
+          "verdict": "partial",
+          "quote": "469 frames",
+          "note": "States cooldown values/startup states but omits the full ready/en lag."
+        },
+        "R07": {
+          "verdict": "partial",
+          "quote": "refund",
+          "note": "States refund/cancel behavior but omits required click-condition cases."
+        },
+        "R08": {
+          "verdict": "absent",
+          "quote": "",
+          "note": "Not stated."
+        },
+        "R09": {
+          "verdict": "absent",
+          "quote": "",
+          "note": "Not stated."
+        },
+        "R10": {
+          "verdict": "correct",
+          "quote": "300",
+          "note": "States all required details."
+        },
+        "R11": {
+          "verdict": "partial",
+          "quote": "250 frames",
+          "note": "States lingering zero-HP retention but does not fully state immediate cell release."
+        },
+        "R12": {
+          "verdict": "partial",
+          "quote": "23.5",
+          "note": "States observed production delays/periods but not the per-flower RNG construction."
+        },
+        "R13": {
+          "verdict": "partial",
+          "quote": "69-90 frames",
+          "note": "States observed firing cadence but not the timescale and queued-loop mechanism."
+        },
+        "R14": {
+          "verdict": "partial",
+          "quote": "shown, live zombie ahead",
+          "note": "States shown/live/ahead targeting but omits the explicit entry-threshold condition."
+        },
+        "R15": {
+          "verdict": "correct",
+          "quote": "200 body HP",
+          "note": "States all required details."
+        },
+        "R16": {
+          "verdict": "correct",
+          "quote": "600",
+          "note": "States all required details."
+        },
+        "R17": {
+          "verdict": "correct",
+          "quote": "1200",
+          "note": "States all required details."
+        },
+        "R18": {
+          "verdict": "partial",
+          "quote": "head shield",
+          "note": "States shield-first damage but omits overflow and the full consequence/count rule."
+        },
+        "R19": {
+          "verdict": "correct",
+          "quote": "0.48 per frame",
+          "note": "States all required details."
+        },
+        "R20": {
+          "verdict": "partial",
+          "quote": "79",
+          "note": "States the approximate reach but omits multiple-zombie behavior."
+        },
+        "R21": {
+          "verdict": "partial",
+          "quote": "100 HP",
+          "note": "States bite damage but omits same-frame resume after plant death."
+        },
+        "R22": {
+          "verdict": "partial",
+          "quote": "83 frames",
+          "note": "States approximate bite periods but not the per-zombie timescale mechanism."
+        },
+        "R23": {
+          "verdict": "partial",
+          "quote": "470 frames",
+          "note": "States approximate death retention/stop timing but not the full event/count/deletion mechanism."
+        },
+        "R24": {
+          "verdict": "partial",
+          "quote": "10.667/frame",
+          "note": "States projectile origin/speed but omits or approximates the exact fixed lifetime."
+        },
+        "R25": {
+          "verdict": "partial",
+          "quote": "used=1",
+          "note": "States damage/continued used-bullet behavior but omits the complete hit window."
+        },
+        "R26": {
+          "verdict": "absent",
+          "quote": "",
+          "note": "Not stated."
+        },
+        "R27": {
+          "verdict": "partial",
+          "quote": "frame 314",
+          "note": "States the sky-sun schedule but omits the x-range rule."
+        },
+        "R28": {
+          "verdict": "partial",
+          "quote": "1312 frames",
+          "note": "States approximate fall/lifetime behavior but omits required ranges and deletion timing."
+        },
+        "R29": {
+          "verdict": "partial",
+          "quote": "(290,1010)",
+          "note": "States target/arc or lifetime pieces but omits the full jump and fade/clickability rule."
+        },
+        "R30": {
+          "verdict": "partial",
+          "quote": "50 ... 44 frames",
+          "note": "States delayed collection credit/target but omits the full collection/deletion sequence."
+        },
+        "R31": {
+          "verdict": "correct",
+          "quote": "frames 33, 39, 45",
+          "note": "States all required details."
+        },
+        "R32": {
+          "verdict": "partial",
+          "quote": "x=535",
+          "note": "States the approximate trigger threshold but omits all required eligibility conditions."
+        },
+        "R33": {
+          "verdict": "partial",
+          "quote": "kills zombies",
+          "note": "States mower kills but omits some all-zombie/shield/corpse details."
+        },
+        "R34": {
+          "verdict": "partial",
+          "quote": "12.16",
+          "note": "States speed/removal approximately but omits the complete one-shot/list behavior."
+        },
+        "R35": {
+          "verdict": "absent",
+          "quote": "",
+          "note": "Not stated."
+        },
+        "R36": {
+          "verdict": "absent",
+          "quote": "",
+          "note": "Not stated."
+        },
+        "R37": {
+          "verdict": "partial",
+          "quote": "wdead",
+          "note": "States warning/spawn timing but not the full flag/tick sequencing."
+        },
+        "R38": {
+          "verdict": "correct",
+          "quote": "1139",
+          "note": "States all required details."
+        },
+        "R39": {
+          "verdict": "partial",
+          "quote": "32-33 seconds",
+          "note": "States approximate 32-second timing but not per-tick 32+rand%10 redraw."
+        },
+        "R40": {
+          "verdict": "partial",
+          "quote": "45 seconds",
+          "note": "States only a fallback/early-clear idea, not the complete ordered trigger expression."
+        },
+        "R41": {
+          "verdict": "partial",
+          "quote": "1780",
+          "note": "States some spawn range/engine facts but omits the complete same-frame/draw order."
+        },
+        "R42": {
+          "verdict": "partial",
+          "quote": "rand",
+          "note": "Mentions randomness but not the complete glibc rand algorithm, seed point, and consumers."
+        },
+        "R43": {
+          "verdict": "absent",
+          "quote": "",
+          "note": "Not stated."
+        },
+        "R44": {
+          "verdict": "partial",
+          "quote": "minstd_rand0",
+          "note": "States only part of the engine seeding/mapping, or uses the wrong RNG."
+        },
+        "R45": {
+          "verdict": "absent",
+          "quote": "",
+          "note": "Not stated."
+        },
+        "R46": {
+          "verdict": "absent",
+          "quote": "",
+          "note": "Not stated."
+        },
+        "R47": {
+          "verdict": "absent",
+          "quote": "",
+          "note": "Not stated."
+        },
+        "R48": {
+          "verdict": "partial",
+          "quote": "left boundary",
+          "note": "States an approximate/no-number mower-loss boundary rather than the exact x<0 rule."
+        },
+        "R49": {
+          "verdict": "partial",
+          "quote": "abort",
+          "note": "Does not state the loss-frame abort and one-frame-before trace end precisely."
+        },
+        "R50": {
+          "verdict": "partial",
+          "quote": "ten waves",
+          "note": "States only a broad final-wave win idea, not the empty-list/0.1-second check."
+        }
+      },
+      "contradicted_claims": []
+    },
+    "D08": {
+      "rules": {
+        "R01": {
+          "verdict": "partial",
+          "quote": "y = 130 + 138*row",
+          "note": "Gives board/lane geometry but omits or misstates a required geometry component."
+        },
+        "R02": {
+          "verdict": "absent",
+          "quote": "",
+          "note": "Not stated."
+        },
+        "R03": {
+          "verdict": "absent",
+          "quote": "",
+          "note": "Not stated."
+        },
+        "R04": {
+          "verdict": "absent",
+          "quote": "",
+          "note": "Not stated."
+        },
+        "R05": {
+          "verdict": "correct",
+          "quote": "10,000 sun",
+          "note": "States all required details."
+        },
+        "R06": {
+          "verdict": "partial",
+          "quote": "469 frames",
+          "note": "States cooldown values/startup states but omits the full ready/en lag."
+        },
+        "R07": {
+          "verdict": "partial",
+          "quote": "refund",
+          "note": "States refund/cancel behavior but omits required click-condition cases."
+        },
+        "R08": {
+          "verdict": "absent",
+          "quote": "",
+          "note": "Not stated."
+        },
+        "R09": {
+          "verdict": "absent",
+          "quote": "",
+          "note": "Not stated."
+        },
+        "R10": {
+          "verdict": "correct",
+          "quote": "300",
+          "note": "States all required details."
+        },
+        "R11": {
+          "verdict": "partial",
+          "quote": "250 frames",
+          "note": "States lingering zero-HP retention but does not fully state immediate cell release."
+        },
+        "R12": {
+          "verdict": "partial",
+          "quote": "23.5",
+          "note": "States observed production delays/periods but not the per-flower RNG construction."
+        },
+        "R13": {
+          "verdict": "partial",
+          "quote": "69-90 frames",
+          "note": "States observed firing cadence but not the timescale and queued-loop mechanism."
+        },
+        "R14": {
+          "verdict": "partial",
+          "quote": "shown, live zombie ahead",
+          "note": "States shown/live/ahead targeting but omits the explicit entry-threshold condition."
+        },
+        "R15": {
+          "verdict": "correct",
+          "quote": "200 body HP",
+          "note": "States all required details."
+        },
+        "R16": {
+          "verdict": "correct",
+          "quote": "600",
+          "note": "States all required details."
+        },
+        "R17": {
+          "verdict": "correct",
+          "quote": "1200",
+          "note": "States all required details."
+        },
+        "R18": {
+          "verdict": "partial",
+          "quote": "head shield",
+          "note": "States shield-first damage but omits overflow and the full consequence/count rule."
+        },
+        "R19": {
+          "verdict": "correct",
+          "quote": "0.48 per frame",
+          "note": "States all required details."
+        },
+        "R20": {
+          "verdict": "partial",
+          "quote": "79",
+          "note": "States the approximate reach but omits multiple-zombie behavior."
+        },
+        "R21": {
+          "verdict": "partial",
+          "quote": "100 HP",
+          "note": "States bite damage but omits same-frame resume after plant death."
+        },
+        "R22": {
+          "verdict": "partial",
+          "quote": "83 frames",
+          "note": "States approximate bite periods but not the per-zombie timescale mechanism."
+        },
+        "R23": {
+          "verdict": "partial",
+          "quote": "470 frames",
+          "note": "States approximate death retention/stop timing but not the full event/count/deletion mechanism."
+        },
+        "R24": {
+          "verdict": "correct",
+          "quote": "10.667/frame",
+          "note": "States all required details."
+        },
+        "R25": {
+          "verdict": "partial",
+          "quote": "used=1",
+          "note": "States damage/continued used-bullet behavior but omits the complete hit window."
+        },
+        "R26": {
+          "verdict": "absent",
+          "quote": "",
+          "note": "Not stated."
+        },
+        "R27": {
+          "verdict": "partial",
+          "quote": "frame 314",
+          "note": "States the sky-sun schedule but omits the x-range rule."
+        },
+        "R28": {
+          "verdict": "partial",
+          "quote": "1312 frames",
+          "note": "States approximate fall/lifetime behavior but omits required ranges and deletion timing."
+        },
+        "R29": {
+          "verdict": "partial",
+          "quote": "(290,1010)",
+          "note": "States target/arc or lifetime pieces but omits the full jump and fade/clickability rule."
+        },
+        "R30": {
+          "verdict": "partial",
+          "quote": "50 ... 44 frames",
+          "note": "States delayed collection credit/target but omits the full collection/deletion sequence."
+        },
+        "R31": {
+          "verdict": "correct",
+          "quote": "frames 33, 39, 45",
+          "note": "States all required details."
+        },
+        "R32": {
+          "verdict": "partial",
+          "quote": "x=535",
+          "note": "States the approximate trigger threshold but omits all required eligibility conditions."
+        },
+        "R33": {
+          "verdict": "partial",
+          "quote": "kills zombies",
+          "note": "States mower kills but omits some all-zombie/shield/corpse details."
+        },
+        "R34": {
+          "verdict": "partial",
+          "quote": "12.16",
+          "note": "States speed/removal approximately but omits the complete one-shot/list behavior."
+        },
+        "R35": {
+          "verdict": "partial",
+          "quote": "10 configured",
+          "note": "Does not provide the complete Level 4 wave sizes and probability table."
+        },
+        "R36": {
+          "verdict": "absent",
+          "quote": "",
+          "note": "Not stated."
+        },
+        "R37": {
+          "verdict": "partial",
+          "quote": "wdead",
+          "note": "States warning/spawn timing but not the full flag/tick sequencing."
+        },
+        "R38": {
+          "verdict": "correct",
+          "quote": "1139",
+          "note": "States all required details."
+        },
+        "R39": {
+          "verdict": "partial",
+          "quote": "32-33 seconds",
+          "note": "States approximate 32-second timing but not per-tick 32+rand%10 redraw."
+        },
+        "R40": {
+          "verdict": "partial",
+          "quote": "45 seconds",
+          "note": "States only a fallback/early-clear idea, not the complete ordered trigger expression."
+        },
+        "R41": {
+          "verdict": "absent",
+          "quote": "",
+          "note": "Not stated."
+        },
+        "R42": {
+          "verdict": "partial",
+          "quote": "rand",
+          "note": "Mentions randomness but not the complete glibc rand algorithm, seed point, and consumers."
+        },
+        "R43": {
+          "verdict": "absent",
+          "quote": "",
+          "note": "Not stated."
+        },
+        "R44": {
+          "verdict": "partial",
+          "quote": "minstd_rand0",
+          "note": "States only part of the engine seeding/mapping, or uses the wrong RNG."
+        },
+        "R45": {
+          "verdict": "correct",
+          "quote": "used set",
+          "note": "States all required details."
+        },
+        "R46": {
+          "verdict": "absent",
+          "quote": "",
+          "note": "Not stated."
+        },
+        "R47": {
+          "verdict": "absent",
+          "quote": "",
+          "note": "Not stated."
+        },
+        "R48": {
+          "verdict": "wrong",
+          "quote": "UserLose is 430",
+          "note": "Contradicts the rubric truth: uses x=430 instead of x<0."
+        },
+        "R49": {
+          "verdict": "partial",
+          "quote": "abort",
+          "note": "Does not state the loss-frame abort and one-frame-before trace end precisely."
+        },
+        "R50": {
+          "verdict": "absent",
+          "quote": "",
+          "note": "Not stated."
+        }
+      },
+      "contradicted_claims": []
+    },
+    "D09": {
+      "rules": {
+        "R01": {
+          "verdict": "partial",
+          "quote": "y = 130 + 138*row",
+          "note": "Gives board/lane geometry but omits or misstates a required geometry component."
+        },
+        "R02": {
+          "verdict": "absent",
+          "quote": "",
+          "note": "Not stated."
+        },
+        "R03": {
+          "verdict": "absent",
+          "quote": "",
+          "note": "Not stated."
+        },
+        "R04": {
+          "verdict": "partial",
+          "quote": "0.001",
+          "note": "Does not explain the first-step epsilon/one-frame action lag."
+        },
+        "R05": {
+          "verdict": "correct",
+          "quote": "10,000 sun",
+          "note": "States all required details."
+        },
+        "R06": {
+          "verdict": "partial",
+          "quote": "469 frames",
+          "note": "States cooldown values/startup states but omits the full ready/en lag."
+        },
+        "R07": {
+          "verdict": "partial",
+          "quote": "refund",
+          "note": "States refund/cancel behavior but omits required click-condition cases."
+        },
+        "R08": {
+          "verdict": "absent",
+          "quote": "",
+          "note": "Not stated."
+        },
+        "R09": {
+          "verdict": "absent",
+          "quote": "",
+          "note": "Not stated."
+        },
+        "R10": {
+          "verdict": "absent",
+          "quote": "",
+          "note": "Not stated."
+        },
+        "R11": {
+          "verdict": "partial",
+          "quote": "250 frames",
+          "note": "States lingering zero-HP retention but does not fully state immediate cell release."
+        },
+        "R12": {
+          "verdict": "partial",
+          "quote": "23.5",
+          "note": "States observed production delays/periods but not the per-flower RNG construction."
+        },
+        "R13": {
+          "verdict": "partial",
+          "quote": "69-90 frames",
+          "note": "States observed firing cadence but not the timescale and queued-loop mechanism."
+        },
+        "R14": {
+          "verdict": "partial",
+          "quote": "shown, live zombie ahead",
+          "note": "States shown/live/ahead targeting but omits the explicit entry-threshold condition."
+        },
+        "R15": {
+          "verdict": "correct",
+          "quote": "200 body HP",
+          "note": "States all required details."
+        },
+        "R16": {
+          "verdict": "correct",
+          "quote": "600",
+          "note": "States all required details."
+        },
+        "R17": {
+          "verdict": "partial",
+          "quote": "1200",
+          "note": "Has the right body health but the bucket shield value is approximate/wrong."
+        },
+        "R18": {
+          "verdict": "partial",
+          "quote": "head shield",
+          "note": "States shield-first damage but omits overflow and the full consequence/count rule."
+        },
+        "R19": {
+          "verdict": "correct",
+          "quote": "0.48 per frame",
+          "note": "States all required details."
+        },
+        "R20": {
+          "verdict": "wrong",
+          "quote": "139 units",
+          "note": "Contradicts the rubric truth."
+        },
+        "R21": {
+          "verdict": "partial",
+          "quote": "100 HP",
+          "note": "States bite damage but omits same-frame resume after plant death."
+        },
+        "R22": {
+          "verdict": "partial",
+          "quote": "83 frames",
+          "note": "States approximate bite periods but not the per-zombie timescale mechanism."
+        },
+        "R23": {
+          "verdict": "partial",
+          "quote": "470 frames",
+          "note": "States approximate death retention/stop timing but not the full event/count/deletion mechanism."
+        },
+        "R24": {
+          "verdict": "correct",
+          "quote": "10.667/frame",
+          "note": "States all required details."
+        },
+        "R25": {
+          "verdict": "partial",
+          "quote": "used=1",
+          "note": "States damage/continued used-bullet behavior but omits the complete hit window."
+        },
+        "R26": {
+          "verdict": "absent",
+          "quote": "",
+          "note": "Not stated."
+        },
+        "R27": {
+          "verdict": "partial",
+          "quote": "frame 314",
+          "note": "States the sky-sun schedule but omits the x-range rule."
+        },
+        "R28": {
+          "verdict": "partial",
+          "quote": "1312 frames",
+          "note": "States approximate fall/lifetime behavior but omits required ranges and deletion timing."
+        },
+        "R29": {
+          "verdict": "partial",
+          "quote": "(290,1010)",
+          "note": "States target/arc or lifetime pieces but omits the full jump and fade/clickability rule."
+        },
+        "R30": {
+          "verdict": "partial",
+          "quote": "50 ... 44 frames",
+          "note": "States delayed collection credit/target but omits the full collection/deletion sequence."
+        },
+        "R31": {
+          "verdict": "partial",
+          "quote": "frames 33, 39, 45",
+          "note": "States mower setup; one timing/detail is missing or approximate."
+        },
+        "R32": {
+          "verdict": "partial",
+          "quote": "x=535",
+          "note": "States the approximate trigger threshold but omits all required eligibility conditions."
+        },
+        "R33": {
+          "verdict": "partial",
+          "quote": "kills zombies",
+          "note": "States mower kills but omits some all-zombie/shield/corpse details."
+        },
+        "R34": {
+          "verdict": "partial",
+          "quote": "12.16",
+          "note": "States speed/removal approximately but omits the complete one-shot/list behavior."
+        },
+        "R35": {
+          "verdict": "absent",
+          "quote": "",
+          "note": "Not stated."
+        },
+        "R36": {
+          "verdict": "absent",
+          "quote": "",
+          "note": "Not stated."
+        },
+        "R37": {
+          "verdict": "partial",
+          "quote": "wdead",
+          "note": "States warning/spawn timing but not the full flag/tick sequencing."
+        },
+        "R38": {
+          "verdict": "correct",
+          "quote": "1139",
+          "note": "States all required details."
+        },
+        "R39": {
+          "verdict": "partial",
+          "quote": "32-33 seconds",
+          "note": "States approximate 32-second timing but not per-tick 32+rand%10 redraw."
+        },
+        "R40": {
+          "verdict": "absent",
+          "quote": "",
+          "note": "Not stated."
+        },
+        "R41": {
+          "verdict": "absent",
+          "quote": "",
+          "note": "Not stated."
+        },
+        "R42": {
+          "verdict": "wrong",
+          "quote": "SplitMix64 streams",
+          "note": "Contradicts the rubric truth."
+        },
+        "R43": {
+          "verdict": "absent",
+          "quote": "",
+          "note": "Not stated."
+        },
+        "R44": {
+          "verdict": "wrong",
+          "quote": "SplitMix64",
+          "note": "Contradicts the rubric truth."
+        },
+        "R45": {
+          "verdict": "absent",
+          "quote": "",
+          "note": "Not stated."
+        },
+        "R46": {
+          "verdict": "absent",
+          "quote": "",
+          "note": "Not stated."
+        },
+        "R47": {
+          "verdict": "absent",
+          "quote": "",
+          "note": "Not stated."
+        },
+        "R48": {
+          "verdict": "partial",
+          "quote": "left boundary",
+          "note": "States an approximate/no-number mower-loss boundary rather than the exact x<0 rule."
+        },
+        "R49": {
+          "verdict": "wrong",
+          "quote": "output continues for 60 frames",
+          "note": "Contradicts the rubric truth."
+        },
+        "R50": {
+          "verdict": "absent",
+          "quote": "",
+          "note": "Not stated."
+        }
+      },
+      "contradicted_claims": []
+    },
+    "D10": {
+      "rules": {
+        "R01": {
+          "verdict": "partial",
+          "quote": "y = 130 + 138*row",
+          "note": "Gives board/lane geometry but omits or misstates a required geometry component."
+        },
+        "R02": {
+          "verdict": "absent",
+          "quote": "",
+          "note": "Not stated."
+        },
+        "R03": {
+          "verdict": "absent",
+          "quote": "",
+          "note": "Not stated."
+        },
+        "R04": {
+          "verdict": "partial",
+          "quote": "0.001",
+          "note": "Does not explain the first-step epsilon/one-frame action lag."
+        },
+        "R05": {
+          "verdict": "correct",
+          "quote": "10,000 sun",
+          "note": "States all required details."
+        },
+        "R06": {
+          "verdict": "partial",
+          "quote": "469 frames",
+          "note": "States cooldown values/startup states but omits the full ready/en lag."
+        },
+        "R07": {
+          "verdict": "partial",
+          "quote": "refund",
+          "note": "States refund/cancel behavior but omits required click-condition cases."
+        },
+        "R08": {
+          "verdict": "absent",
+          "quote": "",
+          "note": "Not stated."
+        },
+        "R09": {
+          "verdict": "absent",
+          "quote": "",
+          "note": "Not stated."
+        },
+        "R10": {
+          "verdict": "correct",
+          "quote": "300",
+          "note": "States all required details."
+        },
+        "R11": {
+          "verdict": "partial",
+          "quote": "250 frames",
+          "note": "States lingering zero-HP retention but does not fully state immediate cell release."
+        },
+        "R12": {
+          "verdict": "partial",
+          "quote": "23.5",
+          "note": "States observed production delays/periods but not the per-flower RNG construction."
+        },
+        "R13": {
+          "verdict": "partial",
+          "quote": "69-90 frames",
+          "note": "States observed firing cadence but not the timescale and queued-loop mechanism."
+        },
+        "R14": {
+          "verdict": "partial",
+          "quote": "shown, live zombie ahead",
+          "note": "States shown/live/ahead targeting but omits the explicit entry-threshold condition."
+        },
+        "R15": {
+          "verdict": "correct",
+          "quote": "200 body HP",
+          "note": "States all required details."
+        },
+        "R16": {
+          "verdict": "correct",
+          "quote": "600",
+          "note": "States all required details."
+        },
+        "R17": {
+          "verdict": "partial",
+          "quote": "1200",
+          "note": "Has the right body health but the bucket shield value is approximate/wrong."
+        },
+        "R18": {
+          "verdict": "partial",
+          "quote": "head shield",
+          "note": "States shield-first damage but omits overflow and the full consequence/count rule."
+        },
+        "R19": {
+          "verdict": "correct",
+          "quote": "0.48 per frame",
+          "note": "States all required details."
+        },
+        "R20": {
+          "verdict": "partial",
+          "quote": "79",
+          "note": "States the approximate reach but omits multiple-zombie behavior."
+        },
+        "R21": {
+          "verdict": "partial",
+          "quote": "100 HP",
+          "note": "States bite damage but omits same-frame resume after plant death."
+        },
+        "R22": {
+          "verdict": "partial",
+          "quote": "83 frames",
+          "note": "States approximate bite periods but not the per-zombie timescale mechanism."
+        },
+        "R23": {
+          "verdict": "partial",
+          "quote": "470 frames",
+          "note": "States approximate death retention/stop timing but not the full event/count/deletion mechanism."
+        },
+        "R24": {
+          "verdict": "partial",
+          "quote": "10.667/frame",
+          "note": "States projectile origin/speed but omits or approximates the exact fixed lifetime."
+        },
+        "R25": {
+          "verdict": "partial",
+          "quote": "used=1",
+          "note": "States damage/continued used-bullet behavior but omits the complete hit window."
+        },
+        "R26": {
+          "verdict": "absent",
+          "quote": "",
+          "note": "Not stated."
+        },
+        "R27": {
+          "verdict": "partial",
+          "quote": "frame 314",
+          "note": "States the sky-sun schedule but omits the x-range rule."
+        },
+        "R28": {
+          "verdict": "partial",
+          "quote": "1312 frames",
+          "note": "States approximate fall/lifetime behavior but omits required ranges and deletion timing."
+        },
+        "R29": {
+          "verdict": "partial",
+          "quote": "(290,1010)",
+          "note": "States target/arc or lifetime pieces but omits the full jump and fade/clickability rule."
+        },
+        "R30": {
+          "verdict": "partial",
+          "quote": "50 ... 44 frames",
+          "note": "States delayed collection credit/target but omits the full collection/deletion sequence."
+        },
+        "R31": {
+          "verdict": "correct",
+          "quote": "frames 33, 39, 45",
+          "note": "States all required details."
+        },
+        "R32": {
+          "verdict": "partial",
+          "quote": "x=535",
+          "note": "States the approximate trigger threshold but omits all required eligibility conditions."
+        },
+        "R33": {
+          "verdict": "partial",
+          "quote": "kills zombies",
+          "note": "States mower kills but omits some all-zombie/shield/corpse details."
+        },
+        "R34": {
+          "verdict": "partial",
+          "quote": "12.16",
+          "note": "States speed/removal approximately but omits the complete one-shot/list behavior."
+        },
+        "R35": {
+          "verdict": "wrong",
+          "quote": "Level 4 has five waves",
+          "note": "Contradicts the rubric truth."
+        },
+        "R36": {
+          "verdict": "absent",
+          "quote": "",
+          "note": "Not stated."
+        },
+        "R37": {
+          "verdict": "partial",
+          "quote": "wdead",
+          "note": "States warning/spawn timing but not the full flag/tick sequencing."
+        },
+        "R38": {
+          "verdict": "correct",
+          "quote": "1139",
+          "note": "States all required details."
+        },
+        "R39": {
+          "verdict": "partial",
+          "quote": "32-33 seconds",
+          "note": "States approximate 32-second timing but not per-tick 32+rand%10 redraw."
+        },
+        "R40": {
+          "verdict": "partial",
+          "quote": "45 seconds",
+          "note": "States only a fallback/early-clear idea, not the complete ordered trigger expression."
+        },
+        "R41": {
+          "verdict": "partial",
+          "quote": "1780",
+          "note": "States some spawn range/engine facts but omits the complete same-frame/draw order."
+        },
+        "R42": {
+          "verdict": "absent",
+          "quote": "",
+          "note": "Not stated."
+        },
+        "R43": {
+          "verdict": "absent",
+          "quote": "",
+          "note": "Not stated."
+        },
+        "R44": {
+          "verdict": "wrong",
+          "quote": "splitmix64 stream",
+          "note": "Contradicts the rubric truth."
+        },
+        "R45": {
+          "verdict": "absent",
+          "quote": "",
+          "note": "Not stated."
+        },
+        "R46": {
+          "verdict": "absent",
+          "quote": "",
+          "note": "Not stated."
+        },
+        "R47": {
+          "verdict": "absent",
+          "quote": "",
+          "note": "Not stated."
+        },
+        "R48": {
+          "verdict": "partial",
+          "quote": "left boundary",
+          "note": "States an approximate/no-number mower-loss boundary rather than the exact x<0 rule."
+        },
+        "R49": {
+          "verdict": "partial",
+          "quote": "abort",
+          "note": "Does not state the loss-frame abort and one-frame-before trace end precisely."
+        },
+        "R50": {
+          "verdict": "wrong",
+          "quote": "five waves",
+          "note": "Contradicts the rubric truth."
+        }
+      },
+      "contradicted_claims": []
+    }
+  }
+}

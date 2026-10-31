@@ -1,0 +1,10 @@
+{
+  "frames": 9007,
+  "id": "hidden-01-idle-loss",
+  "raw_input_events": 0,
+  "replay_sha256": "c417f71b9af8caee57d9824b810c47bd0418b842c4def67d19988a582ea3e634",
+  "scenario_sha256": "f828e5e48dd4edb340ab11c738095ebcfa67479a1c4495469e99973245acc0a8",
+  "split": "hidden",
+  "trace_sha256": "a7c762cc0277b5c162d5790a4a65eddce12d116f939c3e0499cad2ee2fc9401d",
+  "verified_replay": true
+}

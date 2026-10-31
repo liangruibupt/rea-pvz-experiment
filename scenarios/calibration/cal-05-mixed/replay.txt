@@ -1,0 +1,122 @@
+time_seed 1700000205
+device_seed 205
+boot_max 3000
+end_frame 12500
+post_result_frames 60
+boot MainMenu 240 c 980 158
+boot ModernWorld 120 d 1100 450
+boot ModernWorld 2 m 1000 450
+boot ModernWorld 2 m 900 450
+boot ModernWorld 2 m 800 450
+boot ModernWorld 2 m 700 450
+boot ModernWorld 2 u 700 450
+boot ModernWorld 90 c 883 403
+boot SelectPlantsScene 420 c 187 393
+boot SelectPlantsScene 40 c 311 393
+boot SelectPlantsScene 40 c 434 393
+boot SelectPlantsScene 60 c 398 671
+input 60 m 70 48
+input 62 d 70 48
+input 63 u 70 48
+input 64 m 421 413
+input 74 d 421 413
+input 75 u 421 413
+input 360 m 694 4
+input 362 d 694 4
+input 363 u 694 4
+input 480 m 430 365
+input 482 d 430 365
+input 483 u 430 365
+input 520 m 70 117
+input 522 d 70 117
+input 523 u 70 117
+input 524 m 583 600
+input 534 d 583 600
+input 535 u 583 600
+input 1040 m 70 117
+input 1042 d 70 117
+input 1043 u 70 117
+input 1044 m 583 227
+input 1054 d 583 227
+input 1055 u 583 227
+input 1560 m 70 117
+input 1562 d 70 117
+input 1563 u 70 117
+input 1564 m 583 413
+input 1574 d 583 413
+input 1575 u 583 413
+input 1860 m 419 430
+input 1862 d 419 430
+input 1863 u 419 430
+input 1920 m 727 9
+input 1922 d 727 9
+input 1923 u 727 9
+input 2080 m 70 117
+input 2082 d 70 117
+input 2083 u 70 117
+input 2084 m 665 507
+input 2094 d 665 507
+input 2095 u 665 507
+input 2600 m 70 117
+input 2602 d 70 117
+input 2603 u 70 117
+input 2604 m 665 320
+input 2614 d 665 320
+input 2615 u 665 320
+input 3270 m 421 409
+input 3272 d 421 409
+input 3273 u 421 409
+input 3480 m 687 26
+input 3482 d 687 26
+input 3483 u 687 26
+input 3900 m 70 185
+input 3902 d 70 185
+input 3903 u 70 185
+input 3904 m 909 413
+input 3914 d 909 413
+input 3915 u 909 413
+input 4680 m 418 365
+input 4682 d 418 365
+input 4683 u 418 365
+input 5040 m 639 16
+input 5042 d 639 16
+input 5043 u 639 16
+input 5800 m 70 185
+input 5802 d 70 185
+input 5803 u 70 185
+input 5804 m 909 600
+input 5814 d 909 600
+input 5815 u 909 600
+input 6090 m 409 327
+input 6092 d 409 327
+input 6093 u 409 327
+input 6630 m 937 38
+input 6632 d 937 38
+input 6633 u 937 38
+input 7500 m 429 357
+input 7502 d 429 357
+input 7503 u 429 357
+input 7700 m 70 185
+input 7702 d 70 185
+input 7703 u 70 185
+input 7704 m 909 227
+input 7714 d 909 227
+input 7715 u 909 227
+input 8190 m 706 77
+input 8192 d 706 77
+input 8193 u 706 77
+input 8910 m 415 384
+input 8912 d 415 384
+input 8913 u 415 384
+input 9750 m 775 47
+input 9752 d 775 47
+input 9753 u 775 47
+input 10320 m 417 383
+input 10322 d 417 383
+input 10323 u 417 383
+input 11310 m 904 25
+input 11312 d 904 25
+input 11313 u 904 25
+input 11700 m 420 454
+input 11702 d 420 454
+input 11703 u 420 454

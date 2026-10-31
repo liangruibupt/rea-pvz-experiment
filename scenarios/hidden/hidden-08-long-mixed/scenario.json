@@ -1,0 +1,121 @@
+{
+  "actions": [
+    {
+      "card": "sunflower",
+      "card_index": 0,
+      "col": 0,
+      "frame": 60,
+      "kind": "plant",
+      "row": 2
+    },
+    {
+      "card": "sunflower",
+      "card_index": 0,
+      "col": 0,
+      "frame": 570,
+      "kind": "plant",
+      "row": 0
+    },
+    {
+      "card": "sunflower",
+      "card_index": 0,
+      "col": 0,
+      "frame": 1080,
+      "kind": "plant",
+      "row": 4
+    },
+    {
+      "card": "peashooter",
+      "card_index": 1,
+      "col": 2,
+      "frame": 520,
+      "kind": "plant",
+      "row": 0
+    },
+    {
+      "card": "peashooter",
+      "card_index": 1,
+      "col": 2,
+      "frame": 1040,
+      "kind": "plant",
+      "row": 4
+    },
+    {
+      "card": "peashooter",
+      "card_index": 1,
+      "col": 2,
+      "frame": 1560,
+      "kind": "plant",
+      "row": 2
+    },
+    {
+      "card": "peashooter",
+      "card_index": 1,
+      "col": 3,
+      "frame": 2080,
+      "kind": "plant",
+      "row": 1
+    },
+    {
+      "card": "peashooter",
+      "card_index": 1,
+      "col": 3,
+      "frame": 2600,
+      "kind": "plant",
+      "row": 3
+    },
+    {
+      "card": "wallnut",
+      "card_index": 2,
+      "col": 6,
+      "frame": 3900,
+      "kind": "plant",
+      "row": 2
+    },
+    {
+      "card": "wallnut",
+      "card_index": 2,
+      "col": 6,
+      "frame": 5800,
+      "kind": "plant",
+      "row": 0
+    },
+    {
+      "card": "wallnut",
+      "card_index": 2,
+      "col": 6,
+      "frame": 7700,
+      "kind": "plant",
+      "row": 4
+    },
+    {
+      "card": "wallnut",
+      "card_index": 2,
+      "col": 7,
+      "frame": 9600,
+      "kind": "plant",
+      "row": 1
+    },
+    {
+      "card": "wallnut",
+      "card_index": 2,
+      "col": 7,
+      "frame": 11500,
+      "kind": "plant",
+      "row": 3
+    }
+  ],
+  "collect_sun": {
+    "every_frames": 30,
+    "mode": "first_enabled"
+  },
+  "device_seed": 308,
+  "end_frame": 18000,
+  "frame_ms": 16,
+  "id": "hidden-08-long-mixed",
+  "level": 4,
+  "purpose": "Longest held-out mixed trace for late waves and cumulative drift.",
+  "schema": 1,
+  "split": "hidden",
+  "time_seed": 1700000308
+}

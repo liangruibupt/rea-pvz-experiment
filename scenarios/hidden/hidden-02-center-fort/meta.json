@@ -1,0 +1,10 @@
+{
+  "frames": 9001,
+  "id": "hidden-02-center-fort",
+  "raw_input_events": 66,
+  "replay_sha256": "9afd73f7aa85d476b19d0ea85175afd06ef22d9af55f50d21a737c460f0465f7",
+  "scenario_sha256": "9f00da428448d90a635a62b89d14325027477e6c1926e817fd17206c0766253d",
+  "split": "hidden",
+  "trace_sha256": "a515d1d13a9275c525269c1df5150a7cab676f7e865603865fc069f91376af62",
+  "verified_replay": true
+}

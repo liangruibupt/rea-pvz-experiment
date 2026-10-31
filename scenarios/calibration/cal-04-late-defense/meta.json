@@ -1,0 +1,10 @@
+{
+  "frames": 9094,
+  "id": "cal-04-late-defense",
+  "raw_input_events": 51,
+  "replay_sha256": "39f8125bbd847cf9346e323834ba3700f21471c8c8e6a14efbd24a88d9502f83",
+  "scenario_sha256": "113a0438bfbbfcd7808f06fde7488eb6aacf579fbd970fe61249298b49fc9f85",
+  "split": "calibration",
+  "trace_sha256": "7038018a5452d670ee99c55e9d657deac845e650d38018036cdc7866495afd46",
+  "verified_replay": true
+}

@@ -1,0 +1,10 @@
+{
+  "frames": 3001,
+  "id": "public-01-idle",
+  "raw_input_events": 0,
+  "replay_sha256": "3312cbe3e2b14ccc1d7af81fb2841fe4c833154b39456134a062f1cc5957e776",
+  "scenario_sha256": "cdffb8ddf5dac349b7c100f4d42c1ea2d285c9565656c57706a2f95c677efbeb",
+  "split": "public",
+  "trace_sha256": "7addcf86c630c4754ce6b7d29e05ab7de781b3dcc1f7eb6004361aba396dfb87",
+  "verified_replay": true
+}

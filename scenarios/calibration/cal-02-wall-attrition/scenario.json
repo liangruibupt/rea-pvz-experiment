@@ -1,0 +1,49 @@
+{
+  "actions": [
+    {
+      "card": "wallnut",
+      "card_index": 2,
+      "col": 5,
+      "frame": 1900,
+      "kind": "plant",
+      "row": 0
+    },
+    {
+      "card": "wallnut",
+      "card_index": 2,
+      "col": 5,
+      "frame": 3800,
+      "kind": "plant",
+      "row": 2
+    },
+    {
+      "card": "wallnut",
+      "card_index": 2,
+      "col": 5,
+      "frame": 5700,
+      "kind": "plant",
+      "row": 4
+    },
+    {
+      "card": "wallnut",
+      "card_index": 2,
+      "col": 5,
+      "frame": 5750,
+      "kind": "plant",
+      "row": 1
+    }
+  ],
+  "collect_sun": {
+    "every_frames": 0,
+    "mode": "first_enabled"
+  },
+  "device_seed": 202,
+  "end_frame": 9000,
+  "frame_ms": 16,
+  "id": "cal-02-wall-attrition",
+  "level": 4,
+  "purpose": "Wallnut cooldown, failed during-cooldown action, eating and HP loss.",
+  "schema": 1,
+  "split": "calibration",
+  "time_seed": 1700000202
+}

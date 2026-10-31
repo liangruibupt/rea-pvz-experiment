@@ -1,0 +1,10 @@
+{
+  "frames": 13001,
+  "id": "hidden-06-shield-waves",
+  "raw_input_events": 93,
+  "replay_sha256": "cba589351fda2aacbcf37903275121339f29508f9d5b7262df694db8118483de",
+  "scenario_sha256": "258163998c2c81e46df20e1cd65553c39015b3f3c55bef1e3a1732d75d7305d6",
+  "split": "hidden",
+  "trace_sha256": "9bfafc60cea260da36c784e4fbae422a85f620f34cf9ac6faa72ca3ebbeff6cc",
+  "verified_replay": true
+}
